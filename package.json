@@ -1,22 +1,24 @@
 {
-  "name": "blog",
+  "name": "vuestagram",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",    
-    "predeploy": "vue-cli-service build",
-    "deploy": "gh-pages -d dist",
-    "clean": "gh-pages-clean"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.5",
-    "bootstrap": "^5.2.0-beta1",
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
-    "gh-pages": "^4.0.0",
+    "i": "^0.3.7",
+    "install": "^0.13.0",
+    "register-service-worker": "^1.7.2",
+    "sass": "^1.53.0",
+    "sass-loader": "^10.3.1",
+    "uninstall": "^0.0.0",
     "vue": "^3.2.13",
-    "vue-router": "^4.1.1"
+    "vue-router": "^4.1.1",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

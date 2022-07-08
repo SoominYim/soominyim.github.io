@@ -1,5 +1,5 @@
 <template>
-    <div class="contaner mt-4">
+    <div>
         <h5>개발 블로그</h5>
         <p>s-o-o-min</p>
     </div>
@@ -8,6 +8,7 @@
 <script>
 export default {
     name: "BlogHome",
+    components: {},
 };
 </script>
 

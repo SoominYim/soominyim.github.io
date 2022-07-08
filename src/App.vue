@@ -1,26 +1,11 @@
 <template>
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4"></div>
+    <div>
+        <router-link to="/" class="h4">home</router-link>
+        |
+        <router-link to="/list" class="h4">list</router-link>
+        <router-view :blogs="blogs"></router-view>
+        <br />
     </div>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarToggleExternalContent"
-                aria-controls="navbarToggleExternalContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <router-link to="/" class="text-white h4">home</router-link>
-            <router-link to="/list" class="text-white h4">list</router-link>
-        </div>
-    </nav>
-
-    <router-view :blogs="blogs"></router-view>
 </template>
 
 <script>
