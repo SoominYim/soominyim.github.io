@@ -10,13 +10,12 @@
         <a :href="blogs[$route.params.id].gitUrl" target="_blank"
             >코드보러가기</a
         >
-        <router-view></router-view>
     </div>
 </template>
 
 <script>
 export default {
-    name: "BlogDetail",
+    name: "BlogProject",
     props: {
         blogs: Array,
     },

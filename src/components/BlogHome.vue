@@ -1,16 +1,21 @@
 <template>
     <div>
-        <h5>개발 블로그</h5>
-        <p>s-o-o-min</p>
+        <home-typing></home-typing>
     </div>
 </template>
 
 <script>
+import HomeTyping from "@/components/HomeTyping.vue";
 export default {
     name: "BlogHome",
-    components: {},
+    props: {
+        blogs: Array,
+    },
+    components: {
+        HomeTyping,
+    },
 };
 </script>
 
-<style>
+<style scoped>
 </style>
