@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <div>name:임수민</div>
         <div>skill</div>
         <div>skill</div>
@@ -16,5 +16,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.container {
+    height: 100vh;
+    background: slateblue;
+}
 </style>

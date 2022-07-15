@@ -39,7 +39,7 @@ export default {
 
 <style>
 :root {
-    --primary: #4ade80;
+    --primary: #00c6bb;
     --primary-alt: #22c55e;
     --grey: #64748b;
     --dark: #1e293b;
@@ -47,8 +47,7 @@ export default {
     --light: #f1f5f9;
 }
 </style>
-
-<style scoped>
+<style lang="scss" scoped>
 .sidebar {
     color: white;
     background-color: var(--dark);

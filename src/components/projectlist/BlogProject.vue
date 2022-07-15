@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h4>{{ blogs[$route.params.id].title }}</h4>
         <h4>{{ blogs[$route.params.id].content }}</h4>
         <h4>{{ blogs[$route.params.id].project }}</h4>
@@ -22,5 +22,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.container {
+    height: 100vh;
+    background: pink;
+}
 </style>

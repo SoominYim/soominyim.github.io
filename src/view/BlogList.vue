@@ -27,6 +27,8 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+    height: 100vh;
+    background: coral;
     align-items: center;
     display: flex;
     flex-direction: column;
