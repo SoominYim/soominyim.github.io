@@ -1,10 +1,8 @@
 <template>
     <div class="container">
         <h1>
-            <span>console.log ("</span>
             <span class="typed-text">{{ typeValue }} </span>
             <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
-            <span>");</span>
         </h1>
     </div>
 </template>
@@ -39,7 +37,7 @@ export default {
                     this.charIndex
                 );
                 this.charIndex += 1;
-                setTimeout(this.typeText, this.typingSpeed); //
+                setTimeout(this.typeText, this.typingSpeed);
             } else {
                 // 텍스트가 있으면 erasing
                 this.typeStatus = false;
@@ -73,6 +71,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 .container {
     width: 100%;
     height: 90vh;
@@ -85,7 +85,9 @@ h1 {
     font-weight: normal;
 
     span.typed-text {
+        font-family: "Press Start 2P", cursive;
         color: #276749;
+        font-size: 3rem;
     }
 
     span.cursor {

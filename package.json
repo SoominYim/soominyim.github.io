@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "gsap": "^3.10.4",
     "i": "^0.3.7",
     "install": "^0.13.0",
     "node-sass": "^7.0.1",
