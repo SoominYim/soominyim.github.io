@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <parti-cles></parti-cles>
-        <custom-cursor color="#cb2d3e" color-hover="#f1c40f"></custom-cursor>
+        <custom-cursor></custom-cursor>
         <router-link to="/main">
             <logo-star></logo-star>
         </router-link>
@@ -12,6 +12,7 @@
                     name="fade"
                     mode="out-in"
                     :enter-active-class="route.meta.enterClass"
+                    :leave-active-class="route.meta.leaveClass"
                 >
                     <component :is="Component"></component>
                 </transition>
@@ -21,12 +22,12 @@
 </template>
 
 <script>
-import blogData from "@/assets/blog.js";
+import blogData from "@/assets/items/blog.js";
 import SideBar from "@/components/sidebar/SideBar.vue";
-import CustomCursor from "@/assets/cursor/CustomCursor";
+import CustomCursor from "@/components/CustomCursor";
 import LogoStar from "@/assets/logo/LogoStar";
 import { sidebarWidth } from "@/components/sidebar/state.js";
-import PartiCles from "./assets/particles/PartiCles.vue";
+import PartiCles from "./components/PartiCles.vue";
 
 export default {
     name: "App",
@@ -50,17 +51,22 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "assets/reset.css";
-
+#app {
+    width: 100vw;
+    height: 100vh;
+}
 .content {
+    width: 100%;
+    height: 100%;
     font-family: "Righteous", arial;
     font-weight: normal;
     color: #000;
-    width: 100vw;
-    height: 100vh;
     text-align: center;
     transition: 0.5s ease;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #191f24 100%);
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
 }
+
 .fade-leave-to {
     opacity: 1;
 }
@@ -71,5 +77,8 @@ export default {
 
 .animate__animated.animate__fadeIn {
     --animate-duration: 4s;
+}
+.animate__animated.animate__bounceInDown {
+    --animate-duration: 2s;
 }
 </style>

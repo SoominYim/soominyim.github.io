@@ -4,7 +4,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import BlogList from "@/view/BlogList.vue";
 import BlogHome from "@/view/BlogHome.vue";
 import BlogMain from "@/view/BlogMain";
-import BlogProfile from "@/view/BlogProfile.vue";
+import BlogAbout from "@/view/BlogAbout.vue";
 import BlogProject from "@/components/projectlist/BlogProject";
 
 const router = createRouter({
@@ -24,7 +24,7 @@ const router = createRouter({
       component: BlogMain,
       name: BlogMain,
       meta: {
-        enterClass: "animate__animated animate__bounceInUp",
+        enterClass: "animate__animated animate__bounceInDown",
         leavaClass: "animate__animated animate__bounceInUp",
       },
     },
@@ -43,9 +43,9 @@ const router = createRouter({
       name: BlogProject,
     },
     {
-      path: "/profile",
-      component: BlogProfile,
-      name: BlogProfile,
+      path: "/about",
+      component: BlogAbout,
+      name: BlogAbout,
       meta: {
         enterClass: "animate__animated animate__bounceInDown",
         leavaClass: "animate__animated animate__bounceInUp",

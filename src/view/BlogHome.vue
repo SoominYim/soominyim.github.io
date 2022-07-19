@@ -7,32 +7,40 @@
                 <div class="moon"></div>
             </div>
         </router-link>
-        <div class="floresta">
-            <img src="@/assets/img/bgTree.png" alt="" />
+        <blog-footer></blog-footer>
+        <div class="footer">
+            <blog-footer></blog-footer>
         </div>
     </div>
 </template>
 
 <script>
-import CustomCursor from "@/assets/cursor/CustomCursor";
+import CustomCursor from "@/components/CustomCursor";
 import HomeTyping from "@/components/HomeTyping";
+import BlogFooter from "@/components/BlogFooter.vue";
 
 export default {
     name: "BlogHome",
-    props: {
-        blogs: Array,
-    },
+    props: {},
     components: {
         CustomCursor,
         HomeTyping,
+        BlogFooter,
     },
+    data() {
+        return {};
+    },
+    methods: {},
     mounted() {},
 };
 </script>
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
+.container {
+    width: 100%;
+    height: 100%;
+}
 .moon_warp {
     position: absolute;
     right: 200px;
@@ -64,18 +72,20 @@ export default {
     }
 }
 
-.floresta {
-    position: fixed;
+.footer {
+    position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 20px;
     width: 100%;
-    pointer-events: none;
-    img {
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
     z-index: 10;
+}
+@keyframes cloudsFrames {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 10000px 0;
+    }
 }
 </style>
