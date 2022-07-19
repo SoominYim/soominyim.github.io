@@ -30,9 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-:root {
-    --grey: grey;
-}
+@import "@/assets/scss/utils.scss";
 .star {
     position: absolute;
     top: 50px;
@@ -42,6 +40,15 @@ export default {
     align-items: center;
     align-content: center;
     text-align: center;
+    z-index: 999999;
+    @include mobile {
+        top: 5px;
+        left: 5px;
+    }
+    @include tablet {
+        top: 50px;
+        left: 50px;
+    }
 }
 
 .wrap {
@@ -60,11 +67,17 @@ export default {
             border-bottom: calc(7.5px * 1.732) solid var(--grey);
             border-left: 7.5px solid transparent;
             border-right: 7.5px solid transparent;
+            &:hover {
+                border-bottom: calc(7.5px * 1.732) solid #555;
+                &::after {
+                    border-top: calc(7.5px * 1.732) solid #555;
+                }
+            }
         }
         div::after {
             content: "";
             position: absolute;
-            top: calc(7.5px * 1.732);
+            top: calc(7px * 1.732);
             left: -7.5px;
             width: 0px;
             height: 0px;

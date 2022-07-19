@@ -17,7 +17,13 @@ export default {
         return {
             typeValue: "", //state
             typeStatus: false, // true시 cursor 멈춤
-            typeArray: ["Hello, World!!!", "Please, Use the sidebar", ""], // Text 넣고
+            typeArray: [
+                "Hello, World!!!",
+                "임수민의 포트폴리오 입니다.",
+                "달을 누르시면 메인으로 이동합니다.",
+                "It's Yim Soomin's portfolio",
+                "Press the moon to go to the main page",
+            ], // Text 넣고
             typingSpeed: 200, // typing speed
             erasingSpeed: 100, // erasing speed
             newTextDelay: 1000, // 새로운텍스트 속도
@@ -41,7 +47,7 @@ export default {
             } else {
                 // 텍스트가 있으면 erasing
                 this.typeStatus = false;
-                setTimeout(this.eraseText, this.newTextDelay + 1500); // 글 지울 때 딜레이
+                setTimeout(this.eraseText, this.newTextDelay + 1000); // 글 지울 때 딜레이
             }
         },
         eraseText() {
@@ -60,7 +66,7 @@ export default {
                 if (this.typeArrayIndex >= this.typeArray.length)
                     this.typeArrayIndex = 0;
 
-                setTimeout(this.typeText, this.typingSpeed + 1000); // 글 쓸때 딜레이
+                setTimeout(this.typeText, this.typingSpeed + 500); // 글 쓸때 딜레이
             }
         },
     },
@@ -71,7 +77,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=Press+Start+2P&display=swap");
 
 .container {
     width: 100%;
@@ -85,9 +91,9 @@ h1 {
     font-weight: normal;
 
     span.typed-text {
-        font-family: "Press Start 2P", cursive;
-        color: #276749;
-        font-size: 3rem;
+        font-family: "Orbitron", sans-serif;
+        color: #fff;
+        font-size: 30px;
     }
 
     span.cursor {
@@ -104,7 +110,7 @@ h1 {
 }
 @keyframes cursorBlink {
     49% {
-        background-color: black;
+        background-color: #fff;
     }
     50% {
         background-color: transparent;
