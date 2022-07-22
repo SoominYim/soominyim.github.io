@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <parti-cles></parti-cles>
         <custom-cursor color="#cb2d3e" color-hover="#f1c40f"></custom-cursor>
         <home-typing></home-typing>
         <router-link to="/main">
@@ -18,6 +19,7 @@
 import CustomCursor from "@/components/CustomCursor";
 import HomeTyping from "@/components/HomeTyping";
 import BlogFooter from "@/components/BlogFooter.vue";
+import PartiCles from "@/components/PartiCles.vue";
 
 export default {
     name: "BlogHome",
@@ -26,6 +28,7 @@ export default {
         CustomCursor,
         HomeTyping,
         BlogFooter,
+        PartiCles,
     },
     data() {
         return {};
@@ -40,6 +43,8 @@ export default {
 .container {
     width: 100%;
     height: 100%;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
 }
 .moon_warp {
     position: absolute;
