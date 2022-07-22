@@ -15,8 +15,8 @@ const router = createRouter({
       component: BlogHome,
       name: BlogHome,
       meta: {
-        enterClass: "animate__animated animate__fadeIn",
-        leavaClass: "animate__animated animate__fadeIn",
+        enterActiveClass: "animate__animated animate__fadeIn",
+        leaveToClass: "animate__animated animate__fadeOut",
       },
     },
     {
@@ -24,8 +24,8 @@ const router = createRouter({
       component: BlogMain,
       name: BlogMain,
       meta: {
-        enterClass: "animate__animated animate__bounceInDown",
-        leavaClass: "animate__animated animate__bounceInUp",
+        enterActiveClass: "animate__animated animate__fadeIn",
+        leaveActiveClass: "animate__animated animate__fadeOut",
       },
     },
     {
@@ -33,22 +33,26 @@ const router = createRouter({
       component: BlogList, // component를 가져옴
       name: BlogList,
       meta: {
-        enterClass: "animate__animated animate__bounceInDown",
-        leavaClass: "animate__animated animate__bounceInUp",
+        enterActiveClass: "animate__animated animate__slideInDown",
+        leaveActiveClass: "animate__animated animate__fadeOut",
       },
     },
     {
       path: "/list/:id",
       component: BlogProject,
       name: BlogProject,
+      meta: {
+        enterActiveClass: "animate__animated animate__slideInDown",
+        leaveActiveClass: "animate__animated animate__slideOutUp",
+      },
     },
     {
       path: "/about",
       component: BlogAbout,
       name: BlogAbout,
       meta: {
-        enterClass: "animate__animated animate__bounceInDown",
-        leavaClass: "animate__animated animate__bounceInUp",
+        enterActiveClass: "animate__animated animate__slideInDown",
+        leaveActiveClass: "animate__animated animate__fadeOut",
       },
     },
     {
