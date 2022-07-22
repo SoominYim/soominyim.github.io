@@ -64,7 +64,8 @@ export default {
 };
 </script>
 
-<style land="scss" scope>
+<style lang="scss" scoped>
+@import "@/assets/scss/utils.scss";
 .custom-cursor__ball {
     position: fixed;
     top: 0;
@@ -83,7 +84,12 @@ export default {
     background: #fff;
     border-radius: 50%;
 }
-
+@include screen {
+    .custom-cursor__ball--small,
+    .custom-cursor__ball--big {
+        display: none;
+    }
+}
 .custom-cursor__ball--small {
     content: "";
     width: 6px;
