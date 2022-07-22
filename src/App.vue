@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-        <parti-cles></parti-cles>
         <custom-cursor></custom-cursor>
         <router-link to="/main">
             <logo-star></logo-star>
@@ -11,8 +10,10 @@
                 <transition
                     name="fade"
                     mode="out-in"
-                    :enter-active-class="route.meta.enterClass"
-                    :leave-active-class="route.meta.leaveClass"
+                    :enter-to-class="route.meta.enterToClass"
+                    :enter-active-class="route.meta.enterActiveClass"
+                    :leave-to-class="route.meta.leaveToClass"
+                    :leave-active-class="route.meta.leaveActiveClass"
                 >
                     <component :is="Component"></component>
                 </transition>
@@ -27,7 +28,6 @@ import SideBar from "@/components/sidebar/SideBar.vue";
 import CustomCursor from "@/components/CustomCursor";
 import LogoStar from "@/assets/logo/LogoStar";
 import { sidebarWidth } from "@/components/sidebar/state.js";
-import PartiCles from "./components/PartiCles.vue";
 
 export default {
     name: "App",
@@ -35,7 +35,6 @@ export default {
         SideBar,
         CustomCursor,
         LogoStar,
-        PartiCles,
     },
     data() {
         return {
@@ -58,27 +57,19 @@ export default {
 .content {
     width: 100%;
     height: 100%;
+    background: #000;
     font-family: "Righteous", arial;
     font-weight: normal;
-    color: #000;
     text-align: center;
     transition: 0.5s ease;
-    background-color: #2d3436;
-    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
 }
 
-.fade-leave-to {
-    opacity: 1;
+.animate__animated.animate__zoomIn,
+.animate__animated.animate__zoomOut {
+    --animate-duration: 1.5s;
 }
-.fade-leave-active {
-    opacity: 0;
-    transition: all 1.5s ease-out;
-}
-
-.animate__animated.animate__fadeIn {
-    --animate-duration: 4s;
-}
-.animate__animated.animate__bounceInDown {
+.animate__animated.animate__fadeIn,
+.animate__animated.animate__fadeOut {
     --animate-duration: 2s;
 }
 </style>

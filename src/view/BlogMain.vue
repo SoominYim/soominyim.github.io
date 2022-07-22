@@ -63,12 +63,19 @@ export default {
     position: relative;
     width: 100vw;
     height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
 }
 .star_wrap {
     position: absolute;
     top: 50%;
     left: 50%;
+    border-radius: 50%;
+    width: 311.75px;
+    display: flex;
+    justify-content: center;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0.3rem 0.6rem rgb(255 255 255 / 20%);
     .star {
         width: calc(90px * 3);
         height: calc(90px * 1.732 * 2);
@@ -100,7 +107,6 @@ export default {
                 cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
             animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
                 both;
-
             &::after {
                 content: "";
                 position: absolute;
