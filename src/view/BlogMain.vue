@@ -159,7 +159,7 @@ export default {
 }
 
 #goAbout {
-    border-bottom: calc(45px * 1.732) solid rgba(64, 67, 92);
+    border-bottom: calc(45px * 1.732) solid #40435c;
     &::after {
         border-top: calc(45px * 1.732) solid rgba(64, 67, 92);
     }
@@ -170,7 +170,7 @@ export default {
 }
 
 #goList {
-    border-bottom: calc(45px * 1.732) solid rgb(98, 101, 127);
+    border-bottom: calc(45px * 1.732) solid #62657f;
     &::after {
         border-top: calc(45px * 1.732) solid rgb(98, 101, 127);
     }

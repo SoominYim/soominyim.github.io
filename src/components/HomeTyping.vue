@@ -27,7 +27,7 @@ export default {
             typingSpeed: 200, // typing speed
             erasingSpeed: 100, // erasing speed
             newTextDelay: 1000, // 새로운텍스트 속도
-            typeArrayIndex: 0, //
+            typeArrayIndex: 0,
             charIndex: 0, //글자 수 늘리기
         };
     },

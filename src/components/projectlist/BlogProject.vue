@@ -5,18 +5,11 @@
                 <h4>{{ blogs[$route.params.id].title }}</h4>
                 <h4>{{ blogs[$route.params.id].content }}</h4>
                 <h4>{{ blogs[$route.params.id].project }}</h4>
-                <p style="font-size: 100px">djflkdslsfslfdsfj</p>
-                <p style="font-size: 100px">djflkdslsfslfdsfj</p>
-                <p style="font-size: 100px">djflkdslsfslfdsfj</p>
-                <p style="font-size: 100px">djflkdslsfslfdsfj</p>
-                <p style="font-size: 100px">djflkdslsfslfdsfj</p>
-                <p style="font-size: 100px">djflkdslsfslfdsfj</p>
-                <p style="font-size: 100px">djflkdslsfslfdsfj</p>
-                <p style="font-size: 100px">djflkdslsfslfdsfj</p>
-                <p style="font-size: 100px">djflkdslsfslfdsfj</p>
+                <br />
                 <a :href="blogs[$route.params.id].pageUrl" target="_blank">
                     보러가기
                 </a>
+                <br />
                 <br />
                 <a :href="blogs[$route.params.id].gitUrl" target="_blank"
                     >코드보러가기</a
