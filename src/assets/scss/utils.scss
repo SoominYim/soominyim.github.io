@@ -23,6 +23,7 @@ $screen: 499px;
         @content;
     }
 }
+/* 반응형 스크린 최소화 일때 */
 @mixin screen {
     @media (max-width: $screen) {
         @content;

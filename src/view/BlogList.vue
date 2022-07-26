@@ -72,10 +72,10 @@ export default {
     display: flex;
     justify-content: center;
     .wrap {
-        display: grid;
-        grid-template-rows: repeat(2, 300px);
-        grid-template-columns: repeat(2, 600px);
-        place-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 100px;
+        justify-content: space-around;
     }
     z-index: 20;
 }
@@ -83,7 +83,7 @@ export default {
     position: relative;
     width: 600px;
     height: 300px;
-    background: red;
+    background: white;
 }
 
 .card {
@@ -95,7 +95,7 @@ export default {
     display: flex;
     flex-direction: column;
     z-index: 10;
-    color: #252b37;
+    color: white;
     background-color: #151823;
 }
 @keyframes moveGradient {
