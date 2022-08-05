@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHashHistory, createRouter } from "vue-router";
 // createWebHashHistory 해시모드도 있는데 url에 #이 추가됨
 // createRouter 가 라우터를 만드는것을 도와줌
 import BlogList from "@/view/BlogList.vue";
@@ -8,7 +8,7 @@ import BlogAbout from "@/view/BlogAbout.vue";
 import BlogProject from "@/view/BlogProject";
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {
       path: "/",
