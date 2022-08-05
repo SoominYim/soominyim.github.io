@@ -5,7 +5,7 @@ import BlogList from "@/view/BlogList.vue";
 import BlogHome from "@/view/BlogHome.vue";
 import BlogMain from "@/view/BlogMain";
 import BlogAbout from "@/view/BlogAbout.vue";
-import BlogProject from "@/components/projectlist/BlogProject";
+import BlogProject from "@/view/BlogProject";
 
 const router = createRouter({
   history: createWebHistory(),

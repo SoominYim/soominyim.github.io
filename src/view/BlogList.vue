@@ -31,44 +31,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
-    &:after {
-        position: absolute;
-        content: "";
-        top: $y;
-        left: $x;
-        right: 0;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-        margin: 0 auto;
-        transform: scale($size);
-        -webkit-filter: blur($spread);
-        -moz-filter: blur($spread);
-        -ms-filter: blur($spread);
-        filter: blur($spread);
-        background: linear-gradient(270deg, $colorA, $colorB);
-        background-size: 200% 200%;
-        animation: animateGlow $duration ease infinite;
-
-        @keyframes animateGlow {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-    }
-}
-
 .container {
     height: 100vh;
     width: 100vw;
-    padding-top: 110px;
     display: flex;
     justify-content: center;
     .wrap {
@@ -76,13 +41,28 @@ export default {
         flex-wrap: wrap;
         padding: 100px;
         justify-content: space-around;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
     z-index: 20;
+}
+::-webkit-scrollbar {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+    display: block;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 50px;
 }
 .card_wrap {
     position: relative;
     width: 600px;
     height: 300px;
+    margin-top: 20px;
     background: white;
 }
 
@@ -96,7 +76,7 @@ export default {
     flex-direction: column;
     z-index: 10;
     color: white;
-    background-color: #151823;
+    background-color: #5f6d9f;
 }
 @keyframes moveGradient {
     50% {
