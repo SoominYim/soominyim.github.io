@@ -6,7 +6,8 @@ export default [
     project: "Vue 프로젝트",
     pageUrl: "https://soominyim.github.io/vuestagram/",
     gitUrl: "https://github.com/SoominYim/vuestagram",
-    image: require("@/assets/img/bg.png"),
+    image: "",
+    contents: "",
   },
   {
     number: 1,
@@ -15,7 +16,8 @@ export default [
     project: "React 프로젝트",
     pageUrl: "https://soominyim.github.io/reactTodo/",
     gitUrl: "https://github.com/SoominYim/reactTodo",
-    image: require("@/assets/img/bg.png"),
+    image: "",
+    contents: "",
   },
   {
     number: 2,
@@ -24,7 +26,8 @@ export default [
     project: "Vue 프로젝트",
     pageUrl: "https://soominyim.github.io/vuedongsan/",
     gitUrl: "https://github.com/SoominYim/vuedongsan",
-    image: require("@/assets/img/bg.png"),
+    image: "",
+    contents: "",
   },
   {
     number: 3,
@@ -33,6 +36,7 @@ export default [
     project: "JavaScript 프로젝트",
     pageUrl: "https://soominyim.github.io/tetris/",
     gitUrl: "https://github.com/SoominYim/tetris",
-    image: require("@/assets/img/bg.png"),
+    image: "",
+    contents: "",
   },
 ];

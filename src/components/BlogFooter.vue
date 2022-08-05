@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="" title="git_hub" class="sns">
+        <a href="https://github.com/SoominYim" title="git_hub" class="sns">
             <i class="fa-brands fa-github"></i>
         </a>
         <a href="" title="instagram" class="sns">
