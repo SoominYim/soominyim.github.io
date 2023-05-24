@@ -7,12 +7,12 @@
                 <h4>{{ blogs[$route.params.id].project }}</h4>
                 <br />
                 <a :href="blogs[$route.params.id].pageUrl" target="_blank">
-                    보러가기
+                    view page
                 </a>
                 <br />
                 <br />
                 <a :href="blogs[$route.params.id].gitUrl" target="_blank"
-                    >코드보러가기</a
+                    >view code</a
                 >
             </div>
         </div>

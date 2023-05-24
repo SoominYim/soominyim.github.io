@@ -18,7 +18,6 @@ export default {
             typeValue: "", //state
             typeStatus: false, // true시 cursor 멈춤
             typeArray: [
-                "테스트11",
                 "Hello, World!!!",
                 "임수민의 포트폴리오 입니다.",
                 "달을 누르시면 메인으로 이동합니다.",

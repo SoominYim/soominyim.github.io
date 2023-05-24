@@ -2,7 +2,7 @@ export default [
   {
     number: 0,
     title: "뷰스타그램",
-    content: "실시간 렌더링으로 사진을 올리면 ...",
+    content: "실시간 렌더링으로 사진을 업로드 하면 ...",
     project: "Vue 프로젝트",
     pageUrl: "https://soominyim.github.io/vuestagram/",
     gitUrl: "https://github.com/SoominYim/vuestagram",
