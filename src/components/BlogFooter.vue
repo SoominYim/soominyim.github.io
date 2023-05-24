@@ -1,12 +1,27 @@
 <template>
     <div>
-        <a href="https://github.com/SoominYim" title="git_hub" class="sns">
+        <a
+            href="https://github.com/SoominYim"
+            title="git_hub"
+            class="sns"
+            target="blank"
+        >
             <i class="fa-brands fa-github"></i>
         </a>
-        <a href="" title="instagram" class="sns">
+        <a
+            href="https://www.instagram.com/_soo_min_/"
+            title="instagram"
+            class="sns"
+            target="blank"
+        >
             <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="" title="facebook" class="sns">
+        <a
+            href="https://www.facebook.com/profile.php?id=100002681110982"
+            title="facebook"
+            class="sns"
+            target="blank"
+        >
             <i class="fa-brands fa-facebook"></i
         ></a>
         <span>© 2022. S-o-o-Min . All rights reserved.</span>
