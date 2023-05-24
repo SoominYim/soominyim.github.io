@@ -8,9 +8,11 @@
                 @click="$router.push('/list/' + i)"
             >
                 <div class="card">
-                    <img :src="blog.image" alt="" />
                     <div>{{ blog.title }}</div>
                     <div>{{ blog.project }}</div>
+                </div>
+                <div class="cardImg">
+                    <img :src="blog.image" alt="" />
                 </div>
             </div>
         </div>
@@ -60,23 +62,46 @@ export default {
 }
 .card_wrap {
     position: relative;
+    display: flex;
     width: 600px;
     height: 300px;
     margin-top: 20px;
-    background: white;
+}
+.card_wrap:hover {
+    .cardImg {
+        transform: translateX(200px) rotate(360deg);
+        img {
+        }
+    }
 }
 
 .card {
-    position: relative;
-    box-sizing: border-box;
-    padding: 20px;
-    height: 300px;
-    width: 300px;
     display: flex;
+    box-sizing: border-box;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 50%;
     flex-direction: column;
     z-index: 10;
     color: white;
     background-color: #5f6d9f;
+}
+.cardImg {
+    position: absolute;
+    left: 50px;
+    height: 300px;
+    background: white;
+    border-radius: 50%;
+    transition: all ease 2s;
+    img {
+        border-radius: 50%;
+        box-sizing: border-box;
+        height: 300px;
+        width: 300px;
+        object-fit: contain;
+    }
 }
 @keyframes moveGradient {
     50% {
