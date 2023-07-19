@@ -2,17 +2,13 @@
     <div class="container">
         <custom-cursor></custom-cursor>
         <div class="main">
-            <div class="scrolle">
+            <div class="scroll">
                 <div id="profile">
                     <div class="title_wrap">
                         <span class="title">Profile</span>
                     </div>
                     <div id="img_wrap">
-                        <img
-                            src="@/assets/img/profile.png"
-                            oncontextmenu="return false"
-                            alt=""
-                        />
+                        <img src="@/assets/img/profile.png" oncontextmenu="return false" alt="" />
                     </div>
                     <div id="text_wrap">
                         <div id="name">
@@ -22,9 +18,15 @@
                             <div>
                                 <div>이름</div>
                                 <div id="flip">
-                                    <div><div>任 秀 民</div></div>
-                                    <div><div>Soomin Yim</div></div>
-                                    <div><div>임수민</div></div>
+                                    <div>
+                                        <div>任 秀 民</div>
+                                    </div>
+                                    <div>
+                                        <div>Soomin Yim</div>
+                                    </div>
+                                    <div>
+                                        <div>임수민</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -66,23 +68,13 @@
                         <div id="front_wrap">
                             <div>FRONT-END</div>
                             <div>
-                                <img
-                                    v-for="(f, i) in frontLogos"
-                                    :key="i"
-                                    :src="f.src"
-                                    alt=""
-                                />
+                                <img v-for="(f, i) in frontLogos" :key="i" :src="f.src" alt="" />
                             </div>
                         </div>
                         <div id="back_wrap">
                             <div>BACK-END</div>
                             <div>
-                                <img
-                                    v-for="(b, i) in backLogos"
-                                    :key="i"
-                                    :src="b.src"
-                                    art=""
-                                />
+                                <img v-for="(b, i) in backLogos" :key="i" :src="b.src" art="" />
                             </div>
                         </div>
                     </div>
@@ -206,16 +198,19 @@ export default {
     z-index: 3;
     background: #f1f1f1;
 }
+
 .main {
     width: 100%;
     height: 100%;
     z-index: 2;
-    .scrolle {
+
+    .scroll {
         box-sizing: border-box;
         height: 100vh;
         overflow-y: scroll;
         overflow-x: hidden;
     }
+
     ::-webkit-scrollbar {
         display: block;
         background-color: rgba(0, 0, 0, 0.2);
@@ -227,35 +222,44 @@ export default {
         display: block;
         background-color: rgba(0, 0, 0, 1);
         border-radius: 50px;
+
         &:active {
             background: red;
         }
     }
 }
+
 .title {
     font-size: 60px;
     font-weight: 400;
     font-family: "GongGothicBold";
 }
+
 #profile {
     @include mobile {
         padding: 0;
     }
+
     @include tablet {
         padding: 0 100px;
     }
+
     box-sizing: border-box;
     padding: 0 250px;
+
     #img_wrap {
         margin-top: 50px;
+
         img {
             width: 200px;
         }
     }
+
     .title_wrap {
         box-sizing: border-box;
         padding-top: 50px;
     }
+
     #text_wrap {
         box-sizing: border-box;
         color: #000;
@@ -265,23 +269,27 @@ export default {
         flex-wrap: wrap;
         text-align: left;
         margin-top: 50px;
+
         .icons {
             font-size: 40px;
             margin-right: 10px;
             color: #000;
         }
-        & > div {
+
+        &>div {
             display: flex;
             justify-content: center;
             flex-direction: row;
             margin: 0 auto 30px auto;
             font-weight: 400;
         }
+
         div {
             div {
                 div:nth-child(1) {
                     font-family: BMJUA;
                 }
+
                 div:nth-child(2) {
                     font-family: EarlyFontDiary;
                     margin-top: 5px;
@@ -295,12 +303,15 @@ export default {
                 #flip {
                     height: 30px;
                     overflow: hidden;
+
                     div:first-child {
                         animation: name_show 15s linear infinite;
                     }
+
                     div {
                         font-family: EarlyFontDiary;
                         font-size: 15px;
+
                         div {
                             height: 30px;
                             margin-bottom: 30px;
@@ -312,33 +323,42 @@ export default {
         }
     }
 }
+
 #content {
     font-family: "Noto Sans KR";
     padding: 100px 25%;
+
     p {
         padding-bottom: 40px;
         font-size: 40px;
         line-height: 50px;
     }
+
     span {
         font-size: 24px;
         line-height: 60px;
     }
+
     @include tablet {
         padding: 30px 15%;
+
         p {
             font-size: 25px;
         }
+
         span {
             font-size: 20px;
             line-height: 40px;
         }
     }
+
     @include mobile {
         padding: 30px 5%;
+
         p {
             font-size: 22px;
         }
+
         span {
             display: block;
             font-size: 16px;
@@ -346,20 +366,25 @@ export default {
         }
     }
 }
+
 .skill {
     box-sizing: border-box;
     padding: 20px 80px 80px 80px;
     text-align: center;
+
     @include mobile {
         padding: 20px 30px 30px 80x;
     }
+
     .title_wrap {
         margin-bottom: 50px;
     }
+
     .skill_logo {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+
         #front_wrap,
         #back_wrap {
             text-align: center;
@@ -372,16 +397,19 @@ export default {
             margin: 20px;
             box-shadow: 0 0.3rem 0.6rem rgb(0 0 0 / 40%);
             border-radius: 20px;
+
             div:nth-child(1) {
                 margin-bottom: 50px;
                 font-size: 30px;
                 font-weight: 400;
                 font-family: "GongGothicBold";
             }
+
             div:nth-child(2) {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
+
                 img {
                     padding: 3px;
                     border-radius: 11px;
@@ -390,6 +418,7 @@ export default {
                     width: 100px;
                     box-shadow: 0 0.3rem 0.6rem rgb(0 0 0 / 20%);
                 }
+
                 @include mobile {
                     img {
                         padding: 3px;
@@ -411,30 +440,37 @@ export default {
     height: 200px;
     padding: 50px;
 }
+
 @keyframes name_show {
     0% {
         margin-top: -300px;
     }
+
     5% {
         margin-top: -125px;
     }
+
     33% {
         margin-top: -125px;
     }
+
     38% {
         margin-top: -65px;
     }
+
     66% {
         margin-top: -65px;
     }
+
     71% {
         margin-top: 1px;
     }
+
     99.99% {
         margin-top: 1px;
     }
+
     100% {
         margin-top: -300px;
     }
-}
-</style>
+}</style>

@@ -7,14 +7,9 @@
         <!-- <side-bar /> -->
         <div class="content">
             <router-view v-slot="{ Component, route }" :blogs="blogs">
-                <transition
-                    name="fade"
-                    mode="out-in"
-                    :enter-to-class="route.meta.enterToClass"
-                    :enter-active-class="route.meta.enterActiveClass"
-                    :leave-to-class="route.meta.leaveToClass"
-                    :leave-active-class="route.meta.leaveActiveClass"
-                >
+                <transition name="fade" mode="out-in" :enter-to-class="route.meta.enterToClass"
+                    :enter-active-class="route.meta.enterActiveClass" :leave-to-class="route.meta.leaveToClass"
+                    :leave-active-class="route.meta.leaveActiveClass">
                     <component :is="Component"></component>
                 </transition>
             </router-view>
@@ -45,15 +40,17 @@ export default {
         return { sidebarWidth };
     },
     methods: {},
-    mounted() {},
+    mounted() { },
 };
 </script>
 <style lang="scss" scoped>
 @import "assets/reset.css";
+
 #app {
     width: 100vw;
     height: 100vh;
 }
+
 .content {
     width: 100%;
     height: 100%;
@@ -68,6 +65,7 @@ export default {
 .animate__animated.animate__zoomOut {
     --animate-duration: 1.5s;
 }
+
 .animate__animated.animate__fadeIn,
 .animate__animated.animate__fadeOut {
     --animate-duration: 2s;

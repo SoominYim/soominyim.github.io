@@ -70,8 +70,6 @@ export default {
 .card_wrap:hover {
     .cardImg {
         transform: translateX(200px) rotate(360deg);
-        img {
-        }
     }
 }
 

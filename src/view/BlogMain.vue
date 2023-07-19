@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <parti-cles></parti-cles>
         <div class="star_wrap">
             <div class="star">
                 <div class="content_wrap">
@@ -10,11 +11,7 @@
                             </div>
                         </div>
                     </router-link>
-                    <router-link
-                        to="/about"
-                        id="goAbout_wrap"
-                        class="item_wrap"
-                    >
+                    <router-link to="/about" id="goAbout_wrap" class="item_wrap">
                         <div id="goAbout">
                             <div>
                                 <span>ABOUT</span>
@@ -44,13 +41,19 @@
                 </div>
             </div>
         </div>
+        <code-editor></code-editor>
     </div>
 </template>
 
 <script>
+import CodeEditor from "@/components/CodeEditor.vue";
+import PartiCles from "@/components/PartiCles.vue";
 export default {
     name: "BlogMain",
-    components: {},
+    components: {
+        PartiCles,
+        CodeEditor,
+    },
     data() {
         return {};
     },
@@ -103,10 +106,8 @@ export default {
             border-right: 45px solid transparent;
             transition: all 0.5s;
             opacity: 0.7;
-            -webkit-animation: text-pop-up-top 0.5s
-                cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-            animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-                both;
+            -webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
             &::after {
                 content: "";
                 position: absolute;
@@ -132,8 +133,7 @@ export default {
                     font-weight: bold;
                     font-family: "Roboto Mono", monospace;
                     color: #000;
-                    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff,
-                        0 -1px #fff;
+                    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
                 }
             }
         }
