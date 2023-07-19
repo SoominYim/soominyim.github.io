@@ -1,13 +1,7 @@
 <template>
     <div class="custom-cursor">
-        <div
-            id="cursor-big"
-            class="custom-cursor__ball custom-cursor__ball--big"
-        ></div>
-        <div
-            id="cursor-small"
-            class="custom-cursor__ball custom-cursor__ball--small"
-        ></div>
+        <div id="cursor-big" class="custom-cursor__ball custom-cursor__ball--big"></div>
+        <div id="cursor-small" class="custom-cursor__ball custom-cursor__ball--small"></div>
     </div>
 </template>
 
@@ -66,6 +60,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/utils.scss";
+
 .custom-cursor__ball {
     position: fixed;
     top: 0;
@@ -84,17 +79,19 @@ export default {
     background: #fff;
     border-radius: 50%;
 }
+
 @include screen {
+
     .custom-cursor__ball--small,
     .custom-cursor__ball--big {
         display: none;
     }
 }
+
 .custom-cursor__ball--small {
     content: "";
     width: 6px;
     height: 6px;
     background: #fff;
     border-radius: 50%;
-}
-</style>
+}</style>
