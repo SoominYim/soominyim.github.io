@@ -6,14 +6,9 @@
                 <h4>{{ blogs[$route.params.id].content }}</h4>
                 <h4>{{ blogs[$route.params.id].project }}</h4>
                 <br />
-                <a :href="blogs[$route.params.id].pageUrl" target="_blank">
-                    view page
-                </a>
                 <br />
                 <br />
-                <a :href="blogs[$route.params.id].gitUrl" target="_blank"
-                    >view code</a
-                >
+                <a :href="blogs[$route.params.id].gitUrl" target="_blank">view code</a>
             </div>
         </div>
     </div>
@@ -41,6 +36,7 @@ export default {
     justify-content: center;
     z-index: 2;
 }
+
 .wrap {
     margin-top: 110px;
     height: 80vh;
@@ -49,6 +45,7 @@ export default {
     color: #fff;
     z-index: 1;
 }
+
 .scrolle {
     box-sizing: border-box;
     padding: 20px;
@@ -56,6 +53,7 @@ export default {
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
     display: block;
     background-color: rgba(0, 0, 0, 0.3);
