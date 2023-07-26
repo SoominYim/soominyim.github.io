@@ -32,10 +32,10 @@
                             </div>
                         </div>
                     </router-link>
-                    <router-link to="/" id="e_wrap" class="item_wrap">
+                    <router-link to="" id="e_wrap" class="item_wrap">
                         <div id="e"></div>
                     </router-link>
-                    <router-link to="/" id="f_wrap" class="item_wrap">
+                    <router-link to="" id="f_wrap" class="item_wrap">
                         <div id="f"></div>
                     </router-link>
                 </div>
@@ -62,6 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Press+Start+2P&family=Roboto+Mono&display=swap");
+
 .container {
     position: relative;
     width: 100vw;
@@ -69,6 +70,7 @@ export default {
     background: rgba(0, 0, 0, 0.5);
     background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
 }
+
 .star_wrap {
     position: absolute;
     top: 50%;
@@ -79,6 +81,7 @@ export default {
     justify-content: center;
     transform: translate(-50%, -50%);
     box-shadow: 0 0.3rem 0.6rem rgb(255 255 255 / 20%);
+
     .star {
         width: calc(90px * 3);
         height: calc(90px * 1.732 * 2);
@@ -88,16 +91,19 @@ export default {
         animation: rotate_star 70s linear infinite;
     }
 }
+
 .content_wrap {
     position: absolute;
     left: 90px;
     width: calc(90px * 3);
     height: calc(90px * 1.732 * 2);
+
     .item_wrap {
         display: block;
         position: absolute;
         transform-origin: bottom;
         height: calc(90px * 1.732);
+
         div {
             position: relative;
             width: 0px;
@@ -108,6 +114,7 @@ export default {
             opacity: 0.7;
             -webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
             animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
             &::after {
                 content: "";
                 position: absolute;
@@ -127,6 +134,7 @@ export default {
                 display: flex;
                 justify-content: center;
                 padding-top: calc(32px * 1.732);
+
                 span {
                     z-index: 5;
                     font-size: 15px;
@@ -139,16 +147,20 @@ export default {
         }
     }
 }
-.item_wrap > div:hover {
+
+.item_wrap>div:hover {
     transform: translateY(-20px);
     opacity: 1;
 }
-.item_wrap > #e:hover,
+
+.item_wrap>#e:hover,
 #f:hover {
     transform: translateY(-5px);
 }
+
 #goHome {
     border-bottom: calc(45px * 1.732) solid #4a5568;
+
     &::after {
         border-top: calc(45px * 1.732) solid #4a5568;
     }
@@ -160,6 +172,7 @@ export default {
 
 #goAbout {
     border-bottom: calc(45px * 1.732) solid #40435c;
+
     &::after {
         border-top: calc(45px * 1.732) solid rgba(64, 67, 92);
     }
@@ -171,6 +184,7 @@ export default {
 
 #goList {
     border-bottom: calc(45px * 1.732) solid #62657f;
+
     &::after {
         border-top: calc(45px * 1.732) solid rgb(98, 101, 127);
     }
@@ -182,6 +196,7 @@ export default {
 
 #d {
     border-bottom: calc(45px * 1.732) solid rgba(134, 136, 164);
+
     &::after {
         border-top: calc(45px * 1.732) solid rgba(134, 136, 164);
     }
@@ -193,6 +208,7 @@ export default {
 
 #e {
     border-bottom: calc(45px * 1.732) solid rgba(171, 174, 203);
+
     &::after {
         border-top: calc(45px * 1.732) solid rgba(171, 174, 203);
     }
@@ -204,6 +220,7 @@ export default {
 
 #f {
     border-bottom: calc(45px * 1.732) solid rgba(211, 213, 243);
+
     &::after {
         border-top: calc(45px * 1.732) solid rgba(211, 213, 243);
     }

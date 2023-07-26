@@ -94,4 +94,5 @@ export default {
     height: 6px;
     background: #fff;
     border-radius: 50%;
-}</style>
+}
+</style>
