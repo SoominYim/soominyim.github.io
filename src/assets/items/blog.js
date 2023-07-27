@@ -36,7 +36,7 @@ export default [
         contents: "",
     },
     {
-        number: 5,
+        number: 4,
         title: "jwt-login",
         content: "jwt token 기반 로그인 기능 구현 project",
         project: "node.js express project",
@@ -45,7 +45,7 @@ export default [
         contents: "",
     },
     {
-        number: 4,
+        number: 5,
         title: "socket-io",
         content: "socket-io 를 이용한 채팅방 구현 project",
         project: "vue node.js express project",
@@ -54,7 +54,7 @@ export default [
         contents: "",
     },
     {
-        number: 5,
+        number: 6,
         title: "vue-books",
         content: "vue.js 2.X version 의 shopping mall project",
         project: "vue project",
