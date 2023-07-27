@@ -32,7 +32,7 @@ export default [
         content: "간단하게 즐길 수 있는 ...",
         project: "JavaScript project",
         gitUrl: "https://github.com/SoominYim/tetris",
-        image: require(""),
+        image: "",
         contents: "",
     },
     {
@@ -41,7 +41,7 @@ export default [
         content: "jwt token 기반 로그인 기능 구현 project",
         project: "node.js express project",
         gitUrl: "https://github.com/SoominYim/jwt-login",
-        image: require(""),
+        image: "",
         contents: "",
     },
     {
@@ -50,7 +50,7 @@ export default [
         content: "socket-io 를 이용한 채팅방 구현 project",
         project: "vue node.js express project",
         gitUrl: "https://github.com/SoominYim/vue-socket",
-        image: require(""),
+        image: "",
         contents: "",
     },
     {
@@ -59,7 +59,7 @@ export default [
         content: "vue.js 2.X version 의 shopping mall project",
         project: "vue project",
         gitUrl: "https://github.com/SoominYim/tetris",
-        image: require("@/assets/img/tetrisImg.png"),
+        image: "",
         contents: "",
     },
 ];
