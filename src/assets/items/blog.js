@@ -32,7 +32,7 @@ export default [
         content: "간단하게 즐길 수 있는 ...",
         project: "JavaScript project",
         gitUrl: "https://github.com/SoominYim/tetris",
-        image: "",
+        image: require("@/assets/img/tetrisImg.png"),
         contents: "",
     },
     {
@@ -41,7 +41,7 @@ export default [
         content: "jwt token 기반 로그인 기능 구현 project",
         project: "node.js express project",
         gitUrl: "https://github.com/SoominYim/jwt-login",
-        image: "",
+        image: require("@/assets/img/today-lunch.png"),
         contents: "",
     },
     {

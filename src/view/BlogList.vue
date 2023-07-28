@@ -1,12 +1,8 @@
 <template>
     <div class="container">
+        <parti-cles></parti-cles>
         <div class="wrap">
-            <div
-                class="card_wrap"
-                v-for="(blog, i) in blogs"
-                :key="i"
-                @click="$router.push('/list/' + i)"
-            >
+            <div class="card_wrap" v-for="(blog, i) in blogs" :key="i" @click="$router.push('/list/' + i)">
                 <div class="card">
                     <div>{{ blog.title }}</div>
                     <div>{{ blog.project }}</div>
@@ -20,15 +16,20 @@
 </template>
 
 <script>
+import PartiCles from "@/components/PartiCles.vue";
+
 export default {
     name: "BlogList",
+    components: {
+        PartiCles,
+    },
     props: {
         blogs: Array,
     },
     data() {
         return {};
     },
-    mounted() {},
+    mounted() { },
 };
 </script>
 
@@ -38,6 +39,7 @@ export default {
     width: 100vw;
     display: flex;
     justify-content: center;
+
     .wrap {
         display: flex;
         flex-wrap: wrap;
@@ -46,8 +48,10 @@ export default {
         overflow-y: scroll;
         overflow-x: hidden;
     }
+
     z-index: 20;
 }
+
 ::-webkit-scrollbar {
     display: block;
     background-color: rgba(255, 255, 255, 0.3);
@@ -60,6 +64,7 @@ export default {
     background-color: rgba(255, 255, 255, 1);
     border-radius: 50px;
 }
+
 .card_wrap {
     position: relative;
     display: flex;
@@ -67,6 +72,7 @@ export default {
     height: 300px;
     margin-top: 20px;
 }
+
 .card_wrap:hover {
     .cardImg {
         transform: translateX(200px) rotate(360deg);
@@ -86,6 +92,7 @@ export default {
     color: white;
     background-color: #5f6d9f;
 }
+
 .cardImg {
     position: absolute;
     left: 50px;
@@ -93,6 +100,7 @@ export default {
     background: white;
     border-radius: 50%;
     transition: all ease 2s;
+
     img {
         border-radius: 50%;
         box-sizing: border-box;
@@ -101,6 +109,7 @@ export default {
         object-fit: contain;
     }
 }
+
 @keyframes moveGradient {
     50% {
         background-position: 100% 50%;
@@ -111,16 +120,19 @@ export default {
     .container {
         display: block;
         padding-left: 150px;
+
         .wrap {
             grid-template-rows: repeat(0, 500px);
             grid-template-columns: repeat(8, 400px);
             place-items: center;
         }
     }
+
     .card_wrap {
         width: 400px;
         height: 200px;
     }
+
     .card {
         width: 200px;
         height: 200px;
