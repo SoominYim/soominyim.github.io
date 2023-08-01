@@ -9,6 +9,7 @@
         <!-- <a href="https://www.threads.net/@_soo_min_" title="threads" class="sns" target="blank">
             <i class="fa-brands fa-facebook"></i>
         </a> -->
+
         <a href="https://www.facebook.com/profile.php?id=100002681110982" title="facebook" class="sns" target="blank"> <i
                 class="fa-brands fa-facebook"></i></a>
         <a href="https://twitter.com/soobbag" title="twitter" class="sns" target="blank"> <i
