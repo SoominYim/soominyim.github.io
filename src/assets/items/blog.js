@@ -14,7 +14,7 @@ export default [
         content: "오늘 점심 뭐먹지",
         project: "vue project",
         gitUrl: "https://github.com/SoominYim/today-lunch",
-        image: "",
+        image: require("@/assets/img/today-lunch.png"),
         contents: "",
     },
     {
@@ -41,7 +41,7 @@ export default [
         content: "jwt token 기반 로그인 기능 구현 project",
         project: "node.js express project",
         gitUrl: "https://github.com/SoominYim/jwt-login",
-        image: require("@/assets/img/today-lunch.png"),
+        image: "",
         contents: "",
     },
     {

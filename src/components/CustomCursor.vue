@@ -54,6 +54,7 @@ export default {
             });
         }
         // 요소 위에 커서가 올라갔을 때 이벤트 핸들러
+
         function onMouseHover() {
             // gsap를 사용하여 큰 공을 확대(scale)시킴
             gsap.to(cursorBig, 0.3, {

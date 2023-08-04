@@ -4,6 +4,7 @@
         <div class="wrap">
             <div class="card_wrap" v-for="(blog, i) in blogs" :key="i" @click="$router.push('/list/' + i)">
                 <div class="card">
+
                     <div>{{ blog.title }}</div>
                     <div>{{ blog.project }}</div>
                 </div>
@@ -90,7 +91,28 @@ export default {
     flex-direction: column;
     z-index: 10;
     color: white;
-    background-color: #5f6d9f;
+    // background-color: #5f6d9f;
+    background: url("../assets/img/stylized-earth-01.jpg");
+    background-size: 545px;
+    background-position: center;
+    background-color: #0c55ad;
+    box-shadow:
+        inset -20px 20px 40px rgba(235, 225, 52, 0.3),
+        inset 20px -20px 40px rgba(2, 16, 31, 0.5),
+        inset 10px -10px 10px rgba(2, 16, 31, 0.5);
+    transform-style: preserve-3d;
+    transform: rotate(15deg);
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 545px 0;
+    }
 }
 
 .cardImg {

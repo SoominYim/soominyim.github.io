@@ -41,18 +41,15 @@
                 </div>
             </div>
         </div>
-        <code-editor></code-editor>
     </div>
 </template>
 
 <script>
-import CodeEditor from "@/components/CodeEditor.vue";
 import PartiCles from "@/components/PartiCles.vue";
 export default {
     name: "BlogMain",
     components: {
         PartiCles,
-        CodeEditor,
     },
     data() {
         return {};

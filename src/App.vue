@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <custom-cursor></custom-cursor>
+
         <router-link to="/main">
             <logo-star></logo-star>
         </router-link>
