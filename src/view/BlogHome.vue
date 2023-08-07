@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <parti-cles></parti-cles>
         <custom-cursor color="#cb2d3e" color-hover="#f1c40f"></custom-cursor>
         <home-typing></home-typing>
         <router-link to="/main">
@@ -18,6 +19,7 @@
 import CustomCursor from "@/components/CustomCursor";
 import HomeTyping from "@/components/HomeTyping";
 import BlogFooter from "@/components/BlogFooter.vue";
+import PartiCles from "@/components/PartiCles.vue";
 
 export default {
     name: "BlogHome",
@@ -26,6 +28,7 @@ export default {
         CustomCursor,
         HomeTyping,
         BlogFooter,
+        PartiCles,
     },
     data() {
         return {};
@@ -93,4 +96,5 @@ export default {
     to {
         background-position: 10000px 0;
     }
-}</style>
+}
+</style>
