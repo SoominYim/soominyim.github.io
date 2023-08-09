@@ -6,11 +6,17 @@
                 <div class="card">
                     <div>{{ blog.title }}</div>
                     <div>{{ blog.project }}</div>
+                    <div class="left-eye"></div>
+                    <div class="right-eye"></div>
+                    <div class="mouth"></div>
+                    <div class="left-horn"></div>
+                    <div class="right-horn"></div>
                 </div>
                 <div class="cardImg">
                     <img :src="blog.image" alt="" />
                 </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -133,6 +139,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$dark-purple: rgb(70, 0, 150);
+$light-purple: rgb(202, 174, 229);
+$midnight-purple: rgb(39, 35, 73);
+$faded-black: rgba(0, 0, 0, .3);
+
+
+
+
+
+
 .container {
     height: 100vh;
     width: 100vw;
@@ -188,9 +204,127 @@ export default {
     border-radius: 50%;
     flex-direction: column;
     z-index: 10;
+    background-color: radial-gradient($light-purple 10%, $dark-purple, transparent 90%);
+    ;
     color: white;
-    background-color: #5f6d9f;
 }
+
+.card {
+    background: radial-gradient($light-purple 10%, $dark-purple, transparent 90%);
+    border-radius: 50%;
+    box-shadow: 0 -1px 1px 4px black;
+
+}
+
+.card::before {
+    content: "";
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0, $light-purple 5%, $dark-purple, transparent);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    filter: blur(5px);
+    border: 1px solid black;
+}
+
+.left-eye {
+    z-index: 3;
+    position: absolute;
+    width: 35px;
+    height: 45px;
+    background: linear-gradient(black 50%, transparent 90%);
+    border-radius: 50%;
+    top: 140px;
+    left: 90px;
+    box-shadow: inset 0 5px 10px 5px black;
+    animation: blink 4s linear infinite;
+}
+
+.left-eye::before {
+    content: "";
+    z-index: 3;
+    position: absolute;
+    width: 60px;
+    height: 18px;
+    background: linear-gradient(black 50%, transparent 70%);
+    border-radius: 50%;
+    top: -10px;
+    left: -20px;
+    transform: rotatez(25deg);
+}
+
+.right-eye {
+    z-index: 3;
+    position: absolute;
+    width: 35px;
+    height: 45px;
+    background: linear-gradient(black 50%, transparent 90%);
+    border-radius: 50%;
+    top: 140px;
+    right: 90px;
+    box-shadow: inset 0 5px 10px 5px black;
+    animation: blink 4s linear infinite;
+}
+
+.right-eye::before {
+    content: "";
+    z-index: 3;
+    position: absolute;
+    width: 60px;
+    height: 18px;
+    background: linear-gradient(black 50%, transparent 70%);
+    border-radius: 50%;
+    top: -10px;
+    right: -20px;
+    transform: rotatez(-25deg);
+}
+
+.mouth {
+    z-index: 3;
+    position: absolute;
+    width: 140px;
+    height: 120px;
+    background: radial-gradient(circle at 50% 0, transparent 70%, black 70%, $faded-black 80%, black 90%);
+    border-radius: 50%;
+    top: 140px;
+    left: 80px;
+}
+
+.left-horn {
+    position: absolute;
+    width: 90px;
+    height: 120px;
+    background: radial-gradient(circle at 70% 0, transparent 50%, $light-purple 50%, $dark-purple 70%, black);
+    border-radius: 50%;
+    top: -35px;
+    left: -15px;
+}
+
+.right-horn {
+    position: absolute;
+    width: 90px;
+    height: 120px;
+    background: radial-gradient(circle at 30% 0, transparent 50%, $light-purple 50%, $dark-purple 70%, black);
+    border-radius: 50%;
+    top: -35px;
+    right: -20px;
+}
+
+@keyframes blink {
+    0% {
+        transform: rotatex(90deg);
+    }
+
+    7% {
+        transform: rotatex(0);
+    }
+
+}
+
+
 
 
 .cardImg {
