@@ -9,11 +9,12 @@
         <!-- <a href="https://www.threads.net/@_soo_min_" title="threads" class="sns" target="blank">
             <i class="fa-brands fa-facebook"></i>
         </a> -->
-
         <a href="https://www.facebook.com/profile.php?id=100002681110982" title="facebook" class="sns" target="blank"> <i
                 class="fa-brands fa-facebook"></i></a>
         <a href="https://twitter.com/soobbag" title="twitter" class="sns" target="blank"> <i
                 class="fa-brands fa-twitter"></i></a>
+        <a href="https://s-o-o-min.tistory.com/" title="tistory" class="sns" target="blank"> <i
+                class="fa-solid fa-t"></i></a>
 
 
         <span>© 2022. S-o-o-Min . All rights reserved.</span>
