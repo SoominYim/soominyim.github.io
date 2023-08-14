@@ -127,6 +127,26 @@ export default {
             ],
             frontLogos: [
                 {
+                    name: "vue",
+                    src: require("@/assets/logo/vue.png"),
+                },
+                {
+                    name: "js",
+                    src: require("@/assets/logo/js.png"),
+                },
+                {
+                    name: "react",
+                    src: require("@/assets/logo/react.png"),
+                },
+                {
+                    name: "jquery",
+                    src: require("@/assets/logo/jquery.png"),
+                },
+                {
+                    name: "vite",
+                    src: require("@/assets/logo/vite.png"),
+                },
+                {
                     name: "html",
                     src: require("@/assets/logo/html.png"),
                 },
@@ -134,21 +154,18 @@ export default {
                     name: "css",
                     src: require("@/assets/logo/css.png"),
                 },
-                {
-                    name: "js",
-                    src: require("@/assets/logo/js.png"),
-                },
-                {
-                    name: "jquery",
-                    src: require("@/assets/logo/jquery.png"),
-                },
-                {
-                    name: "vue",
-                    src: require("@/assets/logo/vue.png"),
-                },
+
                 {
                     name: "sass",
                     src: require("@/assets/logo/sass.png"),
+                },
+                {
+                    name: "bootstrap",
+                    src: require("@/assets/logo/bootstrap.png"),
+                },
+                {
+                    name: "vuetify",
+                    src: require("@/assets/logo/vuetify.png"),
                 },
             ],
             backLogos: [
@@ -165,6 +182,10 @@ export default {
                     src: require("@/assets/logo/mysql.png"),
                 },
                 {
+                    name: "firebase",
+                    src: require("@/assets/logo/firebase.png"),
+                },
+                {
                     name: "jsp",
                     src: require("@/assets/logo/jsp.png"),
                 },
@@ -175,6 +196,10 @@ export default {
                 {
                     name: "tomcat",
                     src: require("@/assets/logo/tomcat.png"),
+                },
+                {
+                    name: "express",
+                    src: require("@/assets/logo/express.jpg"),
                 },
             ],
         };
