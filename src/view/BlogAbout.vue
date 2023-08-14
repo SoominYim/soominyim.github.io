@@ -8,7 +8,7 @@
                         <span class="title">Profile</span>
                     </div>
                     <div id="img_wrap">
-                        <img src="@/assets/img/profile.png" oncontextmenu="return false" alt="" />
+                        <img src="@/assets/img/profile2.png" oncontextmenu="return false" alt="" />
                     </div>
                     <div id="text_wrap">
                         <div id="name">
@@ -473,4 +473,5 @@ export default {
     100% {
         margin-top: -300px;
     }
-}</style>
+}
+</style>
