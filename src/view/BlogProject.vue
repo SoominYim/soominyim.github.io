@@ -4,17 +4,15 @@
         </div>
         <div class="wrap">
             <div class="scrolle">
-                <h4>{{ blogs[$route.params.id].title }}</h4>
-                <h4>{{ blogs[$route.params.id].content }}</h4>
+                <h1>{{ blogs[$route.params.id].title }}</h1>
+                <h2>{{ blogs[$route.params.id].content }}</h2>
                 <h4 v-html="project"></h4>
                 <div v-html="contents"></div>
-                <br />
-                <br />
-                <br />
                 <div class="btn-wrapper">
                     <div class="btn-wrapper__container">
                         <div class="btn-inner">
-                            <a class="btn-inner__text" :href="blogs[$route.params.id].gitUrl" target="_blank">view code</a>
+                            <a class="btn-inner__text" :href="blogs[$route.params.id].gitUrl" target="_blank">view
+                                code</a>
                         </div>
                     </div>
                 </div>
@@ -63,6 +61,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$blue: #15B5E2;
+$btn-bg: #10131C;
+
 .container {
     height: 100vh;
     width: 100vw;
@@ -71,6 +72,14 @@ export default {
 
 img {
     width: 420px;
+}
+
+h1 {
+    font-size: 6vw;
+}
+
+h2 {
+    font-size: 3vw;
 }
 
 .wrap {
@@ -84,6 +93,7 @@ img {
     background: rgba(100, 100, 100, 0.2);
     color: #fff;
     z-index: 3;
+    line-height: 5vw;
 }
 
 .scrolle {
@@ -96,14 +106,14 @@ img {
 
 ::-webkit-scrollbar {
     display: block;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(20, 180, 224, 0.3);
     border-radius: 50px;
     width: 0.5em;
 }
 
 ::-webkit-scrollbar-thumb {
     display: block;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(20, 180, 224, 0.7);
     border-radius: 50px;
 }
 
@@ -115,8 +125,7 @@ a {
 
 /* BUTTON START */
 // Variables
-$blue: #15B5E2;
-$btn-bg: #10131C;
+
 
 
 .btn-wrapper {

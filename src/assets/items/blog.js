@@ -3,18 +3,18 @@ export default [
         number: 0,
         title: "뷰스타그램",
         content: "Vue로 만들어본 instagram",
-        project: `BaseLanguage : Vue, javascript, scss 
+        project: `BaseLanguage : Vue3.X, javascript, scss 
         Server, DB : node.js, express, mySql
         Library, Plug-in : JWT-token, axios, Vuex, FaceBook Auth, instagram filterBox`,
         gitUrl: "https://github.com/SoominYim/vuestagram",
         url: null,
         image: require("@/assets/img/vuestagram_01.png"),
         contents: `
-        <h4>메인(로그인) 페이지</h4>
+        메인(로그인) 페이지
         <img style="width : 600px;"src="${require("../img/vuestagram_01.png")}"/>
-        <h4>회원가입 페이지</h4>
+        회원가입 페이지
         <img style="width : 600px;"src="${require("../img/vuestagram_02.png")}"/>
-        <h4>로그인 후 피드</h4>
+        로그인 후 피드
         <img style="width : 420px;"src="${require("../img/vuestagram_03.png")}"/>
         기존 React로 만들어진 인스타그램을 Vue로 리팩토링하여 작업 
         `,
@@ -23,7 +23,7 @@ export default [
         number: 1,
         title: "Today-lunch",
         content: "오늘 점심 뭐먹지",
-        project: `BaseLanguage : Vue, javascript, scss
+        project: `BaseLanguage : Vue3.X, javascript, scss
         Server, DB : null
         Library, Plug-in : Vuex`,
         gitUrl: "https://github.com/SoominYim/today-lunch",
@@ -65,23 +65,30 @@ export default [
         contents: `공부를 위해 만들었던 테트리스.
         <img style="width : 600px;"src="${require("../img/tetrisImg.png")}"/>
         지금 봐도 낭만이 있다.
-
         Moving Blocks : ← →
         Block Change Direction : ↑
         Slow Drop: ↓
         Fast Drop : Space bar
-        
         간단한 기능까지 구현 했다.`,
     },
     {
         number: 4,
         title: "vue-tetris",
         content: "휴대용 게임기처럼 만든 테트리스",
-        project: "vue project",
+        project: `BaseLanguage : Vue2.X, javascript, less
+        Server, DB : null
+        Library, Plug-in : Vuex,
+        `,
         gitUrl: "https://github.com/SoominYim/vue-tetris",
         url: "https://soominyim.github.io/vue-tetris/",
         image: require("@/assets/img/vue-tetris.png"),
-        contents: "",
+        contents: `기존의 구현했던 테트리스와는 다르게 좀 더 퀄리티 있는 
+        테트리스 게임을 만들고 싶었다.
+         <img style="width : 600px;"src="${require("../img/vue-tetris.png")}"/>
+        모바일에서도 즐길 수 있게 native하게 구성되었다.
+        level, sound, pause, start Line 구성, 다음에 나올 block 등등의 기능들을 
+        추가하여 온전한 미니게임으로 즐길 수 있다.
+         `,
     },
     {
         number: 5,
