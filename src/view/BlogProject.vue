@@ -4,11 +4,13 @@
             <div class="scrolle">
                 <h4>{{ blogs[$route.params.id].title }}</h4>
                 <h4>{{ blogs[$route.params.id].content }}</h4>
-                <h4>{{ blogs[$route.params.id].project }}</h4>
+                <h4 v-html="project"></h4>
                 <br />
                 <br />
                 <br />
                 <a :href="blogs[$route.params.id].gitUrl" target="_blank">view code</a>
+                <a v-if="blogs[$route.params.id].url !== null" :href="blogs[$route.params.id].url"
+                    target="_blank">preview</a>
             </div>
         </div>
     </div>
@@ -20,11 +22,21 @@ export default {
     props: {
         blogs: Array,
     },
+    computed: {
+        project() {
+            const blog = this.blogs[this.$route.params.id];
+            if (blog && blog.project) {
+                return blog.project.split('\n').join('<br/>');
+            }
+            return '';
+        }
+    },
     methods: {
         goBack() {
             this.$router.go(-1);
         },
     },
+
 };
 </script>
 

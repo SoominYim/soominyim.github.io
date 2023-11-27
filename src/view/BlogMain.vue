@@ -25,16 +25,20 @@
                             </div>
                         </div>
                     </router-link>
-                    <router-link to="/" id="d_wrap" class="item_wrap">
+                    <a href="https://github.com/SoominYim" id="d_wrap" class="item_wrap" target="_blank">
                         <div id="d">
                             <div>
                                 <span>GITHUB</span>
                             </div>
                         </div>
-                    </router-link>
-                    <router-link to="" id="e_wrap" class="item_wrap">
-                        <div id="e"></div>
-                    </router-link>
+                    </a>
+                    <a href="https://s-o-o-min.tistory.com/" id="e_wrap" class="item_wrap" target="_blank">
+                        <div id="e">
+                            <div>
+                                <span>TISTORY</span>
+                            </div>
+                        </div>
+                    </a>
                     <router-link to="" id="f_wrap" class="item_wrap">
                         <div id="f"></div>
                     </router-link>
@@ -150,7 +154,6 @@ export default {
     opacity: 1;
 }
 
-.item_wrap>#e:hover,
 #f:hover {
     transform: translateY(-5px);
 }

@@ -145,10 +145,6 @@ $midnight-purple: rgb(39, 35, 73);
 $faded-black: rgba(0, 0, 0, .3);
 
 
-
-
-
-
 .container {
     height: 100vh;
     width: 100vw;
