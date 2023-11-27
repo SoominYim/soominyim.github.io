@@ -2,44 +2,76 @@ export default [
     {
         number: 0,
         title: "뷰스타그램",
-        content: "facebook Login",
-        project: `baseLanguage : Vue, javascript, scss 
-        serve, dB : node.js, express, mySql
-        library, plug-in : JWT-token, axios, Vuex, FaceBook Auth, instagram filterBox`,
+        content: "Vue로 만들어본 instagram",
+        project: `BaseLanguage : Vue, javascript, scss 
+        Server, DB : node.js, express, mySql
+        Library, Plug-in : JWT-token, axios, Vuex, FaceBook Auth, instagram filterBox`,
         gitUrl: "https://github.com/SoominYim/vuestagram",
         url: null,
         image: require("@/assets/img/vuestagram_01.png"),
-        contents: "",
+        contents: `
+        <h4>메인(로그인) 페이지</h4>
+        <img style="width : 600px;"src="${require("../img/vuestagram_01.png")}"/>
+        <h4>회원가입 페이지</h4>
+        <img style="width : 600px;"src="${require("../img/vuestagram_02.png")}"/>
+        <h4>로그인 후 피드</h4>
+        <img style="width : 420px;"src="${require("../img/vuestagram_03.png")}"/>
+        기존 React로 만들어진 인스타그램을 Vue로 리팩토링하여 작업 
+        `,
     },
     {
         number: 1,
         title: "Today-lunch",
         content: "오늘 점심 뭐먹지",
-        project: "vue project",
+        project: `BaseLanguage : Vue, javascript, scss
+        Server, DB : null
+        Library, Plug-in : Vuex`,
         gitUrl: "https://github.com/SoominYim/today-lunch",
-        url: "https://soominyim.github.io/today-lunch/null",
+        url: "https://soominyim.github.io/today-lunch",
         image: require("@/assets/img/today-lunch.png"),
-        contents: "",
+        contents: `매일 점심 정하기가 귀찮아 만들어 본 랜덤 메뉴정하기
+        <img style="width : 600px;"src="${require("../img/today-lunch.png")}"/>
+        원하는 음식이 나올때마다 누르는 한국인의 정서를 없애기 위해
+        첫 째로 나온 음식이후엔 선택이 되지 않게 했다.
+        랜덤 로직을 직접 짜는게 가장 오래 걸렸다.
+        각 country로 랜덤으로 뽑아 배열의 푸시하는 방식으로 로직을 구성하였다.
+`,
     },
     {
         number: 2,
         title: "Todo",
-        content: "Google SignIn Api ...",
-        project: "React project",
+        content: `fire-base에 저장 되는 나만의 Todo List`,
+        project: `BaseLanguage : React, javascript, scss
+        Server, DB : Firebase
+        Library, Plug-in : googleAuth`,
         gitUrl: "https://github.com/SoominYim/reactTodo",
         url: null,
         image: require("@/assets/img/reactTodoImg.png"),
-        contents: "",
+        contents: `초기 리액트 공부를 위해 만들었던 TODO LIST
+        <img style="width : 600px;"src="${require("../img/reactTodoImg.png")}"/>
+        `,
     },
     {
         number: 3,
         title: "Tetris",
-        content: "간단하게 즐길 수 있는 ...",
-        project: "JavaScript project",
+        content: `간단한 웹 테트리스`,
+        project: `BaseLanguage : Html, javascript, scss
+        Server, DB : Firebase
+        Library, Plug-in : googleAuth,
+        `,
         gitUrl: "https://github.com/SoominYim/tetris",
-        url: null,
+        url: "https://soominyim.github.io/tetris/",
         image: require("@/assets/img/tetrisImg.png"),
-        contents: "",
+        contents: `공부를 위해 만들었던 테트리스.
+        <img style="width : 600px;"src="${require("../img/tetrisImg.png")}"/>
+        지금 봐도 낭만이 있다.
+
+        Moving Blocks : ← →
+        Block Change Direction : ↑
+        Slow Drop: ↓
+        Fast Drop : Space bar
+        
+        간단한 기능까지 구현 했다.`,
     },
     {
         number: 4,
