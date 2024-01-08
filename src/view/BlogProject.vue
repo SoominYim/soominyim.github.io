@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$blue: #15B5E2;
+$blue: #5AC093;
 $btn-bg: #10131C;
 
 .container {
@@ -106,14 +106,14 @@ h2 {
 
 ::-webkit-scrollbar {
     display: block;
-    background-color: rgba(20, 180, 224, 0.3);
+    background-color: rgba(32, 251, 182, 0.3);
     border-radius: 50px;
     width: 0.5em;
 }
 
 ::-webkit-scrollbar-thumb {
     display: block;
-    background-color: rgba(20, 180, 224, 0.7);
+    background-color: rgba(90, 192, 147, 0.7);
     border-radius: 50px;
 }
 
