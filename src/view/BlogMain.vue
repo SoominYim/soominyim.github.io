@@ -104,6 +104,7 @@ export default {
 
 .content_wrap {
   position: absolute;
+  top: 0;
   left: 90px;
   width: calc(90px * 3);
   height: calc(90px * 1.732 * 2);
@@ -122,6 +123,7 @@ export default {
       border-right: 45px solid transparent;
       transition: all 0.5s;
       -webkit-transition: all 0.5s;
+
       opacity: 0.7;
       animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
       -webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
