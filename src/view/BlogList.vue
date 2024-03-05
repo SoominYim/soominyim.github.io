@@ -127,7 +127,7 @@ export default {
   }
   .card_wrap {
     width: 90%;
-    height: 220px;
+    height: 260px;
     margin: 50px 0 10px 0;
     border-bottom: #a7a7a7 2px solid;
   }
@@ -156,7 +156,7 @@ export default {
 
   .cardImg {
     position: relative;
-    top: 5px;
+    top: 20px;
     left: 0;
     height: 200px;
     width: 50%;
