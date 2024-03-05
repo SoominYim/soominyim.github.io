@@ -80,7 +80,7 @@ h2 {
   position: absolute;
   top: 120px;
   left: calc(50% - 80vw / 2);
-  height: 80vh;
+  height: 80%;
   width: 80vw;
   border-radius: 20px;
   background: rgba(100, 100, 100, 0.2);
@@ -92,7 +92,7 @@ h2 {
 .scrolle {
   box-sizing: border-box;
   padding: 30px 10px 10px 10px;
-  height: 80vh;
+  height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -102,11 +102,11 @@ h2 {
     position: absolute;
     top: 80px;
     left: calc(50% - 95vw / 2);
-    height: 85vh;
+    height: 85%;
     width: 95vw;
   }
   .scrolle {
-    height: 85vh;
+    height: 100%;
   }
 }
 
