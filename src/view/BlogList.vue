@@ -148,6 +148,7 @@ export default {
       padding-left: 10px;
       padding-top: 0;
       padding-right: 0;
+      font-size: 9px;
     }
     .null {
       width: 0;
