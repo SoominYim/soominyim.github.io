@@ -80,10 +80,17 @@ export default {
   width: 311.75px;
   display: flex;
   justify-content: center;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-box-shadow: 0 0.3rem 0.6rem rgb(255 255 255 / 20%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+
   box-shadow: 0 0.3rem 0.6rem rgb(255 255 255 / 20%);
+  -webkit-box-shadow: 0 0.3rem 0.6rem rgb(255 255 255 / 20%);
+  -moz-transform: 0 0.3rem 0.6rem rgb(255 255 255 / 20%);
+  -ms-transform: 0 0.3rem 0.6rem rgb(255 255 255 / 20%);
+  -o-transform: 0 0.3rem 0.6rem rgb(255 255 255 / 20%);
 
   .star {
     width: calc(90px * 3);
@@ -113,11 +120,11 @@ export default {
       height: 0px;
       border-left: 45px solid transparent;
       border-right: 45px solid transparent;
-      -webkit-transition: all 0.5s;
       transition: all 0.5s;
+      -webkit-transition: all 0.5s;
       opacity: 0.7;
-      -webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
       animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      -webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
       &::after {
         content: "";
