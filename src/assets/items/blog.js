@@ -16,27 +16,40 @@ export default [
           Axios를 이용하여 HTTP 통신을 하고 Vuex를 사용하여 상태 관리를 하였습니다.
           또한, 페이스북 인증 및 인스타그램 필터 박스 등의 기능을 구현하였습니다.
 
-          <ul style="position: relative; left: calc(50% - 60% / 2); width: 60%; line-height: 2.1; text-align: left; list-style: disc;">
-          <div style="font-size:16px">🖥 프로젝트의 주요 기능</div>
+          <span style="font-size:24px">🖥 프로젝트의 주요 기능</span>
+          <ul style="position: relative; left: 0; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
             <li>사용자는 회원가입 및 로그인을 할 수 있습니다.</li>
             <li>인증된 사용자는 피드를 확인할 수 있고, 사진과 코멘트를 남길 수 있습니다.</li>
             <li>사용자는 피드에서 다른 사용자의 사진을 좋아요 및 댓글을 달 수 있습니다.</li>
             <li>페이스북 인증을 통해 사용자는 쉽게 가입할 수 있습니다.</li>
             <li>인스타그램과 유사한 필터를 적용하여 사진을 편집할 수 있습니다.</li>
-        </ul>
-
-        <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_01.png")}"/>
-        메인(로그인) 페이지
-        <br/>
-        <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_02.png")}"/>
-        회원가입 페이지
-        <br/>
-        <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_03.png")}"/>
-        로그인 후 피드
-        <br/>
-        React로 만들어진 기존 인스타그램을 Vue로 refactoring 하였습니다.
-        <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_04.png")}"/>
-        DB_diagram
+          </ul>
+        <div style="text-align:center">
+            <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_01.png")}"/>
+            메인(로그인) 페이지
+            <br/>
+            <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_02.png")}"/>
+            회원가입 페이지
+            <br/>
+            <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_03.png")}"/>
+            로그인 후 피드
+            <br/>
+            <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_04.png")}"/>
+            DB_diagram
+        </div>
+        <span style="font-size:24px">🖥 데이터베이스 구조</span>
+          <ul style="position: relative; left: 0; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>users 테이블: 사용자 정보를 저장합니다. 사용자의 이름, 닉네임, 비밀번호 등을 포함합니다.</li>
+            <li>follow 테이블: 사용자 간의 팔로우 관계를 저장합니다.</li>
+            <li>block 테이블: 사용자 간의 차단 관계를 저장합니다.</li>
+            <li>posts 테이블: 게시물 정보를 저장합니다. 게시물의 텍스트 내용과 작성 시간을 포함합니다.</li>
+            <li>medias 테이블: 미디어 (이미지 또는 비디오) 정보를 저장합니다.</li>
+            <li>post_media 테이블: 게시물과 미디어 간의 관계를 저장합니다.</li>
+            <li>comments 테이블: 댓글 정보를 저장합니다. 댓글의 내용과 작성 시간을 포함합니다.</li>
+            <li>likes 테이블: 좋아요 정보를 저장합니다. 어떤 대상에 대한 좋아요인지, 사용자가 누른 좋아요인지, 그리고 작성 시간을 포함합니다.</li>
+          </ul>
+        이 데이터베이스 구조를 통해 사용자 간의 관계, 게시물 및 미디어 콘텐츠, 댓글, 좋아요 등의 정보를 
+        효과적으로 관리하고 조회할 수 있습니다.
         `,
   },
   {

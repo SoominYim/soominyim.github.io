@@ -7,7 +7,10 @@
         <h2>{{ blogs[$route.params.id].content }}</h2>
         <div style="margin-right: 30px; font-size: 30px">🔗 SKILLS</div>
         <div v-html="project"></div>
-        <div v-html="contents"></div>
+        <div
+          style="position: relative; left: calc(50% - 70% / 2); width: 70%; text-align: left"
+          v-html="contents"
+        ></div>
         <div class="btn-wrapper">
           <div class="btn-wrapper__container">
             <div class="btn-inner">
