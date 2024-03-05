@@ -78,9 +78,8 @@ h2 {
 
 .wrap {
   position: absolute;
-  top: 0;
+  top: 120px;
   left: calc(50% - 80vw / 2);
-  margin-top: 110px;
   height: 80vh;
   width: 80vw;
   border-radius: 20px;
@@ -101,14 +100,13 @@ h2 {
 @include mobile {
   .wrap {
     position: absolute;
-    top: 0;
+    top: 80px;
     left: calc(50% - 95vw / 2);
-    margin-top: 60px;
-    height: 90vh;
+    height: 85vh;
     width: 95vw;
   }
   .scrolle {
-    height: 90vh;
+    height: 85vh;
   }
 }
 
@@ -118,7 +116,6 @@ h2 {
   border-radius: 50px;
   width: 0.5em;
 }
-
 ::-webkit-scrollbar-thumb {
   display: block;
   background-color: rgba(90, 192, 147, 0.7);
