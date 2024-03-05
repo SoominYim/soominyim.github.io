@@ -10,7 +10,7 @@
           <div>
             <strong style="margin-right: 20px; font-size: 16px">💻 {{ blog.title }}</strong>
             <br />
-            {{ blog.content }},
+            {{ blog.content }}
             <br />
             <br />
             <strong style="margin-right: 20px; font-size: 16px">🔗 SKILLS</strong>

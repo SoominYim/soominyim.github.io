@@ -52,11 +52,23 @@ export default [
         효과적으로 관리하고 조회할 수 있습니다.
         `,
   },
+
   {
     number: 1,
+    title: "Mini_Mate",
+    content: "Tools web",
+    project: `Vue3, Vuex, Javascript, Scss`,
+    gitUrl: "https://github.com/SoominYim/mini-mate",
+    url: "https://mini-mate.vercel.app/",
+    image: null,
+    contents: `
+`,
+  },
+  {
+    number: 2,
     title: "Today_Lunch",
     content: "오늘 점심 뭐먹지",
-    project: `Vue3, Javascript, Scss, Vuex`,
+    project: `Vue3, Vuex, Javascript, Scss`,
     gitUrl: "https://github.com/SoominYim/today-lunch",
     url: "https://soominyim.github.io/today-lunch",
     image: require("@/assets/img/today-lunch.png"),
@@ -69,7 +81,7 @@ export default [
 `,
   },
   {
-    number: 2,
+    number: 3,
     title: "Todo",
     content: `fire-base에 저장 되는 나만의 Todo List`,
     project: ` React, Javascript, Scss, Firebase,  GoogleAuth`,
@@ -81,7 +93,7 @@ export default [
         `,
   },
   {
-    number: 3,
+    number: 4,
     title: "Js_Tetris",
     content: `간단한 웹 테트리스`,
     project: ` Html, Javascript, Css`,
@@ -98,7 +110,7 @@ export default [
         간단한 기능까지 구현 했다.`,
   },
   {
-    number: 4,
+    number: 5,
     title: "Vue-Tetris",
     content: "휴대용 게임기처럼 만든 테트리스",
     project: ` Vue2.X, Javascript, Less, Vuex`,
@@ -114,7 +126,7 @@ export default [
          `,
   },
   {
-    number: 5,
+    number: 6,
     title: "JWT-login",
     content: "JWT-token 기반 로그인 기능 구현 project",
     project: "node.js, express, JWT-token",
@@ -124,7 +136,7 @@ export default [
     contents: "",
   },
   {
-    number: 6,
+    number: 7,
     title: "Socket-io",
     content: "socket-io 를 이용한 채팅방 구현 project",
     project: "Vue3, Node.js, Express",
@@ -134,7 +146,7 @@ export default [
     contents: "",
   },
   {
-    number: 7,
+    number: 8,
     title: "Vue-books",
     content: "vue.js 2.X version 의 shopping mall project",
     project: "Vue2, JavaScript, Css",
