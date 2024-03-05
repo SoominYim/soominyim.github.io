@@ -3,19 +3,19 @@
     <div class="wrap">
       <div class="card_wrap" v-for="(blog, i) in blogs" :key="i" @click="$router.push('/list/' + i)">
         <div class="cardImg">
-          <img :src="blog.image" alt="" />
+          <img v-if="blog.image !== null" :src="blog.image" alt="" />
         </div>
         <div class="card">
           <div class="null"></div>
           <div>
-            <br />
-            {{ blog.title }}
+            <strong style="margin-right: 20px; font-size: 16px">💻 {{ blog.title }}</strong>
             <br />
             {{ blog.content }},
             <br />
-            skills
             <br />
-            <v-html> {{ blog.project }} </v-html>
+            <strong style="margin-right: 20px; font-size: 16px">🔗 SKILLS</strong>
+            <br />
+            <p v-html="blog.project"></p>
           </div>
         </div>
       </div>

@@ -2,10 +2,11 @@
   <div>
     <div class="container" @click="goBack"></div>
     <div class="wrap">
-      <div class="scrolle">
+      <div class="scrolle" style="line-height: 4.1">
         <h1>{{ blogs[$route.params.id].title }}</h1>
         <h2>{{ blogs[$route.params.id].content }}</h2>
-        <h4 v-html="project"></h4>
+        <div style="margin-right: 30px; font-size: 30px">🔗 SKILLS</div>
+        <div v-html="project"></div>
         <div v-html="contents"></div>
         <div class="btn-wrapper">
           <div class="btn-wrapper__container">
@@ -77,20 +78,20 @@ $btn-bg: #10131c;
 
 h1 {
   line-height: 1.8;
-  font-size: 6vw;
+  font-size: 30px;
 }
 
 h2 {
   line-height: 1.5;
-  font-size: 4vw;
+  font-size: 28px;
 }
 
 .wrap {
   position: absolute;
   top: 120px;
-  left: calc(50% - 80vw / 2);
+  left: calc(50% - 60% / 2);
   height: 80%;
-  width: 80vw;
+  width: 60%;
   border-radius: 20px;
   background: rgba(100, 100, 100, 0.2);
   color: #fff;
@@ -104,6 +105,19 @@ h2 {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+@include mobile {
+  .wrap {
+    position: absolute;
+    top: 80px;
+    left: calc(50% - 95vw / 2);
+    height: 85%;
+    width: 95vw;
+  }
+  .scrolle {
+    height: 100%;
+  }
 }
 
 @include tablet {
