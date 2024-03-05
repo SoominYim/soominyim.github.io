@@ -9,11 +9,11 @@ export default [
     image: require("@/assets/img/vuestagram_01.png"),
     contents: `
         메인(로그인) 페이지
-        <img style="width : 100%;"src="${require("../img/vuestagram_01.png")}"/>
+        <img style="width : 85%;"src="${require("../img/vuestagram_01.png")}"/>
         회원가입 페이지
-        <img style="width : 100%;"src="${require("../img/vuestagram_02.png")}"/>
+        <img style="width : 85%;"src="${require("../img/vuestagram_02.png")}"/>
         로그인 후 피드
-        <img style="width : 100%;"src="${require("../img/vuestagram_03.png")}"/>
+        <img style="width : 85%;"src="${require("../img/vuestagram_03.png")}"/>
         기존 React로 만들어진 인스타그램을 Vue로 리팩토링하여 작업 
         `,
   },
@@ -26,7 +26,7 @@ export default [
     url: "https://soominyim.github.io/today-lunch",
     image: require("@/assets/img/today-lunch.png"),
     contents: `매일 점심 정하기가 귀찮아 만들어 본 랜덤 메뉴정하기
-        <img style="width : 100%;"src="${require("../img/today-lunch.png")}"/>
+        <img style="width : 85%;"src="${require("../img/today-lunch.png")}"/>
         원하는 음식이 나올때마다 누르는 한국인의 정서를 없애기 위해
         첫 째로 나온 음식이후엔 선택이 되지 않게 했다.
         랜덤 로직을 직접 짜는게 가장 오래 걸렸다.
@@ -42,7 +42,7 @@ export default [
     url: null,
     image: require("@/assets/img/reactTodoImg.png"),
     contents: `초기 리액트 공부를 위해 만들었던 TODO LIST
-        <img style="width : 100%;"src="${require("../img/reactTodoImg.png")}"/>
+        <img style="width : 85%;"src="${require("../img/reactTodoImg.png")}"/>
         `,
   },
   {
@@ -54,7 +54,7 @@ export default [
     url: "https://soominyim.github.io/tetris/",
     image: require("@/assets/img/tetrisImg.png"),
     contents: `공부를 위해 만들었던 테트리스.
-        <img style="width : 100%;"src="${require("../img/tetrisImg.png")}"/>
+        <img style="width : 85%;"src="${require("../img/tetrisImg.png")}"/>
         지금 봐도 낭만이 있다.
         Moving Blocks : ← →
         Block Change Direction : ↑
@@ -72,7 +72,7 @@ export default [
     image: require("@/assets/img/vue-tetris.png"),
     contents: `기존의 구현했던 테트리스와는 다르게 좀 더 퀄리티 있는 
         테트리스 게임을 만들고 싶었다.
-         <img style="width : 100%;"src="${require("../img/vue-tetris.png")}"/>
+         <img style="width : 85%;"src="${require("../img/vue-tetris.png")}"/>
         모바일에서도 즐길 수 있게 native하게 구성되었다.
         level, sound, pause, start Line 구성, 다음에 나올 block 등등의 기능들을 
         추가하여 온전한 미니게임으로 즐길 수 있다.

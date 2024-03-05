@@ -48,6 +48,13 @@ export default {
       }
       return "";
     },
+    getStyleObject() {
+      // Check if the device is a mobile device
+      const isMobile = window.innerWidth <= 768;
+
+      // Apply different styles based on the device type
+      return isMobile ? { width: "100%" } : { width: "200px" };
+    },
   },
   methods: {
     goBack() {
@@ -69,11 +76,13 @@ $btn-bg: #10131c;
 }
 
 h1 {
+  line-height: 1.8;
   font-size: 6vw;
 }
 
 h2 {
-  font-size: 3vw;
+  line-height: 1.5;
+  font-size: 4vw;
 }
 
 .wrap {
@@ -97,7 +106,7 @@ h2 {
   overflow-x: hidden;
 }
 
-@include mobile {
+@include tablet {
   .wrap {
     position: absolute;
     top: 80px;
@@ -126,6 +135,10 @@ a {
   color: #fff;
   display: block;
   font-size: 30px;
+}
+
+.img_wrap {
+  width: 200px !important;
 }
 
 /* BUTTON START */

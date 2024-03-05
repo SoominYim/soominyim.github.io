@@ -41,6 +41,13 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/utils.scss";
 
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container {
   height: 100vh;
   width: 100vw;
@@ -88,14 +95,17 @@ export default {
   width: 500px;
   height: 300px;
   border-radius: 20px;
-  box-shadow: 0px 10px 15px -3px rgba(255, 255, 255, 0.1), 0px 10px 15px -3px rgba(255, 255, 255, 0.1),
-    0px 10px 15px -3px rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 2px 14px rgba(255, 255, 255, 0.33), 4px 8px 56px rgba(255, 255, 255, 0.22),
+    10px 17px 125px rgba(255, 255, 255, 0.11);
+
   line-height: 2.2;
   color: #fff;
   div {
     width: 50%;
     padding-top: 40px;
     padding-right: 40px;
+    font-family: "GangwonEdu_OTFBoldA";
+    font-size: 12px;
   }
 }
 .cardImg {
@@ -107,7 +117,7 @@ export default {
   display: flex;
   box-sizing: border-box;
   height: 200px;
-  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.6);
+  box-shadow: 8px 6px 11px rgba(255, 255, 255, 0.16), 31px 24px 44px rgba(255, 255, 255, 0.08);
 
   img {
     background-size: contain;
@@ -117,7 +127,7 @@ export default {
     width: 250px;
   }
 }
-@include mobile {
+@include tablet {
   .container {
     .wrap {
       padding: 50px 0px 50px 10px;
@@ -142,8 +152,10 @@ export default {
     box-shadow: none;
     line-height: 1.8;
     text-align: left;
+    padding-top: 13px;
 
     div {
+      text-align: center;
       width: 100%;
       padding-left: 10px;
       padding-top: 0;
