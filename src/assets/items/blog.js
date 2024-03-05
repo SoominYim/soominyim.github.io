@@ -2,10 +2,8 @@ export default [
   {
     number: 0,
     title: "뷰스타그램",
-    content: "Vue로 만들어본 instagram",
-    project: `BaseLanguage : Vue3.X, javascript, scss 
-        Server, DB : node.js, express, mySql
-        Library, Plug-in : JWT-token, axios, Vuex, FaceBook Auth, instagram filterBox`,
+    content: "Vue.js refactoring instagram",
+    project: `Vue3, Javascript, Scss, Node.js, Express, MySql, JWT-token, Axios, Vuex, FaceBook Auth, instagram filterBox`,
     gitUrl: "https://github.com/SoominYim/vuestagram",
     url: null,
     image: require("@/assets/img/vuestagram_01.png"),
@@ -23,9 +21,7 @@ export default [
     number: 1,
     title: "Today-lunch",
     content: "오늘 점심 뭐먹지",
-    project: `BaseLanguage : Vue3.X, javascript, scss
-        Server, DB : null
-        Library, Plug-in : Vuex`,
+    project: `Vue3, Javascript, Scss, Vuex`,
     gitUrl: "https://github.com/SoominYim/today-lunch",
     url: "https://soominyim.github.io/today-lunch",
     image: require("@/assets/img/today-lunch.png"),
@@ -41,24 +37,19 @@ export default [
     number: 2,
     title: "Todo",
     content: `fire-base에 저장 되는 나만의 Todo List`,
-    project: `BaseLanguage : React, javascript, scss
-        Server, DB : Firebase
-        Library, Plug-in : googleAuth`,
+    project: ` React, Javascript, Scss, Firebase,  GoogleAuth`,
     gitUrl: "https://github.com/SoominYim/reactTodo",
     url: null,
     image: require("@/assets/img/reactTodoImg.png"),
     contents: `초기 리액트 공부를 위해 만들었던 TODO LIST
-        <img style="width : 600px;"src="${require("../img/reactTodoImg.png")}"/>
+        <img style="width : 100%;"src="${require("../img/reactTodoImg.png")}"/>
         `,
   },
   {
     number: 3,
     title: "Tetris",
     content: `간단한 웹 테트리스`,
-    project: `BaseLanguage : Html, javascript, scss
-        Server, DB : Firebase
-        Library, Plug-in : googleAuth,
-        `,
+    project: ` Html, Javascript, Css`,
     gitUrl: "https://github.com/SoominYim/tetris",
     url: "https://soominyim.github.io/tetris/",
     image: require("@/assets/img/tetrisImg.png"),
@@ -75,10 +66,7 @@ export default [
     number: 4,
     title: "vue-tetris",
     content: "휴대용 게임기처럼 만든 테트리스",
-    project: `BaseLanguage : Vue2.X, javascript, less
-        Server, DB : null
-        Library, Plug-in : Vuex,
-        `,
+    project: ` Vue2.X, Javascript, Less, Vuex`,
     gitUrl: "https://github.com/SoominYim/vue-tetris",
     url: "https://soominyim.github.io/vue-tetris/",
     image: require("@/assets/img/vue-tetris.png"),
@@ -92,9 +80,9 @@ export default [
   },
   {
     number: 5,
-    title: "jwt-login",
-    content: "jwt token 기반 로그인 기능 구현 project",
-    project: "node.js express project",
+    title: "JWT-login",
+    content: "JWT-token 기반 로그인 기능 구현 project",
+    project: "node.js, express, JWT-token",
     gitUrl: "https://github.com/SoominYim/jwt-login",
     url: null,
     image: "",
@@ -104,7 +92,7 @@ export default [
     number: 6,
     title: "socket-io",
     content: "socket-io 를 이용한 채팅방 구현 project",
-    project: "vue node.js express project",
+    project: "Vue3, Node.js, Express",
     gitUrl: "https://github.com/SoominYim/vue-socket",
     url: null,
     image: "",
@@ -114,7 +102,7 @@ export default [
     number: 7,
     title: "vue-books",
     content: "vue.js 2.X version 의 shopping mall project",
-    project: "vue project",
+    project: "Vue2, JavaScript, Css",
     gitUrl: "https://github.com/SoominYim/vue-books",
     url: null,
     image: "",
