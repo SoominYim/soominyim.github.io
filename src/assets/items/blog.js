@@ -60,7 +60,7 @@ export default [
     project: `Vue3, Vuex, Javascript, Scss`,
     gitUrl: "https://github.com/SoominYim/mini-mate",
     url: "https://mini-mate.vercel.app/",
-    image: null,
+    image: require("@/assets/img/mini.png"),
     contents: `
 `,
   },
