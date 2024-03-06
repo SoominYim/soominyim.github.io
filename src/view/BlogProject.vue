@@ -52,13 +52,6 @@ export default {
       }
       return "";
     },
-    getStyleObject() {
-      // Check if the device is a mobile device
-      const isMobile = window.innerWidth <= 768;
-
-      // Apply different styles based on the device type
-      return isMobile ? { width: "100%" } : { width: "200px" };
-    },
   },
   methods: {
     goBack() {

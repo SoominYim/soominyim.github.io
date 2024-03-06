@@ -127,7 +127,7 @@ export default {
     width: 250px;
   }
 }
-@include tablet {
+@include mobile_tablet {
   .container {
     .wrap {
       padding: 50px 0px 50px 10px;

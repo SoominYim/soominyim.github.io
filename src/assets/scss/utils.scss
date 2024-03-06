@@ -3,36 +3,36 @@ $tablet: 767px;
 $desktop: 768px;
 $screen: 499px;
 
-/*반응형, 브라우저 크기가 767px 이하일때*/
 @mixin mobile {
-    @media (min-width: 320px) and (max-width: $mobile) {
-        @content;
-    }
+  @media (min-width: 0px) and (max-width: $mobile) {
+    @content;
+  }
 }
-
-/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
 @mixin tablet {
-    @media (min-width: 481px) and (max-width: $tablet) {
-        @content;
-    }
+  @media (min-width: 481px) and (max-width: $tablet) {
+    @content;
+  }
 }
 
-/*반응형, 브라우저 크기가 1024px 이상일때*/
+@mixin mobile_tablet {
+  @media (min-width: 0px) and (max-width: $tablet) {
+    @content;
+  }
+}
+
 @mixin desktop {
-    @media (min-width: $desktop) {
-        @content;
-    }
+  @media (min-width: $desktop) {
+    @content;
+  }
 }
-/* 반응형 스크린 최소화 일때 */
 @mixin screen {
-    @media (max-width: $screen) {
-        @content;
-    }
+  @media (max-width: $screen) {
+    @content;
+  }
 }
 
-/*넓이, 높이 자동 계산함수*/
 @mixin square($size) {
-    $calculated: 32px * $size;
-    width: $calculated;
-    height: $calculated;
+  $calculated: 32px * $size;
+  width: $calculated;
+  height: $calculated;
 }
