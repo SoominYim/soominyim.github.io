@@ -3,10 +3,14 @@
     <div class="container" @click="goBack"></div>
     <div class="wrap">
       <div class="scrolle" style="line-height: 4.1">
-        <h1>{{ blogs[$route.params.id].title }}</h1>
+        <div class="title">{{ blogs[$route.params.id].title }}</div>
         <h2>{{ blogs[$route.params.id].content }}</h2>
         <div style="margin-right: 30px; font-size: 30px">🔗 SKILLS</div>
-        <div v-html="project"></div>
+        <div class="skill-box">
+          <div v-for="(skill, i) in project.split(',')" :key="i" class="skill">
+            <p>{{ skill.trim() }}</p>
+          </div>
+        </div>
         <div
           style="position: relative; left: calc(50% - 70% / 2); width: 70%; text-align: left"
           v-html="contents"
@@ -58,6 +62,9 @@ export default {
       this.$router.go(-1);
     },
   },
+  mounted() {
+    console.log(console.log(this.blogs[this.$route.params.id].project));
+  },
 };
 </script>
 
@@ -71,15 +78,43 @@ $btn-bg: #10131c;
   width: 100vw;
   z-index: 1;
 }
+hr {
+  width: 80%;
+  height: 2px;
+  background-color: #777;
+  border: 0;
+}
 
-h1 {
-  line-height: 1.8;
-  font-size: 30px;
+.title {
+  position: relative;
+  top: -29px;
+  left: -10px;
+  width: 105.4%;
+  line-height: 3;
+  font-size: 32px;
+  background-color: #777;
+  border-top-left-radius: 20px;
 }
 
 h2 {
   line-height: 1.5;
   font-size: 28px;
+}
+
+.skill-box {
+  position: relative;
+  left: calc(50% - 80% / 2);
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+  line-height: 3.3;
+}
+
+.skill {
+  width: 95px;
+  border: 1px solid #777;
 }
 
 .wrap {
@@ -89,7 +124,10 @@ h2 {
   height: 80%;
   width: 60%;
   border-radius: 20px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
   background: rgba(100, 100, 100, 0.2);
+
   color: #fff;
   z-index: 3;
   line-height: 5vw;
