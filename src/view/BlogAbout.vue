@@ -41,10 +41,10 @@
           </div>
         </div>
         <div id="content">
-          <p style="font-weight: bold; line-height: 2.1; word-break: keep-all">
+          <div style="font-weight: bold; line-height: 2.1; word-break: keep-all">
             안녕하세요.<br />
-            `빼어난 백성` 프론드엔드 개발자 임수민입니다.
-          </p>
+            <span>빼어난 백성</span> 프론드엔드 개발자 <span>임수민</span>입니다.
+          </div>
           <span style="line-height: 2.9; word-break: keep-all"> </span>
         </div>
         <div class="skill">
@@ -278,10 +278,25 @@ export default {
   font-family: "Noto Sans KR";
   padding: 100px 25%;
 
-  p {
+  div {
     padding-bottom: 40px;
     font-size: 40px;
     line-height: 50px;
+    span {
+      position: relative;
+      font-size: 40px;
+      line-height: 50px;
+      color: #3fb984;
+      &:nth-of-type(1)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -20px;
+        width: 10px;
+        height: 100%;
+        background-color: rgb(49, 71, 94);
+      }
+    }
   }
 
   span {
@@ -292,10 +307,12 @@ export default {
   @include tablet {
     padding: 30px 15%;
 
-    p {
+    div {
       font-size: 25px;
+      span {
+        font-size: 25px;
+      }
     }
-
     span {
       font-size: 20px;
       line-height: 40px;
@@ -305,12 +322,14 @@ export default {
   @include mobile {
     padding: 30px 5%;
 
-    p {
+    div {
       font-size: 22px;
+      span {
+        font-size: 22px;
+      }
     }
 
     span {
-      display: block;
       font-size: 16px;
       line-height: 30px;
     }

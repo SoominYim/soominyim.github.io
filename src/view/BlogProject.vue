@@ -111,14 +111,10 @@ h2 {
 }
 
 .skill {
-  width: 95px;
+  padding: 0 8px;
   border: 2px solid rgba(32, 251, 182, 0.3);
   border-radius: 5px;
   font-size: 10px;
-  @include mobile {
-    * {
-    }
-  }
 }
 .content {
   position: relative;
