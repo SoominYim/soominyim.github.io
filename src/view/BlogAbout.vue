@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <custom-cursor></custom-cursor>
     <div class="main">
       <div class="scroll">
         <div id="profile">
@@ -88,14 +87,12 @@
 </template>
 
 <script>
-import CustomCursor from "@/components/CustomCursor.vue";
 import BlogFooter from "@/components/BlogFooter.vue";
 import skill from "@/assets/items/skillLogo.js";
 
 export default {
   name: "BlogProfile",
   components: {
-    CustomCursor,
     BlogFooter,
   },
   data() {

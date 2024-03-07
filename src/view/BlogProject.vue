@@ -11,10 +11,7 @@
             <p>{{ skill.trim() }}</p>
           </div>
         </div>
-        <div
-          style="position: relative; left: calc(50% - 70% / 2); width: 70%; text-align: left"
-          v-html="contents"
-        ></div>
+        <div class="content" v-html="contents"></div>
         <div class="btn-wrapper">
           <div class="btn-wrapper__container">
             <div class="btn-inner">
@@ -62,9 +59,7 @@ export default {
       this.$router.go(-1);
     },
   },
-  mounted() {
-    console.log(console.log(this.blogs[this.$route.params.id].project));
-  },
+  mounted() {},
 };
 </script>
 
@@ -103,18 +98,38 @@ h2 {
 
 .skill-box {
   position: relative;
-  left: calc(50% - 80% / 2);
-  width: 80%;
+  left: calc(50% - 90% / 2);
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 10px;
   line-height: 3.3;
+  @include mobile {
+    gap: 5px;
+  }
 }
 
 .skill {
   width: 95px;
-  border: 1px solid #777;
+  border: 2px solid rgba(32, 251, 182, 0.3);
+  border-radius: 5px;
+  font-size: 10px;
+  @include mobile {
+    * {
+    }
+  }
+}
+.content {
+  position: relative;
+  left: calc(50% - 70% / 2);
+  width: 70%;
+  text-align: left;
+  word-break: keep-all;
+  @include mobile {
+    left: calc(50% - 90% / 2);
+    width: 90%;
+  }
 }
 
 .wrap {

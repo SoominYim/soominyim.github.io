@@ -8,21 +8,15 @@ export default [
     url: null,
     image: require("@/assets/img/vuestagram_01.png"),
     contents: `
-         Vue.js로 제작된 '뷰스타그램'은 인스타그램을 모티브로 한 프로젝트입니다.
-         기존에 React로 작성된 인스타그램을 Vue.js로 리팩토링하여 제작하였습니다.
-          Vue3, JavaScript, SCSS를 사용하여 프론트엔드를 개발하였고,
-          백엔드는 Node.js와 Express 프레임워크를 이용하여 구축하였습니다.
-          데이터베이스는 MySQL을 사용하였으며, 사용자 인증에는 JWT 토큰을 활용하였습니다.
-          Axios를 이용하여 HTTP 통신을 하고 Vuex를 사용하여 상태 관리를 하였습니다.
-          또한, 페이스북 인증 및 인스타그램 필터 박스 등의 기능을 구현하였습니다.
-
+         Vue.js로 제작된 '뷰스타그램'은 인스타그램을 모티브로 한 프로젝트입니다. 기존에 React로 작성된 인스타그램을 Vue.js로 리팩토링하여 제작하였습니다. Vue3, JavaScript, SCSS를 사용하여 프론트엔드를 개발하였고, 백엔드는 Node.js와 Express 프레임워크를 이용하여 구축하였습니다. 데이터베이스는 MySQL을 사용하였으며, 사용자 인증에는 JWT 토큰을 활용하였습니다. Axios를 이용하여 HTTP 통신을 하고 Vuex를 사용하여 상태 관리를 하였습니다. 또한, 페이스북 인증 및 인스타그램 필터 박스 등의 기능을 구현하였습니다.
           <span style="font-size:24px">🖥 프로젝트의 주요 기능</span>
-          <ul style="position: relative; left: 0; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
             <li>사용자는 회원가입 및 로그인을 할 수 있습니다.</li>
             <li>인증된 사용자는 피드를 확인할 수 있고, 사진과 코멘트를 남길 수 있습니다.</li>
             <li>사용자는 피드에서 다른 사용자의 사진을 좋아요 및 댓글을 달 수 있습니다.</li>
             <li>페이스북 인증을 통해 사용자는 쉽게 가입할 수 있습니다.</li>
             <li>인스타그램과 유사한 필터를 적용하여 사진을 편집할 수 있습니다.</li>
+            <li>Infinity Scroll를 활용하여 Feed Data를 가져옵니다.</li>
           </ul>
         <div style="text-align:center">
             <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_01.png")}"/>
@@ -38,7 +32,7 @@ export default [
             DB_diagram
         </div>
         <span style="font-size:24px">🖥 데이터베이스 구조</span>
-          <ul style="position: relative; left: 0; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
             <li>users 테이블: 사용자 정보를 저장합니다. 사용자의 이름, 닉네임, 비밀번호 등을 포함합니다.</li>
             <li>follow 테이블: 사용자 간의 팔로우 관계를 저장합니다.</li>
             <li>block 테이블: 사용자 간의 차단 관계를 저장합니다.</li>
@@ -48,8 +42,7 @@ export default [
             <li>comments 테이블: 댓글 정보를 저장합니다. 댓글의 내용과 작성 시간을 포함합니다.</li>
             <li>likes 테이블: 좋아요 정보를 저장합니다. 어떤 대상에 대한 좋아요인지, 사용자가 누른 좋아요인지, 그리고 작성 시간을 포함합니다.</li>
           </ul>
-        이 데이터베이스 구조를 통해 사용자 간의 관계, 게시물 및 미디어 콘텐츠, 댓글, 좋아요 등의 정보를 
-        효과적으로 관리하고 조회할 수 있습니다.
+        이 데이터베이스 구조를 통해 사용자 간의 관계, 게시물 및 미디어 콘텐츠, 댓글, 좋아요 등의 정보를 효과적으로 관리하고 조회할 수 있습니다.
         `,
   },
 
@@ -124,35 +117,5 @@ export default [
         level, sound, pause, start Line 구성, 다음에 나올 block 등등의 기능들을 
         추가하여 온전한 미니게임으로 즐길 수 있다.
          `,
-  },
-  {
-    number: 6,
-    title: "JWT-login",
-    content: "JWT-token 기반 로그인 기능 구현 project",
-    project: "#node.js, #express, #JWT-token",
-    gitUrl: "https://github.com/SoominYim/jwt-login",
-    url: null,
-    image: null,
-    contents: "",
-  },
-  {
-    number: 7,
-    title: "Socket-io",
-    content: "socket-io 를 이용한 채팅방 구현 project",
-    project: "#Vue3, #Node.js, #Express",
-    gitUrl: "https://github.com/SoominYim/vue-socket",
-    url: null,
-    image: null,
-    contents: "",
-  },
-  {
-    number: 8,
-    title: "Vue-books",
-    content: "vue.js 2.X version 의 shopping mall project",
-    project: "#Vue2, #JavaScript, #Css",
-    gitUrl: "https://github.com/SoominYim/vue-books",
-    url: null,
-    image: null,
-    contents: "",
   },
 ];
