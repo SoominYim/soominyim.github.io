@@ -1,8 +1,9 @@
 export default [
   {
     number: 0,
-    title: "뷰스타그램",
-    content: "Vue.js refactoring instagram",
+    title: "Vuestagram",
+    content:
+      "React로 구성된 Instagram을 Vue로 리팩토링 한 프로젝트입니다. 반응형으로 제작되었으며, login, 피드 작성 및 팔로우 등 기능을 구현하였습니다.",
     project: `#Vue3, #Vuex, #Javascript, #Scss, #Node.js, #Express, #MySql, #JWT-token, #Axios, #FaceBook-Auth`,
     gitUrl: "https://github.com/SoominYim/vuestagram",
     url: null,
@@ -33,16 +34,18 @@ export default [
         </div>
         <span style="font-size:24px">🖥 데이터베이스 구조</span>
           <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>users 테이블: 사용자 정보를 저장합니다. 사용자의 이름, 닉네임, 비밀번호 등을 포함합니다.</li>
-            <li>follow 테이블: 사용자 간의 팔로우 관계를 저장합니다.</li>
-            <li>block 테이블: 사용자 간의 차단 관계를 저장합니다.</li>
-            <li>posts 테이블: 게시물 정보를 저장합니다. 게시물의 텍스트 내용과 작성 시간을 포함합니다.</li>
-            <li>medias 테이블: 미디어 (이미지 또는 비디오) 정보를 저장합니다.</li>
-            <li>post_media 테이블: 게시물과 미디어 간의 관계를 저장합니다.</li>
-            <li>comments 테이블: 댓글 정보를 저장합니다. 댓글의 내용과 작성 시간을 포함합니다.</li>
-            <li>likes 테이블: 좋아요 정보를 저장합니다. 어떤 대상에 대한 좋아요인지, 사용자가 누른 좋아요인지, 그리고 작성 시간을 포함합니다.</li>
+            <li>users: 사용자 정보를 저장합니다. 사용자의 이름, 닉네임, 비밀번호 등을 포함합니다.</li>
+            <li>follow: 사용자 간의 팔로우 관계를 저장합니다.</li>
+            <li>block: 사용자 간의 차단 관계를 저장합니다.</li>
+            <li>posts: 게시물 정보를 저장합니다. 게시물의 텍스트 내용과 작성 시간을 포함합니다.</li>
+            <li>medias: 미디어 (이미지 또는 비디오) 정보를 저장합니다.</li>
+            <li>post_media: 게시물과 미디어 간의 관계를 저장합니다.</li>
+            <li>comments: 댓글 정보를 저장합니다. 댓글의 내용과 작성 시간을 포함합니다.</li>
+            <li>likes: 좋아요 정보를 저장합니다. 어떤 대상에 대한 좋아요인지, 사용자가 누른 좋아요인지, 그리고 작성 시간을 포함합니다.</li>
           </ul>
         이 데이터베이스 구조를 통해 사용자 간의 관계, 게시물 및 미디어 콘텐츠, 댓글, 좋아요 등의 정보를 효과적으로 관리하고 조회할 수 있습니다.
+      
+
         `,
   },
 

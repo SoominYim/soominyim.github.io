@@ -89,11 +89,15 @@ hr {
   font-size: 32px;
   background-color: #777;
   border-top-left-radius: 20px;
+  font-family: "KIMM_Bold";
+  font-weight: 700;
 }
 
 h2 {
   line-height: 1.5;
   font-size: 28px;
+  font-family: "KIMM_Bold";
+  font-weight: 300;
 }
 
 .skill-box {
@@ -102,7 +106,7 @@ h2 {
   width: 90%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   gap: 10px;
   line-height: 3.3;
   @include mobile {
@@ -112,9 +116,12 @@ h2 {
 
 .skill {
   padding: 0 8px;
+  height: 24px;
+  line-height: 2.3;
   border: 2px solid rgba(32, 251, 182, 0.3);
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 12px;
+  font-family: "GangwonEdu_OTFBoldA";
 }
 .content {
   position: relative;
@@ -126,6 +133,7 @@ h2 {
     left: calc(50% - 90% / 2);
     width: 90%;
   }
+  font-family: "HANAMDAUM";
 }
 
 .wrap {

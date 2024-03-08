@@ -12,7 +12,6 @@
             <br />
             {{ blog.content }}
             <br />
-            <br />
             <strong style="margin-right: 20px; font-size: 16px">🔗 SKILLS</strong>
             <br />
             <p v-html="blog.project"></p>
@@ -40,13 +39,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/utils.scss";
-
-@font-face {
-  font-family: "GangwonEdu_OTFBoldA";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 
 .container {
   height: 100vh;
@@ -102,8 +94,8 @@ export default {
   color: #fff;
   div {
     width: 50%;
-    padding-top: 40px;
-    padding-right: 40px;
+    padding-top: 30px;
+    padding-right: 30px;
     font-family: "GangwonEdu_OTFBoldA";
     font-size: 12px;
   }
