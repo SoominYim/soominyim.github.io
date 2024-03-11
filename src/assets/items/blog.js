@@ -6,7 +6,7 @@ export default [
       "React로 구성된 Instagram을 Vue로 리팩토링 한 프로젝트입니다. 반응형으로 제작되었으며, login, 피드 작성 및 팔로우 등 기능을 구현하였습니다.",
     project: `#Vue3, #Vuex, #Javascript, #Scss, #Node.js, #Express, #MySql, #JWT-token, #Axios, #FaceBook-Auth`,
     gitUrl: "https://github.com/SoominYim/vuestagram",
-    url: null,
+    url: "https://vuestagram-dusky.vercel.app",
     image: require("@/assets/img/vuestagram_01.png"),
     contents: `
          Vue.js로 제작된 '뷰스타그램'은 인스타그램을 모티브로 한 프로젝트입니다. 기존에 React로 작성된 인스타그램을 Vue.js로 리팩토링하여 제작하였습니다. Vue3, JavaScript, SCSS를 사용하여 프론트엔드를 개발하였고, 백엔드는 Node.js와 Express 프레임워크를 이용하여 구축하였습니다. 데이터베이스는 MySQL을 사용하였으며, 사용자 인증에는 JWT 토큰을 활용하였습니다. Axios를 이용하여 HTTP 통신을 하고 Vuex를 사용하여 상태 관리를 하였습니다. 또한, 페이스북 인증 및 인스타그램 필터 박스 등의 기능을 구현하였습니다.
