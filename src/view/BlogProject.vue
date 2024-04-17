@@ -138,10 +138,10 @@ h2 {
 
 .wrap {
   position: absolute;
-  top: 120px;
-  left: calc(50% - 60% / 2);
-  height: 80%;
-  width: 60%;
+  top: 60px;
+  left: calc(50% - 70% / 2);
+  height: 90%;
+  width: 70%;
   border-radius: 20px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;

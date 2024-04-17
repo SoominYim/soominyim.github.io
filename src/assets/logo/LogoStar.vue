@@ -33,8 +33,8 @@ export default {
 @import "@/assets/scss/utils.scss";
 .star {
   position: absolute;
-  top: 50px;
-  left: 100px;
+  top: 10px;
+  left: 40px;
   width: calc(15px * 3);
   height: calc(15px * 1.732 * 2);
   align-items: center;
@@ -42,18 +42,17 @@ export default {
   text-align: center;
   z-index: 999999;
   @include mobile {
-    top: 5px;
-    left: 5px;
+    top: -5px;
+    left: 20px;
   }
   @include tablet {
-    top: 50px;
-    left: 50px;
+    top: -10px;
+    left: 35px;
   }
 }
 
 .wrap {
   position: absolute;
-  left: 15px;
   width: calc(15px * 3);
   height: calc(15px * 1.732 * 2);
   .item_warp {
