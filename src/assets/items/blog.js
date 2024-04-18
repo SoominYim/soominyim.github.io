@@ -135,7 +135,7 @@ export default [
     url: null,
     image: require("@/assets/img/pdf_01.png"),
     contents: `
-          PDF Viewer 및 SVG or canvas 형태의 HTML로 Convert 하여 PDF에 원하는 페이지를 로컬에 저장할 수 있는 웹 애플리케이션입니다. 이 애플리케이션은 Vue.js와 JavaScript로 개발되었으며, 스타일링에는 SCSS를 사용했습니다. 서버 측에서는 Node.js와 Express를 사용하여 구현되었습니다.
+          PDF Viewer 및 SVG or canvas 형태의 HTML로 Convert 하여 PDF에 원하는 페이지를 로컬에 저장할 수 있는 웹 애플리케이션입니다. 이 애플리케이션은 Vue3의 Composition API로 작성되었으며, 스타일링에는 SCSS를 사용했습니다. 서버 측에서는 Node.js와 Express를 사용하여 구현되었습니다.
 
           <span style="font-size:24px">📚 스토리보드</span>
           <span style="font-size:20px">📖 초기 화면</span>
