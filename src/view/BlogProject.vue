@@ -7,7 +7,7 @@
         <h2>{{ blogs[$route.params.id].content }}</h2>
         <div style="margin-right: 30px; font-size: 30px">🔗 SKILLS</div>
         <div class="skill-box">
-          <div v-for="(skill, i) in project.split(',')" :key="i" class="skill">
+          <div v-for="(skill, i) in blogs[$route.params.id].project.split(',')" :key="i" class="skill">
             <p>{{ skill.trim() }}</p>
           </div>
         </div>
@@ -95,7 +95,7 @@ hr {
 
 h2 {
   line-height: 1.5;
-  font-size: 28px;
+  font-size: 25px;
   font-family: "KIMM_Bold";
   font-weight: 300;
 }

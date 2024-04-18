@@ -144,7 +144,7 @@ export default [
             <li>파일 첨부 Button을 클릭하여 PDF 파일 업로드 합니다.</li>
             <li>파일이 서버에 업로드 될 때 로딩화면이 보여집니다.</li>
           </ul>
-          <span style="font-size:20px">📖 업로드 후 공통 화면</span>
+          <span style="font-size:20px">📖 업로드 후 공통</span>
           <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
             <li>Page Input에 원하는 Page number를 입력 후 Enter keydown 시 그 Page로 이동합니다.</li>
             <li>Scale은 -,+ button으로 조절 가능하며, Ctrl + 마우스휠, Ctrl + - or + keydown으로도 조절이 가능합니다.</li>
@@ -167,7 +167,7 @@ export default [
             └── ...
             </li>
           </ul>
-          <span style="font-size:20px">📖 개별선택 화면</span>
+          <span style="font-size:20px">📖 개별선택</span>
           <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
               <li>Header의 내용이 현재 업로드된 PDF, Page, Scale, 선택된 Page, 선택 Button, 내보내기 버튼으로 변경됩니다.</li>
               <li>Prev, Next button으로 Page 이동이 가능합니다.</li>
@@ -175,49 +175,108 @@ export default [
               <li>선택된 Page는 Drop down box에서 확인할 수 있습니다.</li>
               <li>Drop down box에서 Page 선택시 그 Page로 이동합니다.</li>
               <li>Delete button 클릭 시 선택을 취소 할수 있습니다.</li>
-              <li>내보내기 클릭 시 선택된 Page가 zip형식으로 다운로드 됩니다.</li>
+              <li>내보내기 클릭 시 선택된 Page가 zip형식으로 패키징되어 다운로드 됩니다.</li>
               <li>선택을 하지 않고 내보내기 클릭 시 현재 Page가 다운로드 됩니다.</li>
           </ul>
-          <span style="font-size:20px">📖 범위선택 화면</span>
+          <span style="font-size:20px">📖 범위선택</span>
           <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
               <li>Header의 내용이 현재 업로드된 PDF, total Page, Page 범위, Scale, 내보내기 버튼으로 변경됩니다.</li>
               <li>원하는 Page 범위를 input에 입력 후 Enter key시 Page가 보여집니다. (Default : 1/1)</li>
               <li>Page가 렌더링 될때 로딩화면이 보여집니다.</li>
               <span style="color : red;"> * 주의사항 : Page 렌더링 중에 내보내기 시 Text layer가 표시 되지 않습니다.</span>
           </ul>
-
-           <span style="font-size:20px">🖨프리뷰</span>
-            <div style="text-align:center">
-                  초기 화면
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_02.png")}"/>
-                  <br/>
-                  로딩화면
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_04.png")}"/>
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_05.png")}"/>
-                  <br/>
-                  개별선택 화면
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_03.png")}"/>
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_06.gif")}"/>
-                  <br/>
-                  범위선택 화면
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_07.png")}"/>
-            </div>
-
           <span style="font-size:24px">🖥 기능 구현</span>
-            <span style="font-size:20px">🔔업로드</span>
+            <span style="font-size:20px">🔔Upload</span>
               <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
                 <span style="font-size:18px">💻클라이언트</span>
                 <li>File Upload시 formDate를 담아 서버에 Post요청 (/upload)
                 - 업로드중엔 로딩화면을 유지
-                - 업로드가 완료되면 파일과 PDF를 화면에 표시
+                - 업로드가 완료되면 파일과 pdf.js 라이브러리를 사용하여 PDF를 화면에 표시
                 ** <span style="color : red;">주요 사항</span>
                 1. FileInput의 name 속성을 통해 서버에 요청
                 2. 개별선택, 범위선택 시에 화면구성, Page 수집방법이 달라야함
                 </li>
                 <span style="font-size:18px">💻서버</span>
-                <li></li>
+                <li>multer 모듈을 활용하여 전달받은 request(formData)를 저장
+                - fs 모듈을 활용하여 새로운 PDF를 전달 받으면 기존 PDF를 삭제
+                - response를 end 하여 요청을 종료
+                </li>
               </ul>
-      `,
+              <span style="font-size:20px">🔔Viewer</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+                <span style="font-size:18px">💻클라이언트</span>
+                <li>Pagination 구현
+                  - 개별선택 : prev, next button, input을 사용
+                  - 범위선택 : start, end input을 사용
+                </li>
+                <li>Scale 구현
+                  - + - button, ctrl + wheel, + - keydown 으로 조절
+                  ** <span style="color : red;">주요 사항</span>
+                  1. 브라우저의 축소확대 기능을 비활성화 (브라우저의 확대를 사용하면 pdf가 깨짐)
+                    &nbsp;- eventListener에 preventDefault 적용
+                    &nbsp;- wheel eventListener 인자에 { passive: false }를 추가
+                  2. 현재의 Scale 값으로 Page Export
+                </li>
+                <li>사용자가 Export할 Page 선택
+                  - 개별선택 : 직접 Page를 선택 및 제거 (선택된 Page 표시) 
+                  - 범위선택 : 현재 보고있는 Pages 자동 선택
+                </li>
+              </ul>
+              <span style="font-size:20px">🔔Export</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+                <span style="font-size:18px">💻클라이언트</span>
+                  <li>선택된 Pages를 pageData에 담아 Json 형식으로 서버에 post (/convert) 요청
+                   ** <span style="color : red;">주요 사항</span>
+                    &nbsp;1. pageData는 JSON.stringify를 사용하여 json 문자열로 변환하여 body에 포함하여 post
+                  </li>
+                  <li>zip 라이브러리를 사용, zip 객체 생성</li>
+                  <li>현재 Node를 Clone 하여 필요없는 내용을 제거 후에 blob 후 zip객체에 push
+                    - elements, classes, style 등 제거
+                  </li>
+                  <li>/convert 요청이 종료 후에 svg file을 get (/getSVGFile) 요청
+                    - 요청중엔 로딩화면을 유지
+                    ** <span style="color : red;">주요 사항</span>
+                      &nbsp;1. await을 사용하여 /convert => /getSVGFile 순으로 요청
+                      &nbsp;2. response를 json으로 받아온 후 SVG File을 blob 후 zip객체에 push
+                  </li>
+                  <li>js, common css 동적 생성 후 zip객체에 push</li>
+                  <li>모든 요청이 종료 후에 비동기로 zip을 generate 하여 패키징 된 zip file을 다운로드
+                    ** <span style="color : red;">주요 사항</span>
+                      &nbsp;1. svg 파일도 패키징 되어야 함
+                      &nbsp;2. getSVG 요청이 종료된 후에 zip.generate되어야 하기때문에 getSVG요청에 await키워드 추가후 비동기로 generate해야함
+                  </li>
+                  <span style="font-size:18px">💻서버</span>
+                  <li>request(pageData)로 요청받은 Page만 SVG로 변환</li>
+                  <li>서버에 내장되어 있는 PDF to SVG 프로그램을 실행
+                    - 실행을 위해 child_process모듈의 exec() 함수를 사용하여 batch 명령어를 동적으로 실행
+                    ** <span style="color : red;">주요 사항</span>
+                    &nbsp;1. shell에서 한국어가 깨지기 떄문에 'chcp 65001' command 통해 UTF-8로 변경
+                    &nbsp;2. exec는 비동기 함수이기 때문에 command가 끝나지 않아도 convert 요청을 종료하는 버그 발생
+                    <span style="color : red;">해결방법</span> : command를 promise 배열에 push 후 await과 promise.all을 사용하여 커맨드가 전부 입력 되고 난뒤 요청을 종료
+                  </li>
+                  <li>convert 요청 종료 후 getSVGFile get 요청에 응답
+                    - 생성된 svg 파일을 json 형식으로 클라이언트에게 전달
+                    ** <span style="color : red;">주요 사항</span>
+                    &nbsp;1. 클라이언트에게 전달이 완료된 후엔 서버에 저장된 SVG파일 제거
+                    </li>
+                </ul>
+                <span style="font-size:20px">🖨프리뷰</span>
+                <div style="text-align:center">
+                      초기 화면
+                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_02.png")}"/>
+                      <br/>
+                      로딩화면
+                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_04.png")}"/>
+                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_05.png")}"/>
+                      <br/>
+                      개별선택 화면
+                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_03.png")}"/>
+                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_06.gif")}"/>
+                      <br/>
+                      범위선택 화면
+                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_07.png")}"/>
+                </div>
+              `,
   },
   {
     number: 2,
