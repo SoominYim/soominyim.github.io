@@ -2,13 +2,13 @@ export default [
   {
     number: 0,
     title: "Mevie",
-    content: `Vue.js 3.X를 사용하여 개발된 영화검색 웹 애플리케이션입니다.`,
+    content: `Vue.js 3.X를 사용하여 개발된 영화검색 웹 애플리케이션`,
     project: `#Vue3, #Vuex, #VueRouter, #Javascript, #Scss, #Axios`,
     gitUrl: "https://github.com/SoominYim/Mevie",
     url: "https://mevie.vercel.app/",
     image: require("@/assets/img/mevie_01.png"),
     contents: `
-         이 애플리케이션은 사용자가 원하는 영화를 검색하고 해당 영화에 대한 정보를 제공하는 기능을 제공합니다. TMDB API를 활용하여 영화 데이터를 가져와 사용자에게 제공합니다.
+         이 애플리케이션은 사용자가 원하는 영화를 검색하고 해당 영화에 대한 정보를 제공하는 기능을 제공하며. TMDB API를 활용하여 영화 데이터를 가져와 사용자에게 제공합니다.
           <span style="font-size:24px">🎞 프로젝트의 주요 기능</span>
           <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
             <li>사용자는 검색 창에 영화 제목을 입력하여 원하는 영화를 검색할 수 있습니다.</li>
@@ -121,7 +121,7 @@ export default [
                   <br/>
                   모바일
                   <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_11.png")}"/>
-              </div>
+            </div>
 
         `,
   },
@@ -129,13 +129,95 @@ export default [
   {
     number: 1,
     title: "PDF TO SVG HTML",
-    content: "Tools web",
+    content: "PDF Viewer 및 SVG or canvas & HTML Convert 웹 애플리케이션",
     project: `#Vue3, #Javascript, #Scss, #Node.js, #Express`,
-    gitUrl: "https://github.com/SoominYim/Mini_Mate",
-    url: "https://mini-mate.vercel.app/",
+    gitUrl: "https://github.com/SoominYim/pdf-to-svg-html",
+    url: null,
     image: require("@/assets/img/pdf_01.png"),
     contents: `
-`,
+          PDF Viewer 및 SVG or canvas 형태의 HTML로 Convert 하여 PDF에 원하는 페이지를 로컬에 저장할 수 있는 웹 애플리케이션입니다. 이 애플리케이션은 Vue.js와 JavaScript로 개발되었으며, 스타일링에는 SCSS를 사용했습니다. 서버 측에서는 Node.js와 Express를 사용하여 구현되었습니다.
+
+          <span style="font-size:24px">📚 스토리보드</span>
+          <span style="font-size:20px">📖 초기 화면</span>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>저장 할 Page를 선택 할 방식을 Select 합니다. (Default: 개별 선택, 범위 선택)</li>
+            <li>파일 첨부 Button을 클릭하여 PDF 파일 업로드 합니다.</li>
+            <li>파일이 서버에 업로드 될 때 로딩화면이 보여집니다.</li>
+          </ul>
+          <span style="font-size:20px">📖 업로드 후 공통 화면</span>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>Page Input에 원하는 Page number를 입력 후 Enter keydown 시 그 Page로 이동합니다.</li>
+            <li>Scale은 -,+ button으로 조절 가능하며, Ctrl + 마우스휠, Ctrl + - or + keydown으로도 조절이 가능합니다.</li>
+            <li>Page input 숫자만 입력 가능하며 Total page를 넘을 수 없습니다.</li>
+            <li>Page에 Text를 드래그할 수 있습니다.</li>
+            <li>내보내기 클릭 시 현재 Scale의 퍼센트로 저장이 됩니다.</li>
+            <li>Directory 구조
+            📁 최상위 폴더
+            ├── 📁 js 폴더
+            │   ├── page1.js
+            │   ├── page2.js
+            │   └── ...
+            ├── 📁 svg 폴더
+            │   ├── page1.svg
+            │   ├── page2.svg
+            │   └── ...
+            ├── common.css
+            ├── page1.html
+            ├── page2.html
+            └── ...
+            </li>
+          </ul>
+          <span style="font-size:20px">📖 개별선택 화면</span>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>Header의 내용이 현재 업로드된 PDF, Page, Scale, 선택된 Page, 선택 Button, 내보내기 버튼으로 변경됩니다.</li>
+              <li>Prev, Next button으로 Page 이동이 가능합니다.</li>
+              <li>내보내기를 원하는 Page를 선택 Button으로 선택할 수 있습니다.</li>
+              <li>선택된 Page는 Drop down box에서 확인할 수 있습니다.</li>
+              <li>Drop down box에서 Page 선택시 그 Page로 이동합니다.</li>
+              <li>Delete button 클릭 시 선택을 취소 할수 있습니다.</li>
+              <li>내보내기 클릭 시 선택된 Page가 zip형식으로 다운로드 됩니다.</li>
+              <li>선택을 하지 않고 내보내기 클릭 시 현재 Page가 다운로드 됩니다.</li>
+          </ul>
+          <span style="font-size:20px">📖 범위선택 화면</span>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>Header의 내용이 현재 업로드된 PDF, total Page, Page 범위, Scale, 내보내기 버튼으로 변경됩니다.</li>
+              <li>원하는 Page 범위를 input에 입력 후 Enter key시 Page가 보여집니다. (Default : 1/1)</li>
+              <li>Page가 렌더링 될때 로딩화면이 보여집니다.</li>
+              <span style="color : red;"> * 주의사항 : Page 렌더링 중에 내보내기 시 Text layer가 표시 되지 않습니다.</span>
+          </ul>
+
+           <span style="font-size:20px">🖨프리뷰</span>
+            <div style="text-align:center">
+                  초기 화면
+                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_02.png")}"/>
+                  <br/>
+                  로딩화면
+                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_04.png")}"/>
+                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_05.png")}"/>
+                  <br/>
+                  개별선택 화면
+                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_03.png")}"/>
+                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_06.gif")}"/>
+                  <br/>
+                  범위선택 화면
+                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_07.png")}"/>
+            </div>
+
+          <span style="font-size:24px">🖥 기능 구현</span>
+            <span style="font-size:20px">🔔업로드</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+                <span style="font-size:18px">💻클라이언트</span>
+                <li>File Upload시 formDate를 담아 서버에 Post요청 (/upload)
+                - 업로드중엔 로딩화면을 유지
+                - 업로드가 완료되면 파일과 PDF를 화면에 표시
+                ** <span style="color : red;">주요 사항</span>
+                1. FileInput의 name 속성을 통해 서버에 요청
+                2. 개별선택, 범위선택 시에 화면구성, Page 수집방법이 달라야함
+                </li>
+                <span style="font-size:18px">💻서버</span>
+                <li></li>
+              </ul>
+      `,
   },
   {
     number: 2,
@@ -152,7 +234,7 @@ export default [
     number: 3,
     title: "Vuestagram",
     content:
-      "React로 구성된 Instagram을 Vue로 리팩토링 한 프로젝트입니다. 반응형으로 제작되었으며, login, 피드 작성 및 팔로우 등 기능을 구현하였습니다.",
+      "React로 구성된 Instagram을 Vue로 리팩토링 한 프로젝트. 반응형으로 제작되었으며, login, 피드 작성 및 팔로우 등 기능을 구현.",
     project: `#Vue3, #Vuex, #Javascript, #Scss, #Node.js, #Express, #MySql, #JWT-token, #Axios, #FaceBook-Auth`,
     gitUrl: "https://github.com/SoominYim/vuestagram",
     url: "https://vuestagram-dusky.vercel.app",
