@@ -282,9 +282,9 @@ export default [
     number: 2,
     title: "Mini_Mate",
     content: "Tools web",
-    project: `#Vue3, #Vuex, #Javascript, #Scss`,
-    gitUrl: "https://github.com/SoominYim/Mini_Mate",
-    url: "https://mini-mate.vercel.app/",
+    project: `#Nuxt3, #Pinia, #Javascript, #Scss`,
+    gitUrl: "https://github.com/SoominYim/MiniMate",
+    url: "https://mini-mate-s.vercel.app",
     image: require("@/assets/img/mini.png"),
     contents: `
 `,
