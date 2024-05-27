@@ -1,4 +1,4 @@
-export default [
+const blog = [
   {
     number: 0,
     title: "Mevie",
@@ -48,16 +48,16 @@ export default [
             </ul>
              <span style="font-size:24px">🖍 UI/UX 디자인</span>
               <div style="text-align:center">
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_02.png")}"/>
+                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_02.png")}"/>
                   로고
                   <br/>
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_03.png")}"/>
+                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_03.png")}"/>
                   메인 페이지
                   <br/>
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_04.png")}"/>
+                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_04.png")}"/>
                   상세 페이지
                   <br/>
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_05.png")}"/>
+                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_05.png")}"/>
                   검색 페이지
               </div>
             <span style="font-size:24px">🖥 기능 구현</span>
@@ -110,17 +110,17 @@ export default [
             <span style="font-size:20px">🖨프리뷰</span>
             <div style="text-align:center">
                   메인 페이지
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_07.png")}"/>
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_08.png")}"/>
+                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_07.png")}"/>
+                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_08.png")}"/>
                   <br/>
                   상세 페이지
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_09.png")}"/>
+                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_09.png")}"/>
                   <br/>
                   검색 페이지
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_10.png")}"/>
+                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_10.png")}"/>
                   <br/>
                   모바일
-                  <img style="width : 85%; border-radius: 10px;"src="${require("../img/mevie_11.png")}"/>
+                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_11.png")}"/>
             </div>
 
         `,
@@ -263,18 +263,18 @@ export default [
                 <span style="font-size:20px">🖨프리뷰</span>
                 <div style="text-align:center">
                       초기 화면
-                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_02.png")}"/>
+                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_02.png")}"/>
                       <br/>
-                      로딩화면
-                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_04.png")}"/>
-                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_05.png")}"/>
+                      로딩 화면
+                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_04.png")}"/>
+                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_05.png")}"/>
                       <br/>
                       개별선택 화면
-                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_03.png")}"/>
-                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_06.gif")}"/>
+                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_03.png")}"/>
+                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_06.gif")}"/>
                       <br/>
                       범위선택 화면
-                      <img style="width : 85%; border-radius: 10px;"src="${require("../img/pdf_07.png")}"/>
+                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_07.png")}"/>
                 </div>
               `,
   },
@@ -282,12 +282,73 @@ export default [
     number: 2,
     title: "Mini_Mate",
     content: "Tools web",
-    project: `#Nuxt3, #Pinia, #Javascript, #Scss`,
+    project: `#Nuxt3, #Pinia, #Typescript ,#Javascript, #Scss`,
     gitUrl: "https://github.com/SoominYim/MiniMate",
     url: "https://mini-mate-s.vercel.app",
     image: require("@/assets/img/mini.png"),
     contents: `
-`,
+        이 애플리케이션은 사용자가 점심 뽑기, 사다리타기, 게임 등의 기능들을 사용할 수 있는 툴들을 모아둔 웹애플리케이션입니다.
+          <span style="font-size:24px">🎞 페이지를 만든 이유</span>
+          <span>점심이나, 커피를 뽑을 사람 등 일상 생활에서 필요로한 뽑기를 만들면서, 뽑기뿐만이 아닌 작업중에 필요한것이나, 킬링타임용 게임 등 제가 원하는 것들을 모두 만들어보고 싶어 제작하게 되었습니다.
+          </span>
+          <span style="font-size:24px">🖥 스토리보드 및 기능구현</span>
+          <div style="text-align:center">
+            <span style="font-size:20px">날씨</span>
+            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_01.png")}"/>
+          </div>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>OpenWeatherMap API를 사용하여 날씨 정보를 받아옵니다.</li>
+            <li>날씨(비, 눈 애니메이션), 시간에 따라 Background 색상이 변경 됩니다.</li>
+            <li>초기 화면에선 오늘 날씨와 날짜에 맞는 날씨, 추후 날짜의 날씨가 표시됩니다.</li>
+            <li>날짜를 클릭시엔 강수 확률, 강수량, 바람의 강도, 습도를 표시합니다.</li>
+          </ul>
+          <div style="text-align:center">
+            <span style="font-size:20px">점심 뽑기</span>
+            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_02.gif")}"/>
+          </div>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>오늘의 점심을 뽑습니다.</li>
+            <li>한식, 중식, 일식, 양식, 아시안 중 선택하여 음식을 고를 수 있습니다.</li>
+            <li>원하지 않는다면 다시 뽑을 수 있습니다.</li>
+          </ul>
+          <div style="text-align:center">
+            <span style="font-size:20px">커피 뽑기</span>
+            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_03.gif")}"/>
+          </div>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>커피를 살 인원을 뽑습니다.</li>
+            <li>인원을 추가하거나 제거 할 수 있습니다.(중복 ❌)</li>
+            <li>2명 이상이 될 경우 뽑기를 진행할 수 있습니다.</li>
+            <li>원하지 않는다면 다시 뽑을 수 있습니다.</li>
+          </ul>
+          <div style="text-align:center">
+            <span style="font-size:20px">사다리타기</span>
+            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_04.gif")}"/>
+          </div>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>사다리 타기를 진행합니다.</li>
+            <li>3 ~ 12명의 인원을 선택할 수 있습니다.</li>
+            <li>내기는 커스텀 할 수 있으며, 자동내기 클릭 시에 꽝 1명과 나머지는 당첨을 선택합니다.</li>
+            <li>시작하기 클릭 후 최상단의 아이템을 클릭시 그 아이템의 색상이 사다리를 탑니다.</li>
+          </ul>
+          <div style="text-align:center">
+            <span style="font-size:20px">오목(진행중)</span>
+            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_05.gif")}"/>
+          </div>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>오목을 진행합니다.</li>
+            <li>흑돌이 선을 잡고 플레이합니다.</li>
+            <li>먼저 오목을 만드는 인원이 승리합니다.</li>
+            <li>승리 후엔 돌을 둘 수 없으며, 다시하기를 클릭하여 게임을 다시 합니다.</li>
+          </ul>
+          <span style="font-size:20px">기능 추가 예정</span>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>렌주룰을 적용합니다.(흑돌은 33, 6목, 44가 불가능 합니다.)</li>
+            <li>UI 개선</li>
+            <li>무르기 기능 추가</li>
+            <li>가능하다면 socket.io를 통한 멀티 플레이 기능</li>
+          </ul>
+        `,
   },
   {
     number: 3,
@@ -310,16 +371,16 @@ export default [
             <li>Infinity Scroll를 활용하여 Feed Data를 가져옵니다.</li>
           </ul>
         <div style="text-align:center">
-            <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_01.png")}"/>
+            <img style="width : 100%; border-radius: 10px;"src="${require("../img/vuestagram_01.png")}"/>
             메인(로그인) 페이지
             <br/>
-            <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_02.png")}"/>
+            <img style="width : 100%; border-radius: 10px;"src="${require("../img/vuestagram_02.png")}"/>
             회원가입 페이지
             <br/>
-            <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_03.png")}"/>
+            <img style="width : 100%; border-radius: 10px;"src="${require("../img/vuestagram_03.png")}"/>
             로그인 후 피드
             <br/>
-            <img style="width : 85%; border-radius: 10px;"src="${require("../img/vuestagram_04.png")}"/>
+            <img style="width : 100%; border-radius: 10px;"src="${require("../img/vuestagram_04.png")}"/>
             DB_diagram
         </div>
         <span style="font-size:24px">🖥 데이터베이스 구조</span>
@@ -346,7 +407,7 @@ export default [
     url: "https://soominyim.github.io/today-lunch",
     image: require("@/assets/img/today-lunch.png"),
     contents: `매일 점심 정하기가 귀찮아 만들어 본 랜덤 메뉴정하기
-        <img style="width : 85%; border-radius: 10px;"src="${require("../img/today-lunch.png")}"/>
+        <img style="width : 100%; border-radius: 10px;"src="${require("../img/today-lunch.png")}"/>
         원하는 음식이 나올때마다 누르는 한국인의 정서를 없애기 위해
         첫 째로 나온 음식이후엔 선택이 되지 않게 했다.
         랜덤 로직을 직접 짜는게 가장 오래 걸렸다.
@@ -362,7 +423,7 @@ export default [
     url: null,
     image: require("@/assets/img/reactTodoImg.png"),
     contents: `초기 리액트 공부를 위해 만들었던 TODO LIST
-        <img style="width : 85%; border-radius: 10px;"src="${require("../img/reactTodoImg.png")}"/>
+        <img style="width : 100%; border-radius: 10px;"src="${require("../img/reactTodoImg.png")}"/>
         `,
   },
   {
@@ -374,7 +435,7 @@ export default [
     url: "https://soominyim.github.io/tetris/",
     image: require("@/assets/img/tetrisImg.png"),
     contents: `Html, Css, Js만을 사용한 테트리스.
-        <img style="width : 85% ;border-radius: 10px;"src="${require("../img/tetrisImg.png")}"/>
+        <img style="width : 100% ;border-radius: 10px;"src="${require("../img/tetrisImg.png")}"/>
         지금 봐도 낭만이 있다.
         Moving Blocks : ← →
         Block Change Direction : ↑
@@ -392,10 +453,12 @@ export default [
     image: require("@/assets/img/vue-tetris.png"),
     contents: `기존의 구현했던 테트리스와는 다르게 좀 더 퀄리티 있는 
         테트리스 게임을 만들고 싶었다.
-         <img style="width : 85% ;border-radius: 10px;"src="${require("../img/vue-tetris.png")}"/>
+         <img style="width : 100% ;border-radius: 10px;"src="${require("../img/vue-tetris.png")}"/>
         모바일에서도 즐길 수 있게 native하게 구성되었다.
         level, sound, pause, start Line 구성, 다음에 나올 block 등등의 기능들을 
         추가하여 온전한 미니게임으로 즐길 수 있다.
          `,
   },
 ];
+
+export default blog;
