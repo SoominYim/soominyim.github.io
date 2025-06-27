@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+/docs
 
 
 # local env files
@@ -24,3 +25,18 @@ pnpm-debug.log*
 
 #Electron-builder output
 /dist_electron
+
+# Build outputs and cache
+*.cache
+.cache/
+
+# Package lock files (using yarn.lock)
+package-lock.json
+
+# OS generated files
+Thumbs.db
+*.db
+
+# Temporary files
+*.tmp
+*.temp
