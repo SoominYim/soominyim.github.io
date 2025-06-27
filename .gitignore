@@ -31,7 +31,7 @@ pnpm-debug.log*
 .cache/
 
 # Package lock files (using yarn.lock)
-package-lock.json
+yarn.lock
 
 # OS generated files
 Thumbs.db
