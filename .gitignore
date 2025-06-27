@@ -23,9 +23,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-#Electron-builder output
-/dist_electron
-
 # Build outputs and cache
 *.cache
 .cache/
@@ -45,7 +42,4 @@ Thumbs.db
 # Config files (personal blog project)
 babel.config.js
 jsconfig.json
-vue.config.js
 
-# README and docs
-README.md
