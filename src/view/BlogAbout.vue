@@ -131,8 +131,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/utils.scss";
-@use "@/assets/font.css";
+@use "@/assets/scss/utils.scss" as *;
+@use "@/assets/font.scss" as *;
 
 .container {
   font-family: "Noto Sans KR";

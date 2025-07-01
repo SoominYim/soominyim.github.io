@@ -44,8 +44,8 @@ export default {
   mounted() { },
 };
 </script>
-<style lang="scss" scoped>
-@use "assets/reset.css";
+<style lang="scss">
+@use "@/assets/reset.scss" as *;
 
 #app {
   width: 100vw;

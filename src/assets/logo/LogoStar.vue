@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/utils.scss";
+@use "@/assets/scss/utils.scss" as *;
 
 .star {
   position: absolute;

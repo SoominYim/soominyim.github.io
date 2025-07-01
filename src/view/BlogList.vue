@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/utils.scss";
+@use "@/assets/scss/utils.scss" as *;
 
 .container {
   height: 100vh;
