@@ -11,8 +11,7 @@
     "lint:fix": "vue-cli-service lint --fix",
     "clean": "rm -rf dist docs node_modules/.cache",
     "predeploy": "yarn build:gh-pages",
-    "deploy": "gh-pages -d dist",
-    "deploy:ci": "gh-pages -d dist -r https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "axios": "^0.27.2",
