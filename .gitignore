@@ -39,6 +39,5 @@ Thumbs.db
 *.temp
 
 # Config files (personal blog project)
-babel.config.js
 jsconfig.json
 
