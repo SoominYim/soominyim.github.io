@@ -27,9 +27,8 @@ pnpm-debug.log*
 *.cache
 .cache/
 
-# Package lock files (using yarn.lock)
+# Package lock files (npm만 제외, yarn.lock은 포함)
 package-lock.json
-yarn.lock
 
 # OS generated files
 Thumbs.db
