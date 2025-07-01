@@ -31,35 +31,35 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "BlogProject",
-  props: {
-    blogs: Array,
-  },
+<script setup>
+import { computed } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-  computed: {
-    project() {
-      const blog = this.blogs[this.$route.params.id];
-      if (blog && blog.project) {
-        return blog.project.split("\n").join("<br/>");
-      }
-      return "";
-    },
-    contents() {
-      const blog = this.blogs[this.$route.params.id];
-      if (blog && blog.contents) {
-        return blog.contents.split("\n").join("<br/>");
-      }
-      return "";
-    },
-  },
-  methods: {
-    goBack() {
-      this.$router.go(-1);
-    },
-  },
-  mounted() { },
+const props = defineProps({
+  blogs: Array,
+});
+
+const route = useRoute();
+const router = useRouter();
+
+// const project = computed(() => {
+//   const blog = props.blogs[route.params.id];
+//   if (blog && blog.project) {
+//     return blog.project.split("\n").join("<br/>");
+//   }
+//   return "";
+// });
+
+const contents = computed(() => {
+  const blog = props.blogs[route.params.id];
+  if (blog && blog.contents) {
+    return blog.contents.split("\n").join("<br/>");
+  }
+  return "";
+});
+
+const goBack = () => {
+  router.go(-1);
 };
 </script>
 
@@ -133,12 +133,12 @@ h2 {
   text-align: left;
   word-break: keep-all;
 
+  font-family: "HANAMDAUM";
+
   @include mobile {
     left: calc(50% - 90% / 2);
     width: 90%;
   }
-
-  font-family: "HANAMDAUM";
 }
 
 .wrap {

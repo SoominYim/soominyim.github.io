@@ -48,17 +48,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import PartiCles from "@/components/PartiCles.vue";
-export default {
-  name: "BlogMain",
-  components: {
-    PartiCles,
-  },
-  data() {
-    return {};
-  },
-};
 </script>
 
 <style lang="scss" scoped>

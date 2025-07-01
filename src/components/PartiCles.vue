@@ -9,14 +9,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "PartiCles",
-  mounted() {},
-};
+<script setup>
 </script>
 
 <style lang="scss" scoped>
+@use "sass:math";
+@use "sass:string";
+
 /* 파티클 애니메이션에 사용되는 변수들 */
 $starFieldWidth: 2560;
 $starFieldHeight: 2560;
@@ -31,13 +30,13 @@ $numShootingStars: 10;
 
 /* 별들의 위치와 색상을 랜덤으로 생성하는 함수 */
 @function create-stars($n) {
-  $stars: "#{random($starFieldWidth)}px #{random($starFieldHeight)}px #fff";
+  $stars: "#{math.random($starFieldWidth)}px #{math.random($starFieldHeight)}px #fff";
 
   @for $i from 2 through $n {
-    $stars: "#{$stars} , #{random($starFieldWidth)}px #{random($starFieldHeight)}px #FFF";
+    $stars: "#{$stars} , #{math.random($starFieldWidth)}px #{math.random($starFieldHeight)}px #FFF";
   }
 
-  @return unquote($stars);
+  @return string.unquote($stars);
 }
 
 /* 요소를 가운데 정렬하는 데 사용되는 믹스인 */

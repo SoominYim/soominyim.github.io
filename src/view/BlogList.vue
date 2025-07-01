@@ -22,19 +22,10 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "BlogList",
-  components: {},
-  props: {
-    blogs: Array,
-  },
-  data() {
-    return {};
-  },
-  methods: {},
-  mounted() { },
-};
+<script setup>
+defineProps({
+  blogs: Array,
+});
 </script>
 
 <style lang="scss" scoped>

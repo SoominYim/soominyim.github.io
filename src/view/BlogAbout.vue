@@ -86,48 +86,37 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import BlogFooter from "@/components/BlogFooter.vue";
 import skill from "@/assets/items/skillLogo.js";
+import { ref } from "vue";
 
-export default {
-  name: "BlogProfile",
-  components: {
-    BlogFooter,
+const profile = ref([
+  {
+    name: "birth",
+    icon: "fa-solid fa-calendar",
+    title: "생일",
+    content: "1996.06.01",
   },
-  data() {
-    return {
-      skill: skill,
-      profile: [
-        {
-          name: "birth",
-          icon: "fa-solid fa-calendar",
-          title: "생일",
-          content: "1996.06.01",
-        },
-        {
-          name: "address",
-          icon: "fa-solid fa-location-dot",
-          title: "거주지",
-          content: "경기도 광주시",
-        },
-        {
-          name: "phone",
-          icon: "fa-solid fa-mobile-screen-button",
-          title: "연락처",
-          content: "010-6242-6431",
-        },
-        {
-          name: "email",
-          icon: "fa-solid fa-envelope",
-          title: "이메일",
-          content: "soo15soo@kakao.com",
-        },
-      ],
-    };
+  {
+    name: "address",
+    icon: "fa-solid fa-location-dot",
+    title: "거주지",
+    content: "경기도 광주시",
   },
-  methods: {},
-};
+  {
+    name: "phone",
+    icon: "fa-solid fa-mobile-screen-button",
+    title: "연락처",
+    content: "010-6242-6431",
+  },
+  {
+    name: "email",
+    icon: "fa-solid fa-envelope",
+    title: "이메일",
+    content: "soo15soo@kakao.com",
+  },
+]);
 </script>
 
 <style lang="scss" scoped>
@@ -186,6 +175,9 @@ export default {
 }
 
 #profile {
+  box-sizing: border-box;
+  padding: 0 250px;
+
   @include mobile {
     padding: 0;
   }
@@ -193,9 +185,6 @@ export default {
   @include tablet {
     padding: 0 100px;
   }
-
-  box-sizing: border-box;
-  padding: 0 250px;
 
   #img_wrap {
     margin-top: 50px;

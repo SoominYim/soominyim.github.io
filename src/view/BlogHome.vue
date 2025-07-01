@@ -15,27 +15,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import CustomCursor from "@/components/CustomCursor";
 import HomeTyping from "@/components/HomeTyping";
 import BlogFooter from "@/components/BlogFooter.vue";
 import PartiCles from "@/components/PartiCles.vue";
-
-export default {
-  name: "BlogHome",
-  props: {},
-  components: {
-    CustomCursor,
-    HomeTyping,
-    BlogFooter,
-    PartiCles,
-  },
-  data() {
-    return {};
-  },
-  methods: {},
-  mounted() { },
-};
 </script>
 
 <style lang="scss" scoped>

@@ -18,31 +18,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import blogData from "@/assets/items/blog.js";
-import SideBar from "@/components/sidebar/SideBar.vue";
 import CustomCursor from "@/components/CustomCursor";
 import LogoStar from "@/assets/logo/LogoStar";
-import { sidebarWidth } from "@/components/sidebar/state.js";
+import { ref } from "vue";
 
-export default {
-  name: "App",
-  components: {
-    SideBar,
-    CustomCursor,
-    LogoStar,
-  },
-  data() {
-    return {
-      blogs: blogData,
-    };
-  },
-  setup() {
-    return { sidebarWidth };
-  },
-  methods: {},
-  mounted() { },
-};
+const blogs = ref(blogData);
 </script>
 <style lang="scss">
 @use "@/assets/reset.scss" as *;
