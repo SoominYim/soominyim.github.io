@@ -33,12 +33,12 @@ export default {
     return {};
   },
   methods: {},
-  mounted() {},
+  mounted() { },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/utils.scss";
+@use "@/assets/scss/utils.scss";
 
 .container {
   height: 100vh;
@@ -92,6 +92,7 @@ export default {
 
   line-height: 2.2;
   color: #fff;
+
   div {
     width: 50%;
     padding-top: 30px;
@@ -100,6 +101,7 @@ export default {
     font-size: 12px;
   }
 }
+
 .cardImg {
   position: absolute;
   border-radius: 20px;
@@ -119,6 +121,7 @@ export default {
     width: 250px;
   }
 }
+
 @include mobile_tablet {
   .container {
     .wrap {
@@ -127,12 +130,14 @@ export default {
       grid-template-columns: repeat(8, 400px);
     }
   }
+
   .card_wrap {
     width: 90%;
     height: 260px;
     margin: 50px 0 10px 0;
     border-bottom: #a7a7a7 2px solid;
   }
+
   .card {
     position: relative;
     left: 0;
@@ -154,6 +159,7 @@ export default {
       padding-right: 0;
       font-size: 11px;
     }
+
     .null {
       width: 0;
     }
@@ -166,6 +172,7 @@ export default {
     height: 200px;
     width: 50%;
     box-shadow: none;
+
     img {
       border-radius: 0;
       height: 90%;
@@ -173,6 +180,7 @@ export default {
       border-radius: 20px;
     }
   }
+
   .card_wrap:hover {
     .cardImg {
       transform: none;

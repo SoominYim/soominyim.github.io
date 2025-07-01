@@ -34,13 +34,11 @@ export default {
     return {};
   },
   methods: {},
-  mounted() {},
+  mounted() { },
 };
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
 .container {
   width: 100%;
   height: 100%;

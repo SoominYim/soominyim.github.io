@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/utils.scss";
+@use "@/assets/scss/utils.scss";
 
 .custom-cursor__ball {
   position: fixed;
@@ -97,6 +97,7 @@ export default {
 
 /* 화면 크기가 작을 때 커서를 숨기는 스타일 */
 @include screen {
+
   .custom-cursor__ball--small,
   .custom-cursor__ball--big {
     display: none;

@@ -131,9 +131,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Bevan&display=swap");
-@import "@/assets/scss/utils.scss";
-@import "@/assets/font.css";
+@use "@/assets/scss/utils.scss";
+@use "@/assets/font.css";
 
 .container {
   font-family: "Noto Sans KR";
@@ -144,6 +143,7 @@ export default {
   justify-content: center;
   z-index: 3;
   background: #f1f1f1;
+
   * {
     vertical-align: center;
   }
@@ -226,7 +226,7 @@ export default {
       color: #000;
     }
 
-    & > div {
+    &>div {
       display: flex;
       justify-content: center;
       flex-direction: row;
@@ -282,11 +282,13 @@ export default {
     padding-bottom: 40px;
     font-size: 40px;
     line-height: 50px;
+
     span {
       position: relative;
       font-size: 40px;
       line-height: 50px;
       color: #3fb984;
+
       &:nth-of-type(1)::after {
         content: "";
         position: absolute;
@@ -309,10 +311,12 @@ export default {
 
     div {
       font-size: 25px;
+
       span {
         font-size: 25px;
       }
     }
+
     span {
       font-size: 20px;
       line-height: 40px;
@@ -324,6 +328,7 @@ export default {
 
     div {
       font-size: 22px;
+
       span {
         font-size: 22px;
       }
@@ -343,6 +348,7 @@ export default {
 
   @include mobile {
     padding: 20px 30px 30px 30px;
+
     #front_wrap,
     #back_wrap,
     #design_wrap,
@@ -359,6 +365,7 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     #front_wrap,
     #back_wrap,
     #design_wrap,
@@ -373,6 +380,7 @@ export default {
       margin: 20px;
       box-shadow: 0 0.3rem 0.6rem rgb(0 0 0 / 40%);
       border-radius: 20px;
+
       @include mobile {
         padding: 30px 5px 25px 5px;
       }

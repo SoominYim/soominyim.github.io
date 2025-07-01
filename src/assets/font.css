@@ -1,4 +1,3 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 .notosanskr * {
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -43,8 +42,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
-@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 
 .hanna * {
   font-family: "Hanna", fantasy;

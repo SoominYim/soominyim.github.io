@@ -62,8 +62,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Press+Start+2P&family=Roboto+Mono&display=swap");
-
 .container {
   position: relative;
   width: 100vw;
@@ -161,7 +159,7 @@ export default {
   }
 }
 
-.item_wrap > div:hover {
+.item_wrap>div:hover {
   transform: translateY(-20px);
   opacity: 1;
 }

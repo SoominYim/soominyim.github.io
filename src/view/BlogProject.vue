@@ -59,12 +59,12 @@ export default {
       this.$router.go(-1);
     },
   },
-  mounted() {},
+  mounted() { },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/utils.scss";
+@use "@/assets/scss/utils.scss";
 $blue: #5ac093;
 $btn-bg: #10131c;
 
@@ -73,6 +73,7 @@ $btn-bg: #10131c;
   width: 100vw;
   z-index: 1;
 }
+
 hr {
   width: 80%;
   height: 2px;
@@ -109,6 +110,7 @@ h2 {
   justify-content: center;
   gap: 10px;
   line-height: 3.3;
+
   @include mobile {
     gap: 5px;
   }
@@ -123,16 +125,19 @@ h2 {
   font-size: 12px;
   font-family: "GangwonEdu_OTFBoldA";
 }
+
 .content {
   position: relative;
   left: calc(50% - 70% / 2);
   width: 70%;
   text-align: left;
   word-break: keep-all;
+
   @include mobile {
     left: calc(50% - 90% / 2);
     width: 90%;
   }
+
   font-family: "HANAMDAUM";
 }
 
@@ -168,6 +173,7 @@ h2 {
     height: 85%;
     width: 95vw;
   }
+
   .scrolle {
     height: 100%;
   }
@@ -181,6 +187,7 @@ h2 {
     height: 85%;
     width: 95vw;
   }
+
   .scrolle {
     height: 100%;
   }
@@ -192,6 +199,7 @@ h2 {
   border-radius: 50px;
   width: 0.5em;
 }
+
 ::-webkit-scrollbar-thumb {
   display: block;
   background-color: rgba(90, 192, 147, 0.7);

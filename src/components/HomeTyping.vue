@@ -86,8 +86,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=Press+Start+2P&display=swap");
-
 /* 컨테이너 스타일 */
 .container {
   width: 100%;
