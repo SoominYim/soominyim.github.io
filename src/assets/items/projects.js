@@ -8,117 +8,90 @@ const project = [
     url: "https://chromewebstore.google.com/detail/elements-position-drag-ov/hhcokjpdklpgebgklpelpkekgiojnjca",
     // image: require("@/assets/img/elements_overlay_01.png"),
     contents: `
-         웹 개발 중 CSS position absolute 요소의 정확한 좌표값을 확인하기 위해 개발한 크롬 확장 프로그램입니다. 개발자, 디자이너, QA 작업에서 요소의 정확한 위치를 빠르게 파악할 수 있도록 도와주는 생산성 도구입니다.
-          <span style="font-size:24px">🎯 프로젝트의 주요 기능</span>
+        <div class="project-detail-section" style="text-align: left;">
+          <h2>✨ 프로젝트 개요</h2>
+          <p>
+            웹 개발 중 CSS <code>position: absolute</code> 요소의 정확한 좌표값을 실시간으로 확인하기 위해 개발된 크롬 확장 프로그램입니다. 개발자, 디자이너, QA 엔지니어 등 웹 요소의 위치를 정밀하게 파악해야 하는 모든 사용자에게 유용한 생산성 도구로, 직관적인 드래그 인터페이스를 통해 <code>left</code>, <code>top</code>, <code>right</code>, <code>bottom</code> 값을 즉시 시각화하여 제공합니다.
+          </p>
+        </div>
+        <div class="project-detail-section" style="text-align: left;">
+          <h2>🚀 주요 기능</h2>
           <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>Ctrl+드래그(Mac: Cmd+드래그)로 웹 요소 이동 시 실시간 좌표 표시</li>
-            <li>position: absolute 요소만 드래그 가능 (레이아웃 보호)</li>
-            <li>left, top, right, bottom 값을 실시간 오버레이로 표시</li>
-            <li>스크롤 보정 기능으로 정확한 위치 계산</li>
-            <li>모든 웹사이트에서 사용 가능</li>
-            <li>웹 데모 버전 별도 제공</li>
+            <li><strong>직관적인 드래그 컨트롤</strong>: <code>Ctrl + 드래그</code> (Mac: <code>Cmd + 드래그</code>)를 통해 <code>position: absolute</code> 요소만 이동 가능하며, 드래그 가능한 요소는 호버 시 하이라이트됩니다.</li>
+            <li><strong>실시간 위치 값 표시</strong>: 드래그 시 요소 위에 <code>left</code>, <code>top</code>, <code>right</code>, <code>bottom</code> CSS 좌표값을 실시간 오버레이로 표시합니다.</li>
+            <li><strong>스크롤 보정 기능</strong>: 페이지 스크롤 위치와 관계없이 정확한 요소 위치를 계산하여 표시합니다.</li>
+            <li><strong>사용자 정의 설정</strong>: 팝업 및 옵션 페이지를 통해 오버레이 위치, 하이라이트 색상, 드래그 후 좌표 유지 여부 등을 설정할 수 있습니다.</li>
+            <li><strong>키보드 단축키 지원</strong>: <code>Ctrl+Shift+Q</code> (Mac: <code>Cmd+Shift+Q</code>) 단축키로 확장 기능을 빠르게 토글할 수 있습니다.</li>
+            <li><strong>다국어 지원</strong>: 한국어, 영어, 일본어, 중국어를 포함한 다국어를 지원하여 접근성을 높였습니다.</li>
+            <li><strong>웹 데모 제공</strong>: 확장 프로그램 설치 없이 기능을 체험할 수 있는 독립 실행형 웹 데모를 제공합니다.</li>
           </ul>
-          <span style="font-size:24px">📚 스토리보드</span>
-          <span style="font-size:20px">📖 크롬 확장 기능</span>
+        </div>
+
+        <div class="project-detail-section" style="text-align: left;">
+          <h2>🛠 기술 스택</h2>
             <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>크롬 웹스토어에서 설치 후 모든 웹사이트에서 사용 가능</li>
-              <li>Ctrl+드래그로 position: absolute 요소만 드래그 가능</li>
-              <li>드래그 중 요소 위에 좌표값 오버레이 표시</li>
-              <li>Ctrl+Shift+Q 단축키로 기능 토글</li>
-              <li>확장 아이콘 클릭으로 설정 관리</li>
+            <li><strong>프론트엔드</strong>: TypeScript, SCSS</li>
+            <li><strong>아키텍처/패턴</strong>: FSD (Feature-Sliced Design)</li>
+            <li><strong>테스트/빌드 도구</strong>: Vitest, Webpack (내부 사용), Sharp (SVG to PNG 변환)</li>
+            <li><strong>크롬 확장 기술</strong>: Manifest V3, Service Worker, Chrome Extension Storage API, i18n API, Commands API</li>
             </ul>
-          <span style="font-size:20px">📖 팝업 설정</span>
-            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>오버레이 위치 설정 (top-left, top-right, bottom-left, bottom-right)</li>
-              <li>하이라이트 색상 설정 (Vue 테마 기본값)</li>
-              <li>드래그 후 좌표 유지 옵션</li>
-              <li>토글 기능 활성화/비활성화</li>
-            </ul>
-          <span style="font-size:20px">📖 고급 설정 (Options 페이지)</span>
-            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>다크모드 테마 설정</li>
-              <li>상세한 색상 커스터마이징</li>
-              <li>애니메이션 효과 설정</li>
-              <li>키보드 단축키 관리</li>
-            </ul>
-          <span style="font-size:20px">📖 웹 데모</span>
-            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>독립 실행형 데모로 테스트 가능</li>
-              <li>다양한 position 속성 요소로 기능 체험</li>
-              <li>Ctrl+드래그로 파란색 테스트 박스 이동</li>
-              <li>실시간 좌표값 오버레이 확인</li>
-            </ul>
-             <span style="font-size:24px">🖥 기술 스택 및 아키텍처</span>
-             <span style="font-size:20px">🔔 FSD (Feature-Sliced Design) 아키텍처</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>app/ - 애플리케이션 진입점 (content-main.ts, content.ts)</li>
-              <li>entities/ - 오버레이 엔티티 비즈니스 로직</li>
-              <li>features/ - 드래그 기능 구현 (drag-manager, hover-manager)</li>
-              <li>shared/ - 공통 유틸리티 및 UI 컴포넌트</li>
-              <li>popup/ - 확장 팝업 설정 UI</li>
-              <li>options/ - 고급 설정 페이지</li>
-              <li>_locales/ - 다국어 지원 (한국어, 영어, 일본어, 중국어)</li>
-            </ul>
-            <span style="font-size:20px">🔔 핵심 기능 구현</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>실시간 드래그 시스템: 마우스 이벤트 처리 및 요소 위치 계산</li>
-              <li>스크롤 보정: window.scrollX/Y를 활용한 정확한 좌표 계산</li>
-              <li>호버 하이라이트: Ctrl 키 감지 시 드래그 가능 요소 시각적 표시</li>
-              <li>토스트 알림: 사용자 피드백을 위한 메시지 시스템</li>
-              <li>키보드 단축키: background script와 content script 간 메시지 전달</li>
-              <li>Extension Storage API: 사용자 설정 영구 저장</li>
-            </ul>
-            <span style="font-size:20px">🔔 다중 패키지 매니저 지원</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>npm, yarn, pnpm 모두 지원하는 스크립트 구성</li>
-              <li>TypeScript 컴파일 및 자동 파일 복사</li>
-              <li>SVG → PNG 아이콘 자동 변환 (Sharp 라이브러리)</li>
-              <li>Vitest + jsdom 조합으로 단위 테스트</li>
-              <li>개발 서버 내장 (CORS 이슈 해결)</li>
-            </ul>
-            <span style="font-size:20px">🔔 Chrome Extension Manifest V3</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>Service Worker 기반 백그라운드 스크립트</li>
-              <li>Content Script로 모든 웹페이지에 기능 주입</li>
-              <li>Storage, ActiveTab 권한으로 최소 권한 원칙</li>
-              <li>다국어 지원을 위한 i18n API 활용</li>
-              <li>Commands API로 키보드 단축키 등록</li>
-            </ul>
-            <span style="font-size:24px">🛠 개발 과정에서의 트러블슈팅</span>
-            <span style="font-size:20px">🔔 스크롤 보정 이슈</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>문제: 페이지 스크롤 시 드래그 좌표 계산 오차 발생</li>
-              <li>해결: scrollDelta 계산 로직 구현하여 스크롤 오프셋 보정</li>
-              <li>결과: 스크롤 위치와 관계없이 정확한 요소 위치 표시</li>
-            </ul>
-            <span style="font-size:20px">🔔 FSD 아키텍처 적용</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>문제: 기능별 코드 분산으로 유지보수 어려움</li>
-              <li>해결: Feature-Sliced Design 패턴 도입하여 모듈화</li>
-              <li>결과: 기능별 독립성 확보 및 테스트 용이성 향상</li>
-            </ul>
-            <span style="font-size:20px">🔔 크롬 확장 권한 최적화</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>문제: 과도한 권한 요청으로 사용자 신뢰도 저하</li>
-              <li>해결: storage와 activeTab만 사용하여 최소 권한 구현</li>
-              <li>결과: 사용자 개인정보 보호 및 보안성 향상</li>
-            </ul>
-            <span style="font-size:20px">🖨프리뷰</span>
+        </div>
+
+        <div class="project-detail-section" style="text-align: left;">
+          <h2>💡 핵심 구현 및 기술적 도전</h2>
+          <h3>실시간 드래그 시스템 구현</h3>
+          <p>
+            사용자가 웹 요소를 드래그할 때, 마우스 이벤트(<code>mousedown</code>, <code>mousemove</code>, <code>mouseup</code>)를 정밀하게 추적하여 요소의 실시간 위치를 계산하고 DOM에 반영했습니다. 특히, 페이지 스크롤 시 발생하는 좌표 오차를 해결하기 위해 <code>window.scrollX</code> 및 <code>window.scrollY</code> 값을 활용한 <code>scrollDelta</code> 보정 로직을 구현하여 어떤 스크롤 환경에서도 정확한 오버레이 위치를 보장했습니다.
+          </p>
+          <h3>FSD 아키텍처 도입</h3>
+          <p>
+            프로젝트의 확장성과 유지보수성을 고려하여 FSD (Feature-Sliced Design) 아키텍처 패턴을 도입했습니다. 이를 통해 애플리케이션을 <code>app</code>, <code>entities</code>, <code>features</code>, <code>shared</code>, <code>popup</code>, <code>options</code> 등의 명확한 계층으로 분리하여 각 모듈의 역할을 명확히 하고, 코드의 응집도를 높여 개발 효율성을 향상시켰습니다.
+          </p>
+          <h3>Manifest V3 기반 크롬 확장 개발</h3>
+          <p>
+            최신 Manifest V3 표준에 맞춰 확장 프로그램을 개발했습니다. Service Worker를 백그라운드 스크립트로 활용하여 효율적인 이벤트 처리를 구현하고, Content Script를 통해 모든 웹페이지에 기능을 주입했습니다. 사용자 설정은 Chrome Extension Storage API를 통해 영구적으로 저장하고, 다국어 지원을 위해 i18n API를 활용했습니다.
+          </p>
+        </div>
+
+        <div class="project-detail-section" style="text-align: left;">
+          <h2>✅ 문제 해결 경험 (Troubleshooting)</h2>
+          <h3>스크롤 시 드래그 요소 좌표 오차 문제</h3>
+          <p>
+            <strong>문제</strong>: 초기 구현 단계에서 사용자가 페이지를 스크롤할 때, 드래그 중인 요소의 오버레이 위치가 실제 요소와 어긋나는 문제가 발생했습니다. 이는 브라우저의 스크롤 위치가 요소의 <code>offset</code> 계산에 영향을 미치기 때문이었습니다.
+          </p>
+          <p>
+            <strong>해결 과정</strong>: <code>window.scrollX</code>와 <code>window.scrollY</code> 값을 실시간으로 추적하여, 드래그 이벤트 발생 시 이 스크롤 오프셋을 요소의 <code>left</code>, <code>top</code> 계산에 반영하는 <code>scrollDelta</code> 보정 로직을 구현했습니다. 이로써 스크롤 위치와 관계없이 오버레이가 항상 정확한 위치에 표시되도록 개선했습니다.
+          </p>
+          <p>
+            <strong>배운 점</strong>: 브라우저 환경에서 동적인 UI 요소의 위치를 정밀하게 제어하기 위해서는 뷰포트와 문서의 스크롤 상태를 정확히 이해하고 계산에 반영하는 것이 필수적임을 깨달았습니다.
+          </p>
+
+          <h3>크롬 확장 권한 최소화 및 보안 강화</h3>
+          <p>
+            <strong>문제</strong>: 확장 프로그램은 사용자에게 다양한 권한을 요청할 수 있지만, 과도한 권한 요청은 사용자 신뢰도를 저하시킬 수 있습니다. 초기에는 광범위한 권한을 고려했으나, 보안 및 사용자 경험 측면에서 최적화가 필요했습니다.
+          </p>
+          <p>
+            <strong>해결 과정</strong>: 프로젝트의 핵심 기능 구현에 필요한 최소한의 권한(<code>storage</code>, <code>activeTab</code>)만을 요청하도록 설계했습니다. 이를 통해 사용자 개인정보 보호를 강화하고, 확장 프로그램의 보안성을 높였습니다.
+          </p>
+          <p>
+            <strong>배운 점</strong>: 크롬 확장 프로그램 개발 시 보안 원칙(Principle of Least Privilege)을 준수하고, 사용자에게 투명하고 안전한 서비스를 제공하는 것이 얼마나 중요한지 체감했습니다.
+          </p>
+        </div>
         `,
   },
-  //  <div style="text-align:center">
-  //                 크롬 웹스토어
-  //                 <img style="width : 100%; border-radius: 10px;"src="${require("../img/elements_overlay_02.png")}"/>
-  //                 <br/>
-  //                 팝업 설정
-  //                 <img style="width : 100%; border-radius: 10px;"src="${require("../img/elements_overlay_03.png")}"/>
-  //                 <br/>
-  //                 드래그 기능 시연
-  //                 <img style="width : 100%; border-radius: 10px;"src="${require("../img/elements_overlay_04.gif")}"/>
-  //                 <br/>
-  //                 웹 데모
-  //                 <img style="width : 100%; border-radius: 10px;"src="${require("../img/elements_overlay_05.png")}"/>
-  //           </div>
+  // <div class="project-detail-section">
+  //   <h2>🖼️ 미리보기</h2>
+  //   <div class="image-gallery">
+  //     <img style="width : 100%; border-radius: 10px;" src="${require("@/assets/img/elements_overlay_02.png")}" alt="크롬 웹스토어 페이지" />
+  //     <p>크롬 웹스토어 페이지</p>
+  //     <img style="width : 100%; border-radius: 10px;" src="${require("@/assets/img/elements_overlay_03.png")}" alt="팝업 설정 화면" />
+  //     <p>팝업 설정 화면</p>
+  //     <img style="width : 100%; border-radius: 10px;" src="${require("@/assets/img/elements_overlay_04.gif")}" alt="드래그 기능 시연 GIF" />
+  //     <p>드래그 기능 시연</p>
+  //     <img style="width : 100%; border-radius: 10px;" src="${require("@/assets/img/elements_overlay_05.png")}" alt="웹 데모 화면" />
+  //     <p>웹 데모 화면</p>
+  //   </div>
+  // </div>
   {
     number: 1,
     title: "Mevie",

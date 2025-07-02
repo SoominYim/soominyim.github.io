@@ -2,7 +2,7 @@
   <div class="container">
     <div class="wrap">
       <div class="card_wrap" v-for="(project, i) in projects" :key="i" @click="$router.push('/list/' + i)">
-        <div class="cardImg">
+        <div class="cardImg" :class="{ 'no-image': project.image === null }">
           <img v-if="project.image !== null" :src="project.image" alt="" />
         </div>
         <div class="card">
@@ -110,6 +110,22 @@ defineProps({
     box-sizing: border-box;
     height: 200px;
     width: 250px;
+  }
+
+  // 이미지가 없을 때 적용될 배경 스타일
+  &.no-image {
+    background: linear-gradient(45deg, #333, #555); // 어두운 그라데이션 배경
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+    font-size: 1.2em;
+    font-family: "GangwonEdu_OTFBoldA";
+    // 필요하다면 여기에 텍스트나 아이콘을 추가할 수 있습니다.
+    &::before {
+      content: "No Image Available"; // 대체 텍스트
+      opacity: 0.7;
+    }
   }
 }
 

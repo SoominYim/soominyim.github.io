@@ -83,14 +83,12 @@ hr {
   font-size: 32px;
   background-color: #777;
   border-top-left-radius: 20px;
-  font-family: "KIMM_Bold";
   font-weight: 700;
 }
 
 h2 {
   line-height: 1.5;
   font-size: 25px;
-  font-family: "KIMM_Bold";
   font-weight: 300;
 }
 
@@ -112,7 +110,7 @@ h2 {
 .skill {
   padding: 0 8px;
   height: 30px;
-  line-height: 2.3;
+  line-height: 1.9;
   border: 2px solid rgba(32, 251, 182, 0.3);
   border-radius: 5px;
   font-size: 15px;
@@ -126,6 +124,7 @@ h2 {
   text-align: left;
   font-size: 16px;
   line-height: 1.6;
+  color: #ffffff;
 
   font-family: "HANAMDAUM";
 
@@ -133,6 +132,139 @@ h2 {
     left: calc(50% - 95% / 2);
     width: 95%;
     font-size: 12px;
+  }
+
+  // v-html 콘텐츠에 적용될 글로벌 스타일
+  :deep(h1) {
+    color: #5ac093;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 30px 0 15px 0;
+    line-height: 1.3;
+
+    @include mobile {
+      font-size: 24px;
+      margin: 25px 0 12px 0;
+    }
+  }
+
+  :deep(h2) {
+    color: #5ac093;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 25px 0 12px 0;
+    line-height: 1.4;
+
+    @include mobile {
+      font-size: 20px;
+      margin: 20px 0 10px 0;
+    }
+  }
+
+  :deep(h3) {
+    color: #5ac093;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+    line-height: 1.4;
+
+    @include mobile {
+      font-size: 17px;
+      margin: 18px 0 8px 0;
+    }
+  }
+
+  :deep(h4) {
+    color: #67c3cc;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 18px 0 8px 0;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 15px;
+      margin: 15px 0 6px 0;
+    }
+  }
+
+  :deep(h5) {
+    color: #8dd3c7;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 15px 0 6px 0;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 14px;
+      margin: 12px 0 5px 0;
+    }
+  }
+
+  :deep(h6) {
+    color: #b3d9d6;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 12px 0 5px 0;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 13px;
+      margin: 10px 0 4px 0;
+    }
+  }
+
+  :deep(p) {
+    color: #e0e0e0;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  :deep(ul),
+  :deep(ol) {
+    color: #e0e0e0;
+    margin: 15px 0;
+    padding-left: 20px;
+  }
+
+  :deep(li) {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  :deep(strong) {
+    color: #5ac093;
+    font-weight: bold;
+  }
+
+  :deep(code) {
+    background: rgba(90, 192, 147, 0.2);
+    color: #5ac093;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+  }
+
+  :deep(.project-detail-section) {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid #5ac093;
+  }
+
+  :deep(img) {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+
+  :deep(a) {
+    color: #5ac093;
+    text-decoration: none;
+  }
+
+  :deep(a:hover) {
+    text-decoration: underline;
   }
 }
 
