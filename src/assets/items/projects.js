@@ -1,6 +1,126 @@
-const blog = [
+const project = [
   {
     number: 0,
+    title: "Elements Position Drag Overlay",
+    content: `Ctrl+드래그로 웹 요소의 CSS position 값을 실시간으로 확인하는 크롬 확장`,
+    project: `#TypeScript, #Chrome Extension, #Manifest V3, #Vitest, #ESM, #FSD Architecture`,
+    gitUrl: "https://github.com/SoominYim/elements-position-drag-overlay",
+    url: "https://chromewebstore.google.com/detail/elements-position-drag-ov/hhcokjpdklpgebgklpelpkekgiojnjca",
+    // image: require("@/assets/img/elements_overlay_01.png"),
+    contents: `
+         웹 개발 중 CSS position absolute 요소의 정확한 좌표값을 확인하기 위해 개발한 크롬 확장 프로그램입니다. 개발자, 디자이너, QA 작업에서 요소의 정확한 위치를 빠르게 파악할 수 있도록 도와주는 생산성 도구입니다.
+          <span style="font-size:24px">🎯 프로젝트의 주요 기능</span>
+          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+            <li>Ctrl+드래그(Mac: Cmd+드래그)로 웹 요소 이동 시 실시간 좌표 표시</li>
+            <li>position: absolute 요소만 드래그 가능 (레이아웃 보호)</li>
+            <li>left, top, right, bottom 값을 실시간 오버레이로 표시</li>
+            <li>스크롤 보정 기능으로 정확한 위치 계산</li>
+            <li>모든 웹사이트에서 사용 가능</li>
+            <li>웹 데모 버전 별도 제공</li>
+          </ul>
+          <span style="font-size:24px">📚 스토리보드</span>
+          <span style="font-size:20px">📖 크롬 확장 기능</span>
+            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>크롬 웹스토어에서 설치 후 모든 웹사이트에서 사용 가능</li>
+              <li>Ctrl+드래그로 position: absolute 요소만 드래그 가능</li>
+              <li>드래그 중 요소 위에 좌표값 오버레이 표시</li>
+              <li>Ctrl+Shift+Q 단축키로 기능 토글</li>
+              <li>확장 아이콘 클릭으로 설정 관리</li>
+            </ul>
+          <span style="font-size:20px">📖 팝업 설정</span>
+            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>오버레이 위치 설정 (top-left, top-right, bottom-left, bottom-right)</li>
+              <li>하이라이트 색상 설정 (Vue 테마 기본값)</li>
+              <li>드래그 후 좌표 유지 옵션</li>
+              <li>토글 기능 활성화/비활성화</li>
+            </ul>
+          <span style="font-size:20px">📖 고급 설정 (Options 페이지)</span>
+            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>다크모드 테마 설정</li>
+              <li>상세한 색상 커스터마이징</li>
+              <li>애니메이션 효과 설정</li>
+              <li>키보드 단축키 관리</li>
+            </ul>
+          <span style="font-size:20px">📖 웹 데모</span>
+            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>독립 실행형 데모로 테스트 가능</li>
+              <li>다양한 position 속성 요소로 기능 체험</li>
+              <li>Ctrl+드래그로 파란색 테스트 박스 이동</li>
+              <li>실시간 좌표값 오버레이 확인</li>
+            </ul>
+             <span style="font-size:24px">🖥 기술 스택 및 아키텍처</span>
+             <span style="font-size:20px">🔔 FSD (Feature-Sliced Design) 아키텍처</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>app/ - 애플리케이션 진입점 (content-main.ts, content.ts)</li>
+              <li>entities/ - 오버레이 엔티티 비즈니스 로직</li>
+              <li>features/ - 드래그 기능 구현 (drag-manager, hover-manager)</li>
+              <li>shared/ - 공통 유틸리티 및 UI 컴포넌트</li>
+              <li>popup/ - 확장 팝업 설정 UI</li>
+              <li>options/ - 고급 설정 페이지</li>
+              <li>_locales/ - 다국어 지원 (한국어, 영어, 일본어, 중국어)</li>
+            </ul>
+            <span style="font-size:20px">🔔 핵심 기능 구현</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>실시간 드래그 시스템: 마우스 이벤트 처리 및 요소 위치 계산</li>
+              <li>스크롤 보정: window.scrollX/Y를 활용한 정확한 좌표 계산</li>
+              <li>호버 하이라이트: Ctrl 키 감지 시 드래그 가능 요소 시각적 표시</li>
+              <li>토스트 알림: 사용자 피드백을 위한 메시지 시스템</li>
+              <li>키보드 단축키: background script와 content script 간 메시지 전달</li>
+              <li>Extension Storage API: 사용자 설정 영구 저장</li>
+            </ul>
+            <span style="font-size:20px">🔔 다중 패키지 매니저 지원</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>npm, yarn, pnpm 모두 지원하는 스크립트 구성</li>
+              <li>TypeScript 컴파일 및 자동 파일 복사</li>
+              <li>SVG → PNG 아이콘 자동 변환 (Sharp 라이브러리)</li>
+              <li>Vitest + jsdom 조합으로 단위 테스트</li>
+              <li>개발 서버 내장 (CORS 이슈 해결)</li>
+            </ul>
+            <span style="font-size:20px">🔔 Chrome Extension Manifest V3</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>Service Worker 기반 백그라운드 스크립트</li>
+              <li>Content Script로 모든 웹페이지에 기능 주입</li>
+              <li>Storage, ActiveTab 권한으로 최소 권한 원칙</li>
+              <li>다국어 지원을 위한 i18n API 활용</li>
+              <li>Commands API로 키보드 단축키 등록</li>
+            </ul>
+            <span style="font-size:24px">🛠 개발 과정에서의 트러블슈팅</span>
+            <span style="font-size:20px">🔔 스크롤 보정 이슈</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>문제: 페이지 스크롤 시 드래그 좌표 계산 오차 발생</li>
+              <li>해결: scrollDelta 계산 로직 구현하여 스크롤 오프셋 보정</li>
+              <li>결과: 스크롤 위치와 관계없이 정확한 요소 위치 표시</li>
+            </ul>
+            <span style="font-size:20px">🔔 FSD 아키텍처 적용</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>문제: 기능별 코드 분산으로 유지보수 어려움</li>
+              <li>해결: Feature-Sliced Design 패턴 도입하여 모듈화</li>
+              <li>결과: 기능별 독립성 확보 및 테스트 용이성 향상</li>
+            </ul>
+            <span style="font-size:20px">🔔 크롬 확장 권한 최적화</span>
+              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+              <li>문제: 과도한 권한 요청으로 사용자 신뢰도 저하</li>
+              <li>해결: storage와 activeTab만 사용하여 최소 권한 구현</li>
+              <li>결과: 사용자 개인정보 보호 및 보안성 향상</li>
+            </ul>
+            <span style="font-size:20px">🖨프리뷰</span>
+        `,
+  },
+  //  <div style="text-align:center">
+  //                 크롬 웹스토어
+  //                 <img style="width : 100%; border-radius: 10px;"src="${require("../img/elements_overlay_02.png")}"/>
+  //                 <br/>
+  //                 팝업 설정
+  //                 <img style="width : 100%; border-radius: 10px;"src="${require("../img/elements_overlay_03.png")}"/>
+  //                 <br/>
+  //                 드래그 기능 시연
+  //                 <img style="width : 100%; border-radius: 10px;"src="${require("../img/elements_overlay_04.gif")}"/>
+  //                 <br/>
+  //                 웹 데모
+  //                 <img style="width : 100%; border-radius: 10px;"src="${require("../img/elements_overlay_05.png")}"/>
+  //           </div>
+  {
+    number: 1,
     title: "Mevie",
     content: `Vue.js 3.X를 사용하여 개발된 영화검색 웹 애플리케이션`,
     project: `#Vue3, #Vuex, #VueRouter, #Javascript, #Scss, #Axios`,
@@ -127,7 +247,7 @@ const blog = [
   },
 
   {
-    number: 1,
+    number: 2,
     title: "PDF TO SVG HTML",
     content: "PDF Viewer 및 SVG or canvas & HTML Convert 웹 애플리케이션",
     project: `#Vue3, #Javascript, #Scss, #Node.js, #Express`,
@@ -279,7 +399,7 @@ const blog = [
               `,
   },
   {
-    number: 2,
+    number: 3,
     title: "Mini_Mate",
     content: "Tools web",
     project: `#Nuxt3, #Pinia, #Typescript ,#Javascript, #Scss`,
@@ -351,7 +471,7 @@ const blog = [
         `,
   },
   {
-    number: 3,
+    number: 4,
     title: "Vuestagram",
     content:
       "React로 구성된 Instagram을 Vue로 리팩토링 한 프로젝트. 반응형으로 제작되었으며, login, 피드 작성 및 팔로우 등 기능을 구현.",
@@ -399,7 +519,7 @@ const blog = [
         `,
   },
   {
-    number: 4,
+    number: 5,
     title: "Today_Lunch",
     content: "오늘 점심 뭐먹지",
     project: `#Vue3, #Vuex, #Javascript, #Scss`,
@@ -415,7 +535,7 @@ const blog = [
 `,
   },
   {
-    number: 5,
+    number: 6,
     title: "Todo",
     content: `fire-base에 저장 되는 나만의 Todo List`,
     project: `#React, #Javascript, #Scss, #Firebase, #GoogleAuth`,
@@ -427,7 +547,7 @@ const blog = [
         `,
   },
   {
-    number: 6,
+    number: 7,
     title: "Js_Tetris",
     content: `간단한 웹 테트리스`,
     project: `#Html, #Javascript, #Css`,
@@ -444,7 +564,7 @@ const blog = [
         간단한 기능까지 구현 했다.`,
   },
   {
-    number: 7,
+    number: 8,
     title: "Vue-Tetris",
     content: "휴대용 게임기처럼 만든 테트리스",
     project: `#Vue2.X, #Javascript, #Less, #Vuex`,
@@ -461,4 +581,4 @@ const blog = [
   },
 ];
 
-export default blog;
+export default project;

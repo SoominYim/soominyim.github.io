@@ -1,20 +1,20 @@
 <template>
   <div class="container">
     <div class="wrap">
-      <div class="card_wrap" v-for="(blog, i) in blogs" :key="i" @click="$router.push('/list/' + i)">
+      <div class="card_wrap" v-for="(project, i) in projects" :key="i" @click="$router.push('/list/' + i)">
         <div class="cardImg">
-          <img v-if="blog.image !== null" :src="blog.image" alt="" />
+          <img v-if="project.image !== null" :src="project.image" alt="" />
         </div>
         <div class="card">
           <div class="null"></div>
           <div>
-            <strong style="margin-right: 20px; font-size: 16px">💻 {{ blog.title }}</strong>
+            <strong style="margin-right: 20px; font-size: 16px">💻 {{ project.title }}</strong>
             <br />
-            {{ blog.content }}
+            {{ project.content }}
             <br />
             <strong style="margin-right: 20px; font-size: 16px">🔗 SKILLS</strong>
             <br />
-            <p v-html="blog.project"></p>
+            <p v-html="project.project"></p>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
 
 <script setup>
 defineProps({
-  blogs: Array,
+  projects: Array,
 });
 </script>
 

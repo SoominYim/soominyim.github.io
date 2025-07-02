@@ -7,11 +7,11 @@
     </router-link>
     <!-- <side-bar /> -->
     <div class="content">
-      <router-view v-slot="{ Component, route }" :blogs="blogs">
+      <router-view v-slot="{ Component, route }" :projects="projects">
         <transition name="fade" mode="out-in" :enter-to-class="route.meta.enterToClass"
           :enter-active-class="route.meta.enterActiveClass" :leave-to-class="route.meta.leaveToClass"
           :leave-active-class="route.meta.leaveActiveClass">
-          <component :is="Component" :blogs="blogs"></component>
+          <component :is="Component" :projects="projects"></component>
         </transition>
       </router-view>
     </div>
@@ -19,12 +19,12 @@
 </template>
 
 <script setup>
-import blogData from "@/assets/items/blog.js";
+import projectData from "@/assets/items/projects.js";
 import CustomCursor from "@/components/CustomCursor.vue";
 import LogoStar from "@/assets/logo/LogoStar.vue";
 import { ref } from "vue";
 
-const blogs = ref(blogData);
+const projects = ref(projectData);
 </script>
 <style lang="scss">
 @use "@/assets/reset.scss" as *;

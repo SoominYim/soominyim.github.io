@@ -3,11 +3,11 @@
     <div class="container" @click="goBack"></div>
     <div class="wrap">
       <div class="scrolle" style="line-height: 4.1">
-        <div class="title">{{ blogs[$route.params.id].title }}</div>
-        <h2>{{ blogs[$route.params.id].content }}</h2>
+        <div class="title">{{ projects[$route.params.id].title }}</div>
+        <h2>{{ projects[$route.params.id].content }}</h2>
         <div style="margin-right: 30px; font-size: 30px">🔗 SKILLS</div>
         <div class="skill-box">
-          <div v-for="(skill, i) in blogs[$route.params.id].project.split(',')" :key="i" class="skill">
+          <div v-for="(skill, i) in projects[$route.params.id].project.split(',')" :key="i" class="skill">
             <p>{{ skill.trim() }}</p>
           </div>
         </div>
@@ -15,14 +15,14 @@
         <div class="btn-wrapper">
           <div class="btn-wrapper__container">
             <div class="btn-inner">
-              <a class="btn-inner__text" :href="blogs[$route.params.id].gitUrl" target="_blank">view code</a>
+              <a class="btn-inner__text" :href="projects[$route.params.id].gitUrl" target="_blank">view code</a>
             </div>
           </div>
         </div>
-        <div class="btn-wrapper" v-if="blogs[$route.params.id].url !== null">
+        <div class="btn-wrapper" v-if="projects[$route.params.id].url !== null">
           <div class="btn-wrapper__container">
             <div class="btn-inner">
-              <a class="btn-inner__text" :href="blogs[$route.params.id].url" target="_blank">preview</a>
+              <a class="btn-inner__text" :href="projects[$route.params.id].url" target="_blank">preview</a>
             </div>
           </div>
         </div>
@@ -36,24 +36,17 @@ import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const props = defineProps({
-  blogs: Array,
+  projects: Array,
 });
 
 const route = useRoute();
 const router = useRouter();
 
-// const project = computed(() => {
-//   const blog = props.blogs[route.params.id];
-//   if (blog && blog.project) {
-//     return blog.project.split("\n").join("<br/>");
-//   }
-//   return "";
-// });
-
+// 마크다운을 HTML로 변환
 const contents = computed(() => {
-  const blog = props.blogs[route.params.id];
-  if (blog && blog.contents) {
-    return blog.contents.split("\n").join("<br/>");
+  const project = props.projects[route.params.id];
+  if (project && project.contents) {
+    return project.contents.split("\n").join("<br/>");
   }
   return "";
 });
