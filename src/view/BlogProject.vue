@@ -11,7 +11,7 @@
             <p>{{ skill.trim() }}</p>
           </div>
         </div>
-        <div class="content" v-html="contents"></div>
+        <div class="project-content" v-html="contents"></div>
         <div class="btn-wrapper">
           <div class="btn-wrapper__container">
             <div class="btn-inner">
@@ -118,26 +118,28 @@ h2 {
 
 .skill {
   padding: 0 8px;
-  height: 24px;
+  height: 30px;
   line-height: 2.3;
   border: 2px solid rgba(32, 251, 182, 0.3);
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 15px;
   font-family: "GangwonEdu_OTFBoldA";
 }
 
-.content {
+.project-content {
   position: relative;
-  left: calc(50% - 70% / 2);
-  width: 70%;
+  left: calc(50% - 90% / 2);
+  width: 90%;
   text-align: left;
-  word-break: keep-all;
+  font-size: 16px;
+  line-height: 1.6;
 
   font-family: "HANAMDAUM";
 
   @include mobile {
-    left: calc(50% - 90% / 2);
-    width: 90%;
+    left: calc(50% - 95% / 2);
+    width: 95%;
+    font-size: 12px;
   }
 }
 

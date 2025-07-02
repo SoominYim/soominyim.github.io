@@ -16,9 +16,9 @@ import { ref, onMounted } from "vue";
 const typeValue = ref("");
 const typeStatus = ref(false);
 const typeArray = [
+  "달을 클릭하면 메인으로 이동합니다.",
   "Hello, World!!!",
   "임수민의 포트폴리오 입니다.",
-  "달을 누르시면 메인으로 이동합니다.",
   "It's Yim Soomin's portfolio",
   "Press the moon to go to the main page",
 ];

@@ -11,7 +11,7 @@
         <transition name="fade" mode="out-in" :enter-to-class="route.meta.enterToClass"
           :enter-active-class="route.meta.enterActiveClass" :leave-to-class="route.meta.leaveToClass"
           :leave-active-class="route.meta.leaveActiveClass">
-          <component :is="Component"></component>
+          <component :is="Component" :blogs="blogs"></component>
         </transition>
       </router-view>
     </div>
@@ -20,14 +20,23 @@
 
 <script setup>
 import blogData from "@/assets/items/blog.js";
-import CustomCursor from "@/components/CustomCursor";
-import LogoStar from "@/assets/logo/LogoStar";
+import CustomCursor from "@/components/CustomCursor.vue";
+import LogoStar from "@/assets/logo/LogoStar.vue";
 import { ref } from "vue";
 
 const blogs = ref(blogData);
 </script>
 <style lang="scss">
 @use "@/assets/reset.scss" as *;
+
+:root {
+  --primary: #00c6bb;
+  --primary-alt: #22c55e;
+  --grey: #64748b;
+  --dark: #1e293b;
+  --dark-ale: #334155;
+  --light: #f1f5f9;
+}
 
 #app {
   width: 100vw;
