@@ -3,81 +3,381 @@ const project = [
     number: 0,
     title: "Elements Position Drag Overlay",
     content: `Ctrl+드래그로 웹 요소의 CSS position 값을 실시간으로 확인하는 크롬 확장`,
-    project: `#TypeScript, #Chrome Extension, #Manifest V3, #Vitest, #ESM, #FSD Architecture`,
+    project: `#TypeScript, #Chrome Extension, #Manifest V3, #Vitest, #FSD Architecture`,
     gitUrl: "https://github.com/SoominYim/elements-position-drag-overlay",
     url: "https://chromewebstore.google.com/detail/elements-position-drag-ov/hhcokjpdklpgebgklpelpkekgiojnjca",
-    // image: require("@/assets/img/elements_overlay_01.png"),
+    image: require("@/assets/img/elements_overlay_01.png"),
     contents: `
-        <div class="project-detail-section" style="text-align: left;">
-          <h2>✨ 프로젝트 개요</h2>
-          <p>
-            웹 개발 중 CSS <code>position: absolute</code> 요소의 정확한 좌표값을 실시간으로 확인하기 위해 개발된 크롬 확장 프로그램입니다. 개발자, 디자이너, QA 엔지니어 등 웹 요소의 위치를 정밀하게 파악해야 하는 모든 사용자에게 유용한 생산성 도구로, 직관적인 드래그 인터페이스를 통해 <code>left</code>, <code>top</code>, <code>right</code>, <code>bottom</code> 값을 즉시 시각화하여 제공합니다.
-          </p>
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">📋</span>프로젝트 개요</h2>
+        <p>
+          <code>Ctrl+드래그</code>(Mac: <code>Cmd+드래그</code>)로 웹 요소의 CSS position 값을 실시간으로 표시하는 크롬 확장 프로그램입니다. 
+          웹 개발 시 <code>position: absolute</code> 요소의 위치 조정을 위해 개발자 도구에서 수치를 반복 수정하는 비효율적인 과정을 개선하고자 개발하였습니다.
+        </p>
+        <div class="highlight-box">
+          <p><strong>🎯 Chrome Web Store 정식 배포</strong> - 개발팀에서 실제 업무에 활용되고 있는 도구입니다.</p>
         </div>
-        <div class="project-detail-section" style="text-align: left;">
-          <h2>🚀 주요 기능</h2>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li><strong>직관적인 드래그 컨트롤</strong>: <code>Ctrl + 드래그</code> (Mac: <code>Cmd + 드래그</code>)를 통해 <code>position: absolute</code> 요소만 이동 가능하며, 드래그 가능한 요소는 호버 시 하이라이트됩니다.</li>
-            <li><strong>실시간 위치 값 표시</strong>: 드래그 시 요소 위에 <code>left</code>, <code>top</code>, <code>right</code>, <code>bottom</code> CSS 좌표값을 실시간 오버레이로 표시합니다.</li>
-            <li><strong>스크롤 보정 기능</strong>: 페이지 스크롤 위치와 관계없이 정확한 요소 위치를 계산하여 표시합니다.</li>
-            <li><strong>사용자 정의 설정</strong>: 팝업 및 옵션 페이지를 통해 오버레이 위치, 하이라이트 색상, 드래그 후 좌표 유지 여부 등을 설정할 수 있습니다.</li>
-            <li><strong>키보드 단축키 지원</strong>: <code>Ctrl+Shift+Q</code> (Mac: <code>Cmd+Shift+Q</code>) 단축키로 확장 기능을 빠르게 토글할 수 있습니다.</li>
-            <li><strong>다국어 지원</strong>: 한국어, 영어, 일본어, 중국어를 포함한 다국어를 지원하여 접근성을 높였습니다.</li>
-            <li><strong>웹 데모 제공</strong>: 확장 프로그램 설치 없이 기능을 체험할 수 있는 독립 실행형 웹 데모를 제공합니다.</li>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🎯</span>개발 배경</h2>
+        <p>
+          회사에서 모달, 드롭다운, 툴팁, 아이콘 등 <code>position: absolute</code> 요소를 빈번히 사용하게 되었습니다. 
+          매번 개발자 도구에서 CSS 값을 수정하며 위치를 맞추는 과정을 하루에 수십 번 반복하는 것이 매우 비효율적이었습니다.
+        </p>
+        <p>
+          "드래그해서 실시간으로 좌표를 보면서 조정할 수 있으면 얼마나 좋을까?"라는 생각에서 시작하여 직접 개발하게 되었습니다.
+        </p>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🚀</span>핵심 기능</h2>
+        <ul class="feature-list">
+          <li><strong>드래그 인터페이스:</strong> <code>Ctrl+드래그</code> (Mac: <code>Cmd+드래그</code>)로 웹 요소 이동</li>
+          <li><strong>실시간 좌표 표시:</strong> 드래그 중 실시간으로 CSS position 값 오버레이 표시</li>
+          <li><strong>요소 감지:</strong> <code>position: absolute</code> 또는 <code>position: fixed</code> 요소 자동 감지</li>
+          <li><strong>토글 기능:</strong> <code>Ctrl + Shift + Q</code>로 확장 기능 On/Off</li>
+          <li><strong>다국어 지원:</strong> 한국어, 영어, 일본어, 중국어(간체) 지원</li>
+        </ul>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🛠</span>기술 스택 및 아키텍처</h2>
+        
+        <h3>기술 스택 선택</h3>
+        <p>
+          모든 웹사이트에서 사용할 수 있도록 크롬 확장 프로그램으로 개발하였습니다. 
+          TypeScript를 선택한 이유는 크롬 확장 API의 타입 정의가 잘 되어 있어 개발 효율성이 높았기 때문입니다.
+        </p>
+        <ul class="tech-list">
+          <li><strong>TypeScript</strong> - 타입 안전성 및 Chrome Extension API 타입 지원</li>
+          <li><strong>Chrome Extension API</strong> - Manifest V3, Content Scripts, Storage API</li>
+          <li><strong>FSD (Feature-Sliced Design)</strong> - 아키텍처 패턴 적용</li>
+        </ul>
+
+        <h3>FSD 아키텍처 적용</h3>
+        <p>
+          항해99에서 학습한 FSD 아키텍처를 크롬 확장에 적용하였습니다. 
+          작은 프로젝트였지만 FSD를 적용함으로써 코드 구조가 명확해지고 기능 추가가 용이해졌습니다.
+        </p>
+
+        <h4>각 영역의 역할</h4>
+        <div class="card-layout">
+          <div class="card">
+            <h4>📁 App 레이어</h4>
+            <ul class="tech-list">
+              <li><strong>content-main.ts:</strong> Content Script 메인 진입점</li>
+              <li><strong>content.ts:</strong> 웹페이지 DOM 조작 로직</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>📁 Features 레이어</h4>
+            <ul class="tech-list">
+              <li><strong>drag-manager:</strong> 드래그 상태 및 이벤트 관리</li>
+              <li><strong>hover-manager:</strong> 호버 하이라이트 관리</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>📁 Shared 레이어</h4>
+            <ul class="tech-list">
+              <li><strong>position-utils:</strong> 위치 계산 유틸리티</li>
+              <li><strong>extension-config:</strong> 확장 설정 관리</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>다중 진입점 아키텍처</h4>
+        <p>Chrome Extension의 특성상 여러 컨텍스트에서 실행되는 구조를 체계적으로 관리하였습니다:</p>
+        <ul class="tech-list">
+          <li><strong>Content Script (app/):</strong> 실제 웹페이지에 주입되어 드래그 기능 제공</li>
+          <li><strong>Popup (popup/):</strong> 확장 아이콘 클릭 시 나타나는 빠른 설정 인터페이스</li>
+          <li><strong>Options (options/):</strong> 크롬 확장 관리 페이지에서 접근하는 상세 설정</li>
+          <li><strong>Background Script:</strong> 확장 생명주기 관리 및 전역 상태 보존</li>
+          <li><strong>Demo (demo/):</strong> 확장 설치 전 기능 체험을 위한 독립 웹페이지</li>
+        </ul>
+        
+        <div class="info-box">
+          <h4>프로젝트 구조</h4>
+          <pre><code>src/
+├── 📁 app/                    # 애플리케이션 레이어
+│   ├── content-main.ts        # Content Script 메인 진입점
+│   └── content.ts             # 콘텐츠 스크립트 로직
+├── 📁 entities/               # 엔티티 레이어 (비즈니스 객체)
+│   └── overlay/               # 좌표 오버레이 엔티티
+│       └── index.ts           # 오버레이 생성/업데이트/제거
+├── 📁 features/               # 피처 레이어 (비즈니스 로직)
+│   └── drag/                  # 드래그 앤 드롭 기능
+│       ├── index.ts           # 외부 인터페이스
+│       └── lib/               # 내부 구현
+│           ├── drag-manager.ts    # 드래그 상태 및 이벤트 관리
+│           ├── hover-manager.ts   # 호버 하이라이트 관리
+│           └── index.ts           # 라이브러리 내보내기
+├── 📁 shared/                 # 공유 레이어 (공통 유틸)
+│   ├── index.ts               # 공용 API
+│   ├── lib/                   # 유틸리티 함수들
+│   │   ├── extension-config.ts    # 확장 설정 관리
+│   │   ├── position-utils.ts      # 위치 계산 유틸
+│   │   └── index.ts               # 라이브러리 모음
+│   ├── types/                 # 타입 정의
+│   │   └── index.ts           # 전역 타입들
+│   └── ui/                    # 공용 UI 컴포넌트
+│       └── toast.ts           # 토스트 알림 컴포넌트
+├── 📁 popup/                  # 팝업 UI (별도 진입점)
+│   ├── popup.html             # 팝업 HTML 구조
+│   ├── popup.css              # 팝업 스타일
+│   └── popup.ts               # 팝업 로직 (설정 관리)
+├── 📁 options/                # 옵션 페이지 (별도 진입점)
+│   ├── options.html           # 옵션 페이지 HTML
+│   ├── options.css            # 옵션 페이지 스타일
+│   └── options.ts             # 고급 설정 관리
+├── 📁 demo/                   # 웹 데모 (독립 실행)
+│   └── demo.ts                # 웹페이지용 데모 로직
+├── 📁 _locales/               # 다국어 지원
+│   ├── en/messages.json       # 영어
+│   ├── ko/messages.json       # 한국어
+│   ├── ja/messages.json       # 일본어
+│   └── zh_CN/messages.json    # 중국어 간체
+├── 📁 icons/                  # 아이콘 파일들
+│   ├── icon.svg               # 소스 SVG
+│   ├── icon16.png             # 16x16 크롬 확장용
+│   ├── icon48.png             # 48x48 크롬 확장용
+│   └── icon128.png            # 128x128 크롬 확장용
+├── 📁 __tests__/              # 테스트 파일들
+│   ├── dragUtils.test.ts      # 드래그 유틸 테스트
+│   ├── integration.test.ts    # 통합 테스트
+│   └── toast.test.ts          # 토스트 UI 테스트
+├── index.html                 # 웹 데모 페이지
+├── index.js                   # 웹 데모 진입점
+├── background.ts              # 백그라운드 스크립트
+└── app-icon.png               # 앱 아이콘</code></pre>
+        </div>
+
+        <h3>FSD 아키텍처의 장점</h3>
+        <p>작은 프로젝트였지만 FSD를 적용함으로써 다음과 같은 장점을 얻을 수 있었습니다:</p>
+        <ul class="tech-list">
+          <li><strong>기능 추가 용이성:</strong> 새로운 feature 추가 시 기존 코드에 영향 없이 독립적 개발</li>
+          <li><strong>테스트 작성 편의성:</strong> 각 기능이 격리되어 있어 단위 테스트 작성 수월</li>
+          <li><strong>코드 파악 용이성:</strong> 몇 개월 후에도 어디에 무엇이 있는지 빠르게 파악 가능</li>
+          <li><strong>다중 진입점 관리:</strong> popup, options, demo가 shared 레이어를 공통 사용하여 중복 코드 최소화</li>
+        </ul>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">💻</span>개발 과정 및 기술적 도전</h2>
+        
+        <h3>1. 정밀한 좌표 계산 시스템 구현</h3>
+        <p>
+          웹페이지의 스크롤 위치, 브라우저 확대/축소, 중첩된 스크롤 컨테이너 등을 고려한 정확한 좌표 계산이 가장 큰 도전이었습니다.
+        </p>
+        <div class="card-layout">
+          <div class="highlight-box">
+            <h4>좌표 계산 알고리즘</h4>
+            <ul class="tech-list">
+              <li><strong>클라이언트 좌표계:</strong> <code>event.clientX/Y</code> 기반 뷰포트 상대 위치</li>
+              <li><strong>페이지 좌표계:</strong> <code>window.scrollX/Y</code> 포함 문서 전체 기준</li>
+              <li><strong>요소 좌표계:</strong> <code>getBoundingClientRect()</code> 활용 요소 상대 위치</li>
+              <li><strong>CSS 좌표계:</strong> <code>position: absolute</code> 기준 최종 CSS 값 산출</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h4>스크롤 오프셋 보정</h4>
+            <ul class="tech-list">
+              <li><strong>동적 스크롤 추적:</strong> 드래그 중 스크롤 변화 실시간 감지</li>
+              <li><strong>다중 컨테이너 대응:</strong> 중첩된 스크롤 영역 처리</li>
+              <li><strong>브라우저 확대/축소:</strong> zoom 레벨 변화 자동 대응</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>2. Chrome Extension API 아키텍처 설계</h3>
+        <p>
+          Chrome Extension의 다중 컨텍스트 구조에서 효율적인 통신과 상태 관리를 구현하였습니다.
+        </p>
+        <div class="highlight-box">
+          <h4>컨텍스트 분리 및 통신</h4>
+          <ul class="tech-list">
+            <li><strong>Content Script:</strong> 웹페이지 DOM 직접 조작 및 드래그 이벤트 처리</li>
+            <li><strong>Background Script:</strong> 확장 생명주기 관리 및 설정 상태 보존</li>
+            <li><strong>Popup Interface:</strong> 즉시 접근 가능한 설정 변경 인터페이스</li>
+            <li><strong>Options Page:</strong> 상세 설정 및 고급 옵션 관리</li>
+            <li><strong>메시지 패싱:</strong> <code>chrome.runtime.sendMessage</code> API 활용 안전한 통신</li>
           </ul>
         </div>
 
-        <div class="project-detail-section" style="text-align: left;">
-          <h2>🛠 기술 스택</h2>
-            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li><strong>프론트엔드</strong>: TypeScript, SCSS</li>
-            <li><strong>아키텍처/패턴</strong>: FSD (Feature-Sliced Design)</li>
-            <li><strong>테스트/빌드 도구</strong>: Vitest, Webpack (내부 사용), Sharp (SVG to PNG 변환)</li>
-            <li><strong>크롬 확장 기술</strong>: Manifest V3, Service Worker, Chrome Extension Storage API, i18n API, Commands API</li>
+        <h3>3. 성능 최적화 및 사용자 경험 개선</h3>
+        <div class="card-layout">
+          <div class="card">
+            <h4>이벤트 처리 최적화</h4>
+            <ul class="tech-list">
+              <li><strong>Throttling 적용:</strong> 마우스 이동 이벤트 과도한 호출 방지</li>
+              <li><strong>RAF 활용:</strong> <code>requestAnimationFrame</code>으로 부드러운 애니메이션</li>
+              <li><strong>메모리 관리:</strong> 페이지 이동 시 이벤트 리스너 자동 정리</li>
             </ul>
+          </div>
+          <div class="card">
+            <h4>브라우저 호환성</h4>
+            <ul class="tech-list">
+              <li><strong>키보드 단축키:</strong> Windows/Mac 환경별 단축키 대응</li>
+              <li><strong>확대/축소 대응:</strong> 브라우저 기본 확대 기능과 충돌 방지</li>
+              <li><strong>반응형 오버레이:</strong> 다양한 화면 크기 대응</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="project-detail-section" style="text-align: left;">
-          <h2>💡 핵심 구현 및 기술적 도전</h2>
-          <h3>실시간 드래그 시스템 구현</h3>
-          <p>
-            사용자가 웹 요소를 드래그할 때, 마우스 이벤트(<code>mousedown</code>, <code>mousemove</code>, <code>mouseup</code>)를 정밀하게 추적하여 요소의 실시간 위치를 계산하고 DOM에 반영했습니다. 특히, 페이지 스크롤 시 발생하는 좌표 오차를 해결하기 위해 <code>window.scrollX</code> 및 <code>window.scrollY</code> 값을 활용한 <code>scrollDelta</code> 보정 로직을 구현하여 어떤 스크롤 환경에서도 정확한 오버레이 위치를 보장했습니다.
-          </p>
-          <h3>FSD 아키텍처 도입</h3>
-          <p>
-            프로젝트의 확장성과 유지보수성을 고려하여 FSD (Feature-Sliced Design) 아키텍처 패턴을 도입했습니다. 이를 통해 애플리케이션을 <code>app</code>, <code>entities</code>, <code>features</code>, <code>shared</code>, <code>popup</code>, <code>options</code> 등의 명확한 계층으로 분리하여 각 모듈의 역할을 명확히 하고, 코드의 응집도를 높여 개발 효율성을 향상시켰습니다.
-          </p>
-          <h3>Manifest V3 기반 크롬 확장 개발</h3>
-          <p>
-            최신 Manifest V3 표준에 맞춰 확장 프로그램을 개발했습니다. Service Worker를 백그라운드 스크립트로 활용하여 효율적인 이벤트 처리를 구현하고, Content Script를 통해 모든 웹페이지에 기능을 주입했습니다. 사용자 설정은 Chrome Extension Storage API를 통해 영구적으로 저장하고, 다국어 지원을 위해 i18n API를 활용했습니다.
-          </p>
+        <h3>4. 보안 및 권한 관리</h3>
+        <p>
+          최소 권한 원칙을 적용하여 사용자 신뢰도를 확보하고 빠른 심사 통과를 달성하였습니다.
+        </p>
+        <div class="warning-box">
+          <h4>최소 권한 정책</h4>
+          <ul class="tech-list">
+            <li><strong>필수 권한만 요청:</strong> <code>storage</code>, <code>activeTab</code>만 사용</li>
+            <li><strong>사용자 제어:</strong> 사용자가 활성화한 탭에서만 동작</li>
+            <li><strong>개인정보 보호:</strong> 어떠한 개인정보도 수집하지 않음</li>
+            <li><strong>로컬 저장:</strong> 모든 설정은 로컬 저장소에만 보관</li>
+          </ul>
         </div>
 
-        <div class="project-detail-section" style="text-align: left;">
-          <h2>✅ 문제 해결 경험 (Troubleshooting)</h2>
-          <h3>스크롤 시 드래그 요소 좌표 오차 문제</h3>
-          <p>
-            <strong>문제</strong>: 초기 구현 단계에서 사용자가 페이지를 스크롤할 때, 드래그 중인 요소의 오버레이 위치가 실제 요소와 어긋나는 문제가 발생했습니다. 이는 브라우저의 스크롤 위치가 요소의 <code>offset</code> 계산에 영향을 미치기 때문이었습니다.
-          </p>
-          <p>
-            <strong>해결 과정</strong>: <code>window.scrollX</code>와 <code>window.scrollY</code> 값을 실시간으로 추적하여, 드래그 이벤트 발생 시 이 스크롤 오프셋을 요소의 <code>left</code>, <code>top</code> 계산에 반영하는 <code>scrollDelta</code> 보정 로직을 구현했습니다. 이로써 스크롤 위치와 관계없이 오버레이가 항상 정확한 위치에 표시되도록 개선했습니다.
-          </p>
-          <p>
-            <strong>배운 점</strong>: 브라우저 환경에서 동적인 UI 요소의 위치를 정밀하게 제어하기 위해서는 뷰포트와 문서의 스크롤 상태를 정확히 이해하고 계산에 반영하는 것이 필수적임을 깨달았습니다.
-          </p>
+        <h3>5. 국제화 시스템 구축</h3>
+        <p>
+          Chrome Extension i18n API를 활용하여 글로벌 사용자를 대상으로 한 다국어 지원 시스템을 구현하였습니다.
+        </p>
+        <ul class="tech-list">
+          <li><strong>4개 언어 지원:</strong> 한국어, 영어, 일본어, 중국어(간체)</li>
+          <li><strong>자동 언어 감지:</strong> 브라우저 언어 설정 기반 자동 적용</li>
+          <li><strong>JSON 기반 관리:</strong> 구조화된 번역 데이터 관리</li>
+          <li><strong>확장 가능 구조:</strong> 향후 추가 언어 지원 용이</li>
+        </ul>
+      </div>
 
-          <h3>크롬 확장 권한 최소화 및 보안 강화</h3>
-          <p>
-            <strong>문제</strong>: 확장 프로그램은 사용자에게 다양한 권한을 요청할 수 있지만, 과도한 권한 요청은 사용자 신뢰도를 저하시킬 수 있습니다. 초기에는 광범위한 권한을 고려했으나, 보안 및 사용자 경험 측면에서 최적화가 필요했습니다.
-          </p>
-          <p>
-            <strong>해결 과정</strong>: 프로젝트의 핵심 기능 구현에 필요한 최소한의 권한(<code>storage</code>, <code>activeTab</code>)만을 요청하도록 설계했습니다. 이를 통해 사용자 개인정보 보호를 강화하고, 확장 프로그램의 보안성을 높였습니다.
-          </p>
-          <p>
-            <strong>배운 점</strong>: 크롬 확장 프로그램 개발 시 보안 원칙(Principle of Least Privilege)을 준수하고, 사용자에게 투명하고 안전한 서비스를 제공하는 것이 얼마나 중요한지 체감했습니다.
-          </p>
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">💡</span>개발하면서 느낀 점</h2>
+        
+        <h3>Chrome Extension API의 복잡성</h3>
+        <p>
+          웹 개발과는 다른 독특한 구조였습니다. Content Script, Background Script, Popup이 각각 다른 컨텍스트에서 실행되고, 
+          메시지 패싱으로 통신해야 했습니다. 처음에는 이해하기 어려웠지만 익숙해지니 꽤 체계적이었습니다.
+        </p>
+
+        <h3>사용자 중심 설계의 중요성</h3>
+        <p>
+          popup과 options 페이지를 만들면서 "개발자 편의 vs 사용자 편의"에 대해 고민하게 되었습니다. 
+          결과적으로 사용자 편의를 우선시한 것이 정답이었습니다. 아무리 기능이 좋아도 설정하기 어려우면 사용하지 않게 됩니다.
+        </p>
+
+        <h3>사용자 피드백의 중요성</h3>
+        <p>
+          동료들의 피드백을 통해 "이런 기능도 있으면 좋겠다", "이 부분이 불편하다" 같은 의견을 받으며 
+          더 나은 도구로 발전시킬 수 있었습니다.
+        </p>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">📈</span>프로젝트 성과</h2>
+        
+        <h3>1. 실제 배포 및 운영 성과</h3>
+        <div class="card-layout">
+          <div class="card">
+            <h4>🌐 Chrome Web Store 배포</h4>
+            <ul class="tech-list">
+              <li><strong>정식 서비스:</strong> 실제 개발팀에서 업무에 활용</li>
+              <li><strong>빠른 심사 통과:</strong> 최소 권한 정책으로 신속한 승인</li>
+              <li><strong>사용자 신뢰:</strong> 개인정보 수집 없는 투명한 운영</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🔒 보안 및 권한 관리</h4>
+            <ul class="tech-list">
+              <li><strong>최소 권한 원칙:</strong> storage, activeTab만 요청</li>
+              <li><strong>사용자 제어:</strong> 활성 탭에서만 동작</li>
+              <li><strong>데이터 보호:</strong> 모든 설정 로컬 저장</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🌍 글로벌 접근성</h4>
+            <ul class="tech-list">
+              <li><strong>다국어 지원:</strong> 한/영/일/중 4개 언어</li>
+              <li><strong>자동 언어 감지:</strong> 브라우저 설정 기반</li>
+              <li><strong>확장 가능:</strong> 추가 언어 지원 준비</li>
+            </ul>
+          </div>
         </div>
-        `,
+
+        <h3>2. 사용자 체험 최적화</h3>
+        <div class="highlight-box">
+          <h4>웹 데모 환경 구축</h4>
+          <p>
+            확장 설치 전 기능을 체험할 수 있는 
+            <a href="https://elements-position-drag-overlay.vercel.app/" target="_blank">독립 웹 데모</a>를 Vercel에 배포하였습니다. 
+            실제 확장과 동일한 드래그 앤 드롭 기능을 웹페이지에서 미리 체험할 수 있어 사용자 진입 장벽을 낮추었습니다.
+          </p>
+          <ul class="tech-list">
+            <li><strong>즉시 체험:</strong> 설치 없이 바로 기능 확인 가능</li>
+            <li><strong>동일한 UI/UX:</strong> 실제 확장과 일치하는 사용자 경험</li>
+            <li><strong>반응형 지원:</strong> 다양한 디바이스에서 체험 가능</li>
+            <li><strong>마케팅 도구:</strong> 기능 소개 및 사용법 안내</li>
+          </ul>
+        </div>
+
+        <h3>3. 품질 관리 및 테스트</h3>
+        <div class="card-layout">
+          <div class="info-box">
+            <h4>테스트 전략</h4>
+            <ul class="tech-list">
+              <li><strong>단위 테스트:</strong> dragUtils.test.ts - 드래그 유틸리티 함수 검증</li>
+              <li><strong>통합 테스트:</strong> integration.test.ts - 컴포넌트 간 상호작용 테스트</li>
+              <li><strong>UI 테스트:</strong> toast.test.ts - 사용자 인터페이스 기능 검증</li>
+              <li><strong>실사용 테스트:</strong> 개발팀 동료들의 실제 업무 환경 테스트</li>
+            </ul>
+          </div>
+          <div class="warning-box">
+            <h4>크로스 브라우저 호환성</h4>
+            <ul class="tech-list">
+              <li><strong>Chrome 기본 지원:</strong> Chrome Extension 네이티브 지원</li>
+              <li><strong>Edge 호환:</strong> Chromium 기반 Edge에서 정상 동작</li>
+              <li><strong>향후 확장:</strong> Firefox WebExtensions 지원 계획</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>4. 기술적 학습 성과</h3>
+        <div class="highlight-box">
+          <h4>핵심 역량 개발</h4>
+          <ul class="tech-list">
+            <li><strong>Chrome Extension 개발:</strong> Manifest V3 표준, 다중 컨텍스트 프로그래밍</li>
+            <li><strong>TypeScript 고급 활용:</strong> Chrome Extension API 타입 정의 활용</li>
+            <li><strong>FSD 아키텍처 실무 적용:</strong> 작은 프로젝트에서도 체계적 구조의 장점 확인</li>
+            <li><strong>좌표 계산 알고리즘:</strong> 복잡한 웹 환경에서의 정확한 위치 계산</li>
+            <li><strong>성능 최적화:</strong> 이벤트 최적화, 메모리 관리, 렌더링 최적화</li>
+            <li><strong>국제화 시스템:</strong> i18n API를 활용한 다국어 지원</li>
+          </ul>
+        </div>
+
+        <h3>5. 사용자 피드백 및 개선</h3>
+        <p>
+          동료 개발자들의 피드백을 통해 지속적인 개선을 진행하였습니다. 
+          "이런 기능도 있으면 좋겠다", "이 부분이 불편하다" 등의 의견을 수렴하여 사용자 중심의 도구로 발전시켰습니다.
+        </p>
+        <ul class="tech-list">
+          <li><strong>사용성 개선:</strong> 개발자 편의보다 사용자 편의 우선</li>
+          <li><strong>기능 개선:</strong> 실제 사용 환경에서의 피드백 반영</li>
+          <li><strong>UI/UX 최적화:</strong> 직관적인 인터페이스 구현</li>
+          <li><strong>성능 개선:</strong> 실사용 환경에서의 성능 최적화</li>
+        </ul>
+
+        <h3>6. 향후 발전 계획</h3>
+        <div class="info-box">
+          <h4>기능 확장 로드맵</h4>
+          <ul class="tech-list">
+            <li><strong>CSS Grid/Flexbox 지원:</strong> 더 다양한 레이아웃 요소 대응</li>
+            <li><strong>Firefox 확장:</strong> WebExtensions API를 통한 Firefox 지원</li>
+            <li><strong>고급 설정:</strong> 사용자 커스터마이징 옵션 확장</li>
+            <li><strong>협업 기능:</strong> 팀 단위 설정 공유 시스템</li>
+            <li><strong>성능 향상:</strong> WebAssembly 활용 고속 계산 엔진</li>
+          </ul>
+        </div>
+      </div>
+    `,
   },
   // <div class="project-detail-section">
   //   <h2>🖼️ 미리보기</h2>
@@ -101,122 +401,116 @@ const project = [
     url: "https://mevie.vercel.app/",
     image: require("@/assets/img/mevie_01.png"),
     contents: `
-         이 애플리케이션은 사용자가 원하는 영화를 검색하고 해당 영화에 대한 정보를 제공하는 기능을 제공하며. TMDB API를 활용하여 영화 데이터를 가져와 사용자에게 제공합니다.
-          <span style="font-size:24px">🎞 프로젝트의 주요 기능</span>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>사용자는 검색 창에 영화 제목을 입력하여 원하는 영화를 검색할 수 있습니다.</li>
-            <li>검색된 영화에 대한 정보(영화 제목, 개봉일, 포스터 등)를 화면에 표시됩니다.</li>
-          </ul>
-          <span style="font-size:24px">📚 스토리보드</span>
-          <span style="font-size:20px">📖 공통 사항</span>
-            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>Logo 클릭 시 메인 화면으로 이동합니다.</li>
-              <li>Search Button 클릭 시 검색 페이지로 이동합니다.</li>
-              <li>Arrow Top 클릭 시 페이지 최상단으로 이동합니다.</li>
-              <li>Mode 토글 시 Bright Mode, Dark Mode로 Mode 변경이 가능합니다.</li>
-              <li>페이지 재방문 시 기존에 적용했던 Mode는 유지 됩니다.</li>
-            </ul>
-          <span style="font-size:20px">📖 메인 페이지</span>
-            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>인기 Movie Slider와 장르별 Movie List Slider가 표시됩니다.</li>
-              <li>페이지 리사이즈 시 요소들의 scale이 작아집니다.</li>
-              <li>페이지 리사이즈 되어도 장르별 영화는 중앙 정렬됩니다.</li>
-              <li>장르별 영화 클릭 시 상세 페이지로 이동합니다.</li>
-              <li>장르별 영화 슬라이드에 Mouse Over 시 좌우 Arrow가 표시됩니다.</li>
-              <li>더 이상 슬라이드가 없다면 Arrow가 표시 되지 않습니다.</li>
-            </ul>
-          <span style="font-size:20px">📖 상세 페이지</span>
-            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-                <li>선택한 영화의 상세 내용이 표시됩니다.</li>
-                <li>감독/출연진의 내용이 표시됩니다.</li>
-                <li>비슷한 장르의 Movie List가 표시되며 클릭 시 상세 페이지로 이동합니다.</li>
-            </ul>
-          <span style="font-size:20px">📖 검색 페이지</span>
-            <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>입력시 실시간으로 입력한 Movie가 Filtering 되어 화면에 표시됩니다.</li>
-              <li>문자열의 앞과 끝은 띄어쓰기가 적용되지 않습니다.</li>
-              <li>한 글자 이상 입력하여야 결과가 표시됩니다.</li>
-              <li>Movie List는 window가 리사이즈 되어도 중앙 정렬됩니다.</li>
-              <li>더 불러올 영화정보가 있다면, 최하단으로 스크롤 시 추가로 영화를 불러옵니다.</li>
-            </ul>
-             <span style="font-size:24px">🖍 UI/UX 디자인</span>
-              <div style="text-align:center">
-                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_02.png")}"/>
-                  로고
-                  <br/>
-                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_03.png")}"/>
-                  메인 페이지
-                  <br/>
-                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_04.png")}"/>
-                  상세 페이지
-                  <br/>
-                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_05.png")}"/>
-                  검색 페이지
-              </div>
-            <span style="font-size:24px">🖥 기능 구현</span>
-            <span style="font-size:20px">🔔공통 사항</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li> TMDB API 사용하여 영화정보 GET</li>
-              <li> Arrow Top, Dark Mode 구현</li>
-              <li>  사용모드 Local storage 저장 (재방문 시 기존에 설정했던 모드 사용)</li>
-              <li> Main, Search, Detail Router 적용</li>
-              <li>  현재 접속한 디바이스 별로 보여지는 Router 다르게 적용 (MobileDetect 사용)</li>
-              **Mobile**
-              <li>  각종 Icon의 LayOut 변경 (Size, Position 등)</li>
-            </ul>
-            <span style="font-size:20px">🔔메인 페이지</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>  메인 Slider에서 infinyty slide 구현</li>
-              <li>  인기영화 순으로 Sorted</li>
-              <li>  페이지 성능을 위해 필요 한 경우에만 API 요청</li>
-              <li>  Window Resize시에도 이미지 크기 유지</li>
-              <li>  장르별 Movie List Slider 구현</li>
-              <li>  Mouse Over시 Arrow 표시</li>
-              <li>  더 이상 움직일 Slide가 없다면 Arrow는 표시 되지 않습니다.</li>
-              <li>  Window Resize 시 가운데 유지</li>
-              <li>  Window Resize 시 Slide Page 유지</li>
-              <li>  영화 클릭 시 상세 페이지로 Route</li>
-              **Mobile**
-              <li>  메인 Slider의 Overview 삭제</li>
-              <li>  장르별 영화 Slide는 Drag 방식</li>
-            </ul>
-            <span style="font-size:20px">🔔상세 페이지</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>  선택한 영화로 페이지 이동</li>
-                <li>  URL로 영화 구분 </li>
-              <li>  영화 상세, 감독/출연진, 비슷한 영화 Component 분리</li>
-                <li>  Parent Component에서 Data 처리 후 각각의 Component로 Data Binding</li>
-              <li>  비슷한 장르 영화 클릭 시 Detail Page로 Route</li>
-            </ul>
-            </ul>
-            <span style="font-size:20px">🔔검색 페이지</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-              <li>  입력시 실시간으로 입력한 내용 표시</li>
-                <li>  두 글자 이상 입력 시 내용 표시 (필요하지 않은 정보가 요청되는 것을 방지)</li>
-                <li>  trim을 이용하여 앞뒤 띄어쓰기 무시</li>
-                <li>  검색 input 상단 고정</li>
-              <li>  Window Resize 시에도 요소 중앙 정렬</li>
-              <li>  최하단으로 스크롤 시 더 불러올 Data가 있다면 API 추가 요청</li>
-              <li>  data Loading시 더 나은 사용자 경험을 위해 Spinner 사용</li>
-              <li>  영화 클릭 시 상세 페이지로 Route </li>
-            </ul>
-            <span style="font-size:20px">🖨프리뷰</span>
-            <div style="text-align:center">
-                  메인 페이지
-                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_07.png")}"/>
-                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_08.png")}"/>
-                  <br/>
-                  상세 페이지
-                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_09.png")}"/>
-                  <br/>
-                  검색 페이지
-                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_10.png")}"/>
-                  <br/>
-                  모바일
-                  <img style="width : 100%; border-radius: 10px;"src="${require("../img/mevie_11.png")}"/>
-            </div>
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🎬</span>프로젝트 개요</h2>
+        <p>
+          TMDB API를 활용한 반응형 영화 검색 플랫폼으로, <strong>Vercel에 배포</strong>되어 실제 서비스 중입니다.
+          Vue 3의 최신 기능을 활용하여 영화 검색, 상세 정보 조회, 장르별 탐색 등 종합적인 영화 정보 서비스를 제공합니다.
+        </p>
+      </div>
 
-        `,
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">⭐</span>핵심 기능</h2>
+        <div class="card-layout">
+          <div class="card">
+            <h4><span class="emoji-icon">🏠</span>메인 페이지</h4>
+            <ul class="feature-list">
+              <li>인기 영화 무한 슬라이더</li>
+              <li>장르별 영화 카테고리</li>
+              <li>반응형 디자인</li>
+              <li>다크/라이트 모드 토글</li>
+              <li>LocalStorage 기반 설정 저장</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4><span class="emoji-icon">🔍</span>검색 기능</h4>
+            <ul class="feature-list">
+              <li>실시간 검색 결과</li>
+              <li>무한 스크롤 페이지네이션</li>
+              <li>로딩 스피너 UX</li>
+              <li>검색어 자동 trim 처리</li>
+              <li>모바일 최적화</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4><span class="emoji-icon">📱</span>상세 페이지</h4>
+            <ul class="feature-list">
+              <li><strong>상세 정보:</strong> 줄거리, 개봉일, 평점, 런타임</li>
+              <li><strong>출연진/스태프:</strong> 감독, 주요 배우 정보</li>
+              <li><strong>추천 시스템:</strong> 비슷한 장르 영화 추천</li>
+              <li><strong>SEO 최적화:</strong> URL 기반 페이지 라우팅</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🛠</span>기술적 구현</h2>
+        <div class="card-layout">
+          <div class="highlight-box">
+            <h4>상태 관리 & 라우팅</h4>
+            <ul class="tech-list">
+              <li><strong>Vuex</strong>로 글로벌 상태 관리 (다크모드, 사용자 설정)</li>
+              <li><strong>Vue Router</strong>로 SPA 라우팅 구현</li>
+              <li><strong>LocalStorage</strong>로 사용자 설정 영구 저장</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h4>API & 성능 최적화</h4>
+            <ul class="tech-list">
+              <li><strong>TMDB API</strong> 연동으로 실시간 영화 데이터</li>
+              <li><strong>Lazy Loading</strong>으로 필요시에만 API 요청</li>
+              <li><strong>Debouncing</strong> 적용으로 검색 성능 최적화</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="highlight-box">
+          <h4>반응형 & UX</h4>
+          <ul class="tech-list">
+            <li><strong>Mobile Detect</strong>로 디바이스별 최적화</li>
+            <li><strong>SCSS</strong>로 컴포넌트 기반 스타일링</li>
+            <li><strong>CSS Grid/Flexbox</strong>로 유연한 레이아웃</li>
+            <li><strong>Infinite Scroll</strong>로 끊김없는 사용자 경험</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">📱</span>주요 화면</h2>
+        <div class="image-gallery">
+          <img src="${require("../img/mevie_03.png")}" alt="메인 페이지"/>
+          <p>메인 페이지 - 인기 영화 & 장르별 카테고리</p>
+          
+          <img src="${require("../img/mevie_04.png")}" alt="상세 페이지"/>
+          <p>상세 페이지 - 영화 정보 & 추천 시스템</p>
+          
+          <img src="${require("../img/mevie_05.png")}" alt="검색 페이지"/>
+          <p>검색 페이지 - 실시간 검색 & 무한 스크롤</p>
+          
+          <img src="${require("../img/mevie_11.png")}" alt="모바일 버전"/>
+          <p>모바일 최적화 화면</p>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🚀</span>프로젝트 성과</h2>
+        <div class="card-layout">
+          <div class="card">
+            <h4>🌐 실제 배포</h4>
+            <p>Vercel을 통한 안정적인 서비스 운영</p>
+          </div>
+          <div class="card">
+            <h4>📱 반응형 지원</h4>
+            <p>모든 디바이스에서 최적화된 사용자 경험</p>
+          </div>
+          <div class="card">
+            <h4>⚡ 성능 최적화</h4>
+            <p>API 호출 최소화 및 로딩 성능 개선</p>
+          </div>
+        </div>
+      </div>
+    `,
   },
 
   {

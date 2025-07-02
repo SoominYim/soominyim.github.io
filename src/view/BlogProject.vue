@@ -11,7 +11,10 @@
             <p>{{ skill.trim() }}</p>
           </div>
         </div>
-        <div class="project-content" v-html="contents"></div>
+
+
+
+        <div class="project-content" v-html="contents" ref="projectContent"></div>
         <div class="btn-wrapper">
           <div class="btn-wrapper__container">
             <div class="btn-inner">
@@ -28,11 +31,22 @@
         </div>
       </div>
     </div>
+
+    <!-- 고정된 목차 사이드바 -->
+    <div class="table-of-contents-sidebar" v-if="tableOfContents.length > 0">
+      <h3 class="toc-title">📑 목차</h3>
+      <ul class="toc-list">
+        <li v-for="item in tableOfContents" :key="item.id" :class="`toc-item toc-${item.level}`"
+          @click="scrollToSection(item.id)">
+          <span class="toc-text">{{ item.text }}</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref, onMounted, nextTick, reactive } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const props = defineProps({
@@ -41,6 +55,8 @@ const props = defineProps({
 
 const route = useRoute();
 const router = useRouter();
+const projectContent = ref(null);
+const tableOfContents = reactive([]);
 
 // 마크다운을 HTML로 변환
 const contents = computed(() => {
@@ -51,9 +67,56 @@ const contents = computed(() => {
   return "";
 });
 
+// 목차 생성 함수
+const generateTableOfContents = () => {
+  if (!projectContent.value) return;
+
+  tableOfContents.splice(0); // 기존 목차 초기화
+
+  const headings = projectContent.value.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+  headings.forEach((heading, index) => {
+    const level = parseInt(heading.tagName.substring(1));
+    // 이모지와 아이콘 제거
+    const text = heading.textContent.replace(/[\u{1F000}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').replace(/span class="emoji-icon".*?span>/g, '').trim();
+    const id = `heading-${index}-${text.replace(/\s+/g, '-').toLowerCase()}`;
+
+    // 제목에 ID 부여
+    heading.id = id;
+
+    tableOfContents.push({
+      id,
+      text,
+      level,
+      element: heading
+    });
+  });
+};
+
+// 섹션으로 스크롤 이동 (더 안정적인 방법)
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    // scrollIntoView API 사용 - 브라우저가 자동으로 최적화
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start', // 요소를 컨테이너 상단 근처에 위치
+      inline: 'nearest'
+    });
+  }
+};
+
 const goBack = () => {
   router.go(-1);
 };
+
+// 컴포넌트 마운트 후 목차 생성
+onMounted(async () => {
+  await nextTick(); // DOM 업데이트 대기
+  setTimeout(() => {
+    generateTableOfContents();
+  }, 100); // HTML 렌더링 완료 대기
+});
 </script>
 
 <style lang="scss" scoped>
@@ -139,12 +202,10 @@ h2 {
     color: #5ac093;
     font-size: 28px;
     font-weight: 700;
-    margin: 30px 0 15px 0;
     line-height: 1.3;
 
     @include mobile {
       font-size: 24px;
-      margin: 25px 0 12px 0;
     }
   }
 
@@ -152,12 +213,10 @@ h2 {
     color: #5ac093;
     font-size: 22px;
     font-weight: 600;
-    margin: 25px 0 12px 0;
     line-height: 1.4;
 
     @include mobile {
       font-size: 20px;
-      margin: 20px 0 10px 0;
     }
   }
 
@@ -165,25 +224,21 @@ h2 {
     color: #5ac093;
     font-size: 18px;
     font-weight: 600;
-    margin: 20px 0 10px 0;
     line-height: 1.4;
 
     @include mobile {
       font-size: 17px;
-      margin: 18px 0 8px 0;
     }
   }
 
   :deep(h4) {
     color: #67c3cc;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
-    margin: 18px 0 8px 0;
     line-height: 1.5;
 
     @include mobile {
       font-size: 15px;
-      margin: 15px 0 6px 0;
     }
   }
 
@@ -191,12 +246,10 @@ h2 {
     color: #8dd3c7;
     font-size: 15px;
     font-weight: 500;
-    margin: 15px 0 6px 0;
     line-height: 1.5;
 
     @include mobile {
       font-size: 14px;
-      margin: 12px 0 5px 0;
     }
   }
 
@@ -204,31 +257,30 @@ h2 {
     color: #b3d9d6;
     font-size: 14px;
     font-weight: 400;
-    margin: 12px 0 5px 0;
     line-height: 1.5;
 
     @include mobile {
       font-size: 13px;
-      margin: 10px 0 4px 0;
     }
   }
 
   :deep(p) {
     color: #e0e0e0;
     line-height: 1.8;
-    margin-bottom: 15px;
   }
 
   :deep(ul),
   :deep(ol) {
     color: #e0e0e0;
-    margin: 15px 0;
     padding-left: 20px;
+    list-style-type: disc;
   }
 
   :deep(li) {
-    margin-bottom: 8px;
     line-height: 1.6;
+    list-style-type: disc;
+    display: list-item;
+    margin-bottom: 4px;
   }
 
   :deep(strong) {
@@ -244,8 +296,33 @@ h2 {
     font-family: 'Courier New', monospace;
   }
 
+  :deep(pre) {
+    background: rgba(32, 32, 32, 0.8);
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    border: 1px solid rgba(90, 192, 147, 0.3);
+
+    @include mobile {
+      font-size: 10px;
+      padding: 10px;
+    }
+
+    // pre 안의 code 태그는 배경색 제거
+    code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+  }
+
   :deep(.project-detail-section) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
@@ -265,6 +342,306 @@ h2 {
 
   :deep(a:hover) {
     text-decoration: underline;
+  }
+
+  // 공통 클래스들
+  :deep(.section-title) {
+    font-size: 24px;
+    font-weight: 600;
+    color: #5ac093;
+    margin: 25px 0 15px 0;
+
+    @include mobile {
+      font-size: 20px;
+      margin: 20px 0 12px 0;
+    }
+  }
+
+  :deep(.subsection-title) {
+    font-size: 20px;
+    font-weight: 500;
+    color: #67c3cc;
+    margin: 20px 0 10px 0;
+
+    @include mobile {
+      font-size: 18px;
+      margin: 15px 0 8px 0;
+    }
+  }
+
+  :deep(.feature-list) {
+    margin: 15px 0;
+    padding-left: 20px;
+    line-height: 1.8;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: 8px;
+      color: #e0e0e0;
+      list-style-type: disc;
+      display: list-item;
+    }
+  }
+
+  :deep(.tech-list) {
+    margin: 15px 0;
+    padding-left: 20px;
+    line-height: 1.8;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: 6px;
+      color: #e0e0e0;
+      list-style-type: disc;
+      display: list-item;
+
+      strong {
+        color: #5ac093;
+      }
+    }
+  }
+
+  :deep(.image-gallery) {
+    text-align: center;
+    margin: 20px 0;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      color: #b0b0b0;
+      font-size: 14px;
+      margin: 5px 0 20px 0;
+      font-style: italic;
+    }
+  }
+
+  :deep(.highlight-box) {
+    background: rgba(90, 192, 147, 0.1);
+    border-left: 4px solid #5ac093;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    flex: 1 1 300px;
+
+    @include mobile {
+      flex: none;
+    }
+
+    p {
+      margin: 0;
+      color: #e0e0e0;
+    }
+
+    strong {
+      color: #5ac093;
+    }
+  }
+
+  :deep(.warning-box) {
+    background: rgba(255, 99, 132, 0.1);
+    border-left: 4px solid #ff6384;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    flex: 1 1 300px;
+
+    @include mobile {
+      flex: none;
+    }
+
+    p {
+      margin: 0;
+      color: #ffe0e0;
+    }
+  }
+
+  :deep(.info-box) {
+    background: rgba(102, 126, 234, 0.1);
+    border-left: 4px solid #667eea;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    flex: 1 1 300px;
+
+    @include mobile {
+      flex: none;
+    }
+
+    p {
+      margin: 0;
+      color: #e0e8ff;
+    }
+  }
+
+  :deep(.card-layout) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px -15px;
+
+    // 2개씩 배치 - gap에 의해 자동으로 정확한 크기로 조정
+    >* {
+      flex: 1 1 0;
+      min-width: 0;
+
+      @include mobile {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  :deep(.card) {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(90, 192, 147, 0.2);
+
+    h4 {
+      margin-top: 0;
+      color: #5ac093;
+    }
+  }
+
+  :deep(.center-text) {
+    text-align: center;
+  }
+
+  :deep(.emoji-icon) {
+    font-size: 1.2em;
+    margin-right: 5px;
+  }
+}
+
+// 고정된 목차 사이드바 스타일
+.table-of-contents-sidebar {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 220px;
+  max-height: 60vh;
+  background: rgba(32, 32, 32, 0.7);
+  border: 1px solid rgba(90, 192, 147, 0.4);
+  border-radius: 8px;
+  padding: 15px;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+  @include tablet {
+    width: 200px;
+    right: 15px;
+    padding: 12px;
+  }
+
+  @include mobile {
+    display: none; // 모바일에서는 숨김
+  }
+
+  .toc-title {
+    color: #5ac093;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    border-bottom: 1px solid rgba(90, 192, 147, 0.3);
+    padding-bottom: 8px;
+    text-align: left;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .toc-item {
+      margin: 2px 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 4px;
+      padding: 4px 8px;
+      text-align: left;
+
+      &:hover {
+        background: rgba(90, 192, 147, 0.2);
+        transform: translateX(2px);
+      }
+
+      .toc-text {
+        color: #e0e0e0;
+        font-size: 11px;
+        line-height: 1.3;
+        display: block;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      // h2 레벨
+      &.toc-2 {
+        margin-left: 0;
+
+        .toc-text {
+          font-weight: 600;
+          color: #5ac093;
+          font-size: 12px;
+        }
+      }
+
+      // h3 레벨
+      &.toc-3 {
+        margin-left: 12px;
+
+        .toc-text {
+          font-weight: 500;
+          color: #67c3cc;
+          font-size: 11px;
+        }
+      }
+
+      // h4 레벨
+      &.toc-4 {
+        margin-left: 24px;
+
+        .toc-text {
+          color: #8dd3c7;
+          font-size: 10px;
+        }
+      }
+
+      // h5, h6 레벨
+      &.toc-5,
+      &.toc-6 {
+        margin-left: 36px;
+
+        .toc-text {
+          color: #b3d9d6;
+          font-size: 9px;
+        }
+      }
+    }
+  }
+
+  // 스크롤바 스타일
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(90, 192, 147, 0.1);
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(90, 192, 147, 0.5);
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(90, 192, 147, 0.7);
   }
 }
 
