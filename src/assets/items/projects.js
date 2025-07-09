@@ -379,19 +379,6 @@ const project = [
       </div>
     `,
   },
-  // <div class="project-detail-section">
-  //   <h2>🖼️ 미리보기</h2>
-  //   <div class="image-gallery">
-  //     <img style="width : 100%; border-radius: 10px;" src="${require("@/assets/img/elements_overlay_02.png")}" alt="크롬 웹스토어 페이지" />
-  //     <p>크롬 웹스토어 페이지</p>
-  //     <img style="width : 100%; border-radius: 10px;" src="${require("@/assets/img/elements_overlay_03.png")}" alt="팝업 설정 화면" />
-  //     <p>팝업 설정 화면</p>
-  //     <img style="width : 100%; border-radius: 10px;" src="${require("@/assets/img/elements_overlay_04.gif")}" alt="드래그 기능 시연 GIF" />
-  //     <p>드래그 기능 시연</p>
-  //     <img style="width : 100%; border-radius: 10px;" src="${require("@/assets/img/elements_overlay_05.png")}" alt="웹 데모 화면" />
-  //     <p>웹 데모 화면</p>
-  //   </div>
-  // </div>
   {
     number: 1,
     title: "Mevie",
@@ -522,146 +509,335 @@ const project = [
     url: null,
     image: require("@/assets/img/pdf_01.png"),
     contents: `
-          PDF Viewer 및 SVG or canvas 형태의 HTML로 Convert 하여 PDF에 원하는 페이지를 로컬에 저장할 수 있는 웹 애플리케이션입니다. 이 애플리케이션은 Vue3의 Composition API로 작성되었으며, 스타일링에는 SCSS를 사용했습니다. 서버 측에서는 Node.js와 Express를 사용하여 구현되었습니다.
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">📋</span>프로젝트 개요</h2>
+        <p>
+          PDF 파일을 업로드하여 <strong>SVG 또는 Canvas 형태의 HTML로 변환</strong>하고, 원하는 페이지를 로컬에 저장할 수 있는 웹 애플리케이션입니다.
+          이 애플리케이션은 <strong>Vue3의 Composition API</strong>로 작성되었으며, 스타일링에는 <strong>SCSS</strong>를 사용했습니다. 
+          서버 측에서는 <strong>Node.js와 Express</strong>를 사용하여 구현되었습니다.
+        </p>
+        
+        <div class="highlight-box">
+          <h4>🏢 실무 배경 및 개발 동기</h4>
+          <p>
+            <strong>회사 업무에서 e-book 콘텐츠 개발</strong> 과정에서 PDF 원본을 웹용 콘텐츠로 변환해야 하는 업무가 빈번했습니다. 
+            기존에는 전체 PDF를 변환하거나, 수동으로 페이지를 캡처하는 비효율적인 방식을 사용했는데, 
+            <strong>수백 페이지의 교육 콘텐츠 중 특정 페이지만 필요한 경우가 많아</strong> 효율적인 도구의 필요성을 느꼈습니다.
+          </p>
+          <ul class="tech-list">
+            <li><strong>문제점:</strong> 전체 PDF 변환 시 불필요한 파일 생성 및 용량 증가</li>
+            <li><strong>기존 방식:</strong> 수동 캡처 → 이미지 편집 → HTML 변환 (시간 소요 과다)</li>
+            <li><strong>해결 목표:</strong> 원하는 페이지만 선택하여 바로 웹용 형태로 변환</li>
+          </ul>
+        </div>
 
-          <span style="font-size:24px">📚 스토리보드</span>
-          <span style="font-size:20px">📖 초기 화면</span>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>저장 할 Page를 선택 할 방식을 Select 합니다. (Default: 개별 선택, 범위 선택)</li>
+        <div class="info-box">
+          <h4>💡 개발 철학</h4>
+          <p>
+            <strong>"실무에서 겪은 불편함을 직접 해결하는 개발자"</strong><br/>
+            단순히 기술을 배우기 위한 토이 프로젝트가 아닌, <strong>실제 업무 효율성을 개선하기 위해 필요에 의해 개발</strong>한 실무형 도구입니다. 
+            현재도 팀 내에서 e-book 콘텐츠 제작 시 활용하고 있어 실용성이 검증된 프로젝트입니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">📚</span>스토리보드</h2>
+        
+        <h3><span class="emoji-icon">📖</span>초기 화면</h3>
+        <ul class="feature-list">
+          <li>저장할 Page를 선택할 방식을 Select 합니다. (Default: 개별 선택, 범위 선택)</li>
             <li>파일 첨부 Button을 클릭하여 PDF 파일 업로드 합니다.</li>
             <li>파일이 서버에 업로드 될 때 로딩화면이 보여집니다.</li>
           </ul>
-          <span style="font-size:20px">📖 업로드 후 공통</span>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+
+        <h3><span class="emoji-icon">📖</span>업로드 후 공통</h3>
+        <ul class="feature-list">
             <li>Page Input에 원하는 Page number를 입력 후 Enter keydown 시 그 Page로 이동합니다.</li>
             <li>Scale은 -,+ button으로 조절 가능하며, Ctrl + 마우스휠, Ctrl + - or + keydown으로도 조절이 가능합니다.</li>
             <li>Page input 숫자만 입력 가능하며 Total page를 넘을 수 없습니다.</li>
             <li>Page에 Text를 드래그할 수 있습니다.</li>
             <li>내보내기 클릭 시 현재 Scale의 퍼센트로 저장이 됩니다.</li>
-            <li>Directory 구조
-            📁 최상위 폴더
+        </ul>
+
+        <div class="info-box">
+          <h4>내보내기 디렉토리 구조</h4>
+          <pre><code>📁 최상위 폴더
             ├── 📁 js 폴더
-            │   ├── page1.js
+│   ├── page1.js      # 각 페이지별 JavaScript
             │   ├── page2.js
             │   └── ...
             ├── 📁 svg 폴더
-            │   ├── page1.svg
+│   ├── page1.svg     # 변환된 SVG 파일
             │   ├── page2.svg
             │   └── ...
-            ├── common.css
-            ├── page1.html
+├── common.css        # 공통 스타일시트
+├── page1.html        # 각 페이지별 HTML
             ├── page2.html
-            └── ...
-            </li>
-          </ul>
-          <span style="font-size:20px">📖 개별선택</span>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+└── ...</code></pre>
+        </div>
+
+        <h3><span class="emoji-icon">📖</span>개별선택 모드</h3>
+        <ul class="feature-list">
               <li>Header의 내용이 현재 업로드된 PDF, Page, Scale, 선택된 Page, 선택 Button, 내보내기 버튼으로 변경됩니다.</li>
               <li>Prev, Next button으로 Page 이동이 가능합니다.</li>
               <li>내보내기를 원하는 Page를 선택 Button으로 선택할 수 있습니다.</li>
               <li>선택된 Page는 Drop down box에서 확인할 수 있습니다.</li>
               <li>Drop down box에서 Page 선택시 그 Page로 이동합니다.</li>
-              <li>Delete button 클릭 시 선택을 취소 할수 있습니다.</li>
+          <li>Delete button 클릭 시 선택을 취소 할 수 있습니다.</li>
               <li>내보내기 클릭 시 선택된 Page가 zip형식으로 패키징되어 다운로드 됩니다.</li>
               <li>선택을 하지 않고 내보내기 클릭 시 현재 Page가 다운로드 됩니다.</li>
           </ul>
-          <span style="font-size:20px">📖 범위선택</span>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
+
+        <h3><span class="emoji-icon">📖</span>범위선택 모드</h3>
+        <ul class="feature-list">
               <li>Header의 내용이 현재 업로드된 PDF, total Page, Page 범위, Scale, 내보내기 버튼으로 변경됩니다.</li>
               <li>원하는 Page 범위를 input에 입력 후 Enter key시 Page가 보여집니다. (Default : 1/1)</li>
               <li>Page가 렌더링 될때 로딩화면이 보여집니다.</li>
-              <span style="color : red;"> * 주의사항 : Page 렌더링 중에 내보내기 시 Text layer가 표시 되지 않습니다.</span>
           </ul>
-          <span style="font-size:24px">🖥 기능 구현</span>
-            <span style="font-size:20px">🔔Upload</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-                <span style="font-size:18px">💻클라이언트</span>
-                <li>File Upload시 formDate를 담아 서버에 Post요청 (/upload)
-                - 업로드중엔 로딩화면을 유지
-                - 업로드가 완료되면 파일과 pdf.js 라이브러리를 사용하여 PDF를 화면에 표시
-                ** <span style="color : red;">주요 사항</span>
-                1. FileInput의 name 속성을 통해 서버에 요청
-                2. 개별선택, 범위선택 시에 화면구성, Page 수집방법이 달라야함
+        <div class="warning-box">
+          <p><strong>⚠️ 주의사항:</strong> Page 렌더링 중에 내보내기 시 Text layer가 표시 되지 않습니다.</p>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🖥</span>기능 구현</h2>
+        
+        <h3><span class="emoji-icon">🔔</span>Upload 기능</h3>
+        
+        <div class="card-layout">
+          <div class="card">
+            <h4><span class="emoji-icon">💻</span>클라이언트</h4>
+            <ul class="tech-list">
+              <li><strong>File Upload 시 formData를 담아 서버에 Post요청 (/upload)</strong>
+                <ul>
+                  <li>업로드중엔 로딩화면을 유지</li>
+                  <li>업로드가 완료되면 파일과 pdf.js 라이브러리를 사용하여 PDF를 화면에 표시</li>
+                </ul>
                 </li>
-                <span style="font-size:18px">💻서버</span>
-                <li>multer 모듈을 활용하여 전달받은 request(formData)를 저장
-                - fs 모듈을 활용하여 새로운 PDF를 전달 받으면 기존 PDF를 삭제
-                - response를 end 하여 요청을 종료
+            </ul>
+            <div class="highlight-box">
+              <h5>🔑 주요 구현 사항</h5>
+              <ul class="tech-list">
+                <li><strong>FileInput의 name 속성을 통해 서버에 요청</strong></li>
+                <li><strong>개별선택, 범위선택 시에 화면구성, Page 수집방법이 달라야함</strong></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h4><span class="emoji-icon">💻</span>서버</h4>
+            <ul class="tech-list">
+              <li><strong>multer 모듈을 활용하여 전달받은 request(formData)를 저장</strong></li>
+              <li><strong>fs 모듈을 활용하여 새로운 PDF를 전달 받으면 기존 PDF를 삭제</strong></li>
+              <li><strong>response를 end 하여 요청을 종료</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3><span class="emoji-icon">🔔</span>Viewer 기능</h3>
+        
+        <h4><span class="emoji-icon">💻</span>클라이언트 구현</h4>
+        
+        <div class="highlight-box">
+          <h5>📄 Pagination 구현</h5>
+          <ul class="tech-list">
+            <li><strong>개별선택:</strong> prev, next button, input을 사용하여 페이지 네비게이션</li>
+            <li><strong>범위선택:</strong> start, end input을 사용하여 페이지 범위 지정</li>
+          </ul>
+        </div>
+
+        <div class="highlight-box">
+          <h5>🔍 Scale 구현</h5>
+          <ul class="tech-list">
+            <li><strong>다양한 조작 방법 지원:</strong> + - button, ctrl + wheel, + - keydown 으로 조절</li>
+            <li><strong>현재의 Scale 값으로 Page Export</strong></li>
+          </ul>
+          <div class="warning-box">
+            <h6>⚠️ 기술적 도전 - 브라우저 확대/축소 충돌 문제</h6>
+            <p><strong>문제:</strong> 브라우저의 기본 확대/축소 기능을 사용하면 PDF가 깨지는 현상 발생</p>
+            <p><strong>해결방법:</strong></p>
+            <ul class="tech-list">
+              <li>eventListener에 <code>preventDefault()</code> 적용하여 기본 동작 차단</li>
+              <li>wheel eventListener 인자에 <code>{ passive: false }</code>를 추가하여 이벤트 차단 가능하게 설정</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h5>✅ 사용자가 Export할 Page 선택</h5>
+          <ul class="tech-list">
+            <li><strong>개별선택:</strong> 직접 Page를 선택 및 제거 (선택된 Page 표시)</li>
+            <li><strong>범위선택:</strong> 현재 보고있는 Pages 자동 선택</li>
+          </ul>
+        </div>
+
+        <h3><span class="emoji-icon">🔔</span>Export 기능</h3>
+        
+        <div class="card-layout">
+          <div class="card">
+            <h4><span class="emoji-icon">💻</span>클라이언트 Export 프로세스</h4>
+            <ul class="tech-list">
+              <li><strong>1. 선택된 Pages를 pageData에 담아 JSON 형식으로 서버에 post (/convert) 요청</strong>
+                <div class="info-box">
+                  <p><strong>구현 방법:</strong> pageData는 <code>JSON.stringify()</code>를 사용하여 json 문자열로 변환하여 body에 포함하여 post</p>
+                </div>
+                </li>
+              
+              <li><strong>2. zip 라이브러리를 사용하여 zip 객체 생성</strong></li>
+              
+              <li><strong>3. 현재 Node를 Clone 하여 필요없는 내용을 제거 후 blob 변환 → zip객체에 push</strong>
+                <ul>
+                  <li>불필요한 elements, classes, style 등 제거</li>
+                  <li>순수한 콘텐츠만 추출하여 저장</li>
+              </ul>
+                </li>
+              
+              <li><strong>4. /convert 요청 종료 후 svg file을 get (/getSVGFile) 요청</strong>
+                <ul>
+                  <li>요청중엔 로딩화면을 유지</li>
+                </ul>
+                <div class="info-box">
+                  <h6>🔑 비동기 처리 구현</h6>
+                  <ul class="tech-list">
+                    <li><code>await</code>을 사용하여 /convert → /getSVGFile 순차적 실행 보장</li>
+                    <li>response를 json으로 받아온 후 SVG File을 blob 변환 → zip객체에 push</li>
+                  </ul>
+                </div>
+                </li>
+              
+              <li><strong>5. js, common css 동적 생성 후 zip객체에 push</strong></li>
+              
+              <li><strong>6. 모든 요청 종료 후 비동기로 zip을 generate하여 패키징된 zip file 다운로드</strong>
+                <div class="warning-box">
+                  <h6>⚠️ 중요한 구현 사항</h6>
+                  <ul class="tech-list">
+                    <li>svg 파일도 반드시 패키징 되어야 함</li>
+                    <li>getSVG 요청이 종료된 후에 zip.generate되어야 하므로 getSVG요청에 await 키워드 추가 후 비동기로 generate</li>
+                  </ul>
+                </div>
                 </li>
               </ul>
-              <span style="font-size:20px">🔔Viewer</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-                <span style="font-size:18px">💻클라이언트</span>
-                <li>Pagination 구현
-                  - 개별선택 : prev, next button, input을 사용
-                  - 범위선택 : start, end input을 사용
-                </li>
-                <li>Scale 구현
-                  - + - button, ctrl + wheel, + - keydown 으로 조절
-                  ** <span style="color : red;">주요 사항</span>
-                  1. 브라우저의 축소확대 기능을 비활성화 (브라우저의 확대를 사용하면 pdf가 깨짐)
-                    &nbsp;- eventListener에 preventDefault 적용
-                    &nbsp;- wheel eventListener 인자에 { passive: false }를 추가
-                  2. 현재의 Scale 값으로 Page Export
-                </li>
-                <li>사용자가 Export할 Page 선택
-                  - 개별선택 : 직접 Page를 선택 및 제거 (선택된 Page 표시) 
-                  - 범위선택 : 현재 보고있는 Pages 자동 선택
-                </li>
-              </ul>
-              <span style="font-size:20px">🔔Export</span>
-              <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-                <span style="font-size:18px">💻클라이언트</span>
-                  <li>선택된 Pages를 pageData에 담아 Json 형식으로 서버에 post (/convert) 요청
-                   ** <span style="color : red;">주요 사항</span>
-                    &nbsp;1. pageData는 JSON.stringify를 사용하여 json 문자열로 변환하여 body에 포함하여 post
+          </div>
+          
+          <div class="card">
+            <h4><span class="emoji-icon">💻</span>서버 Export 처리</h4>
+            <ul class="tech-list">
+              <li><strong>1. request(pageData)로 요청받은 Page만 SVG로 변환</strong></li>
+              
+              <li><strong>2. 서버에 내장되어 있는 PDF to SVG 프로그램을 실행</strong>
+                <ul>
+                  <li>실행을 위해 <code>child_process</code> 모듈의 <code>exec()</code> 함수를 사용하여 batch 명령어를 동적으로 실행</li>
+                </ul>
                   </li>
-                  <li>zip 라이브러리를 사용, zip 객체 생성</li>
-                  <li>현재 Node를 Clone 하여 필요없는 내용을 제거 후에 blob 후 zip객체에 push
-                    - elements, classes, style 등 제거
-                  </li>
-                  <li>/convert 요청이 종료 후에 svg file을 get (/getSVGFile) 요청
-                    - 요청중엔 로딩화면을 유지
-                    ** <span style="color : red;">주요 사항</span>
-                      &nbsp;1. await을 사용하여 /convert => /getSVGFile 순으로 요청
-                      &nbsp;2. response를 json으로 받아온 후 SVG File을 blob 후 zip객체에 push
-                  </li>
-                  <li>js, common css 동적 생성 후 zip객체에 push</li>
-                  <li>모든 요청이 종료 후에 비동기로 zip을 generate 하여 패키징 된 zip file을 다운로드
-                    ** <span style="color : red;">주요 사항</span>
-                      &nbsp;1. svg 파일도 패키징 되어야 함
-                      &nbsp;2. getSVG 요청이 종료된 후에 zip.generate되어야 하기때문에 getSVG요청에 await키워드 추가후 비동기로 generate해야함
-                  </li>
-                  <span style="font-size:18px">💻서버</span>
-                  <li>request(pageData)로 요청받은 Page만 SVG로 변환</li>
-                  <li>서버에 내장되어 있는 PDF to SVG 프로그램을 실행
-                    - 실행을 위해 child_process모듈의 exec() 함수를 사용하여 batch 명령어를 동적으로 실행
-                    ** <span style="color : red;">주요 사항</span>
-                    &nbsp;1. shell에서 한국어가 깨지기 떄문에 'chcp 65001' command 통해 UTF-8로 변경
-                    &nbsp;2. exec는 비동기 함수이기 때문에 command가 끝나지 않아도 convert 요청을 종료하는 버그 발생
-                    <span style="color : red;">해결방법</span> : command를 promise 배열에 push 후 await과 promise.all을 사용하여 커맨드가 전부 입력 되고 난뒤 요청을 종료
-                  </li>
-                  <li>convert 요청 종료 후 getSVGFile get 요청에 응답
-                    - 생성된 svg 파일을 json 형식으로 클라이언트에게 전달
-                    ** <span style="color : red;">주요 사항</span>
-                    &nbsp;1. 클라이언트에게 전달이 완료된 후엔 서버에 저장된 SVG파일 제거
+            </ul>
+            
+            <div class="warning-box">
+              <h5>⚠️ 기술적 도전과 해결</h5>
+              
+              <h6>1. 한글 깨짐 문제</h6>
+              <p><strong>문제:</strong> shell에서 한국어가 깨지는 현상 발생</p>
+              <p><strong>해결:</strong> <code>'chcp 65001'</code> command를 통해 UTF-8로 인코딩 변경</p>
+              
+              <h6>2. 비동기 처리 버그</h6>
+              <p><strong>문제:</strong> exec는 비동기 함수이기 때문에 command가 끝나지 않아도 convert 요청을 종료하는 버그 발생</p>
+              <p><strong>해결:</strong> command를 promise 배열에 push 후 <code>await</code>과 <code>Promise.all()</code>을 사용하여 모든 커맨드가 완료된 후 요청을 종료</p>
+            </div>
+            
+            <ul class="tech-list">
+              <li><strong>3. convert 요청 종료 후 getSVGFile get 요청에 응답</strong>
+                <ul>
+                  <li>생성된 svg 파일을 json 형식으로 클라이언트에게 전달</li>
+                  <li><strong>메모리 관리:</strong> 클라이언트에게 전달이 완료된 후엔 서버에 저장된 SVG파일 제거</li>
+                </ul>
                     </li>
                 </ul>
-                <span style="font-size:20px">🖨프리뷰</span>
-                <div style="text-align:center">
-                      초기 화면
-                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_02.png")}"/>
-                      <br/>
-                      로딩 화면
-                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_04.png")}"/>
-                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_05.png")}"/>
-                      <br/>
-                      개별선택 화면
-                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_03.png")}"/>
-                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_06.gif")}"/>
-                      <br/>
-                      범위선택 화면
-                      <img style="width : 100%; border-radius: 10px;"src="${require("../img/pdf_07.png")}"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🖨</span>프리뷰</h2>
+        <div class="image-gallery">
+          <img style="width: 100%; border-radius: 10px;" src="${require("../img/pdf_02.png")}" alt="초기 화면"/>
+          <p>초기 화면 - 파일 업로드 전</p>
+          
+          <img style="width: 100%; border-radius: 10px;" src="${require("../img/pdf_04.png")}" alt="로딩 화면 1"/>
+          <p>로딩 화면 - 파일 업로드 중</p>
+          
+          <img style="width: 100%; border-radius: 10px;" src="${require("../img/pdf_05.png")}" alt="로딩 화면 2"/>
+          <p>로딩 화면 - SVG 변환 중</p>
+          
+          <img style="width: 100%; border-radius: 10px;" src="${require("../img/pdf_03.png")}" alt="개별선택 화면"/>
+          <p>개별선택 화면 - 페이지별 선택 가능</p>
+          
+          <img style="width: 100%; border-radius: 10px;" src="${require("../img/pdf_06.gif")}" alt="개별선택 기능 시연"/>
+          <p>개별선택 기능 시연 - 드래그 및 선택 기능</p>
+          
+          <img style="width: 100%; border-radius: 10px;" src="${require("../img/pdf_07.png")}" alt="범위선택 화면"/>
+          <p>범위선택 화면 - 페이지 범위 지정</p>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🛠</span>기술 스택</h2>
+        <div class="card-layout">
+          <div class="highlight-box">
+            <h4>Frontend</h4>
+            <ul class="tech-list">
+              <li><strong>Vue3 (Composition API)</strong> - 반응형 UI 구현</li>
+              <li><strong>SCSS</strong> - 컴포넌트 기반 스타일링</li>
+              <li><strong>pdf.js</strong> - PDF 렌더링 및 텍스트 추출</li>
+              <li><strong>zip.js</strong> - 클라이언트 사이드 파일 압축</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h4>Backend</h4>
+            <ul class="tech-list">
+              <li><strong>Node.js</strong> - 서버 런타임 환경</li>
+              <li><strong>Express</strong> - RESTful API 구현</li>
+              <li><strong>multer</strong> - multipart/form-data 파일 업로드</li>
+              <li><strong>child_process</strong> - PDF to SVG 변환 프로그램 실행</li>
+              <li><strong>fs module</strong> - 파일 시스템 조작 및 관리</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">💡</span>기술적 도전과 성과</h2>
+        
+        <div class="card-layout">
+          <div class="card">
+            <h4>🎯 주요 도전 과제</h4>
+            <ul class="tech-list">
+              <li><strong>대용량 PDF 처리:</strong> 수백 페이지 PDF의 효율적 렌더링</li>
+              <li><strong>메모리 최적화:</strong> 클라이언트/서버 메모리 관리</li>
+              <li><strong>비동기 처리:</strong> 복잡한 비동기 작업 순서 보장</li>
+              <li><strong>크로스 플랫폼:</strong> Windows 환경에서의 한글 인코딩</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h4>📈 프로젝트 성과</h4>
+            <ul class="tech-list">
+              <li><strong>풀스택 개발 경험:</strong> Frontend와 Backend 전체 구현</li>
+              <li><strong>파일 처리 전문성:</strong> 업로드, 변환, 다운로드 전체 파이프라인</li>
+              <li><strong>실무 활용 가능:</strong> 실제 문서 작업에 활용 가능한 도구</li>
+              <li><strong>확장 가능한 구조:</strong> 다른 파일 형식으로 확장 가능</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h4>🔧 개발하면서 배운 점</h4>
+          <ul class="tech-list">
+            <li><strong>비동기 프로그래밍의 중요성:</strong> Promise와 async/await를 활용한 복잡한 비동기 흐름 제어</li>
+            <li><strong>메모리 관리:</strong> 대용량 파일 처리 시 메모리 누수 방지 및 가비지 컬렉션</li>
+            <li><strong>사용자 경험:</strong> 로딩 상태, 에러 처리 등 세심한 UX 설계의 중요성</li>
+            <li><strong>시스템 통합:</strong> 외부 프로그램과의 통합 및 인코딩 문제 해결</li>
+          </ul>
+        </div>
                 </div>
               `,
   },
