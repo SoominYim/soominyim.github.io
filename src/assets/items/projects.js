@@ -8,38 +8,35 @@ const project = [
     url: "https://chromewebstore.google.com/detail/elements-position-drag-ov/hhcokjpdklpgebgklpelpkekgiojnjca",
     image: require("@/assets/img/elements_overlay_01.png"),
     contents: `
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">📋</span>프로젝트 개요</h2>
-        <p>
-          <code>Ctrl+드래그</code>(Mac: <code>Cmd+드래그</code>)로 웹 요소의 CSS position 값을 실시간으로 표시하는 크롬 확장 프로그램입니다. 
-          웹 개발 시 <code>position: absolute</code> 요소의 위치 조정을 위해 개발자 도구에서 수치를 반복 수정하는 비효율적인 과정을 개선하고자 개발하였습니다.
-        </p>
-        <div class="highlight-box">
-          <p><strong>🎯 Chrome Web Store 정식 배포</strong> - 개발팀에서 실제 업무에 활용되고 있는 도구입니다.</p>
-        </div>
-      </div>
+        <vue-component name="ProjectDetailSection" props='{"title":"프로젝트 개요","icon":"📋"}'>
+          <p>
+            <code>Ctrl+드래그</code>(Mac: <code>Cmd+드래그</code>)로 웹 요소의 CSS position 값을 실시간으로 표시하는 크롬 확장 프로그램입니다. 
+            웹 개발 시 <code>position: absolute</code> 요소의 위치 조정을 위해 개발자 도구에서 수치를 반복 수정하는 비효율적인 과정을 개선하고자 개발하였습니다.
+          </p>
+          <vue-component name="ProjectHighlightBox" props='{"title":"🎯 Chrome Web Store 정식 배포"}'>
+            <p>개발팀에서 실제 업무에 활용되고 있는 도구입니다.</p>
+          </vue-component>
+        </vue-component>
 
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">🎯</span>개발 배경</h2>
-        <p>
-          회사에서 모달, 드롭다운, 툴팁, 아이콘 등 <code>position: absolute</code> 요소를 빈번히 사용하게 되었습니다. 
-          매번 개발자 도구에서 CSS 값을 수정하며 위치를 맞추는 과정을 하루에 수십 번 반복하는 것이 매우 비효율적이었습니다.
-        </p>
-        <p>
-          "드래그해서 실시간으로 좌표를 보면서 조정할 수 있으면 얼마나 좋을까?"라는 생각에서 시작하여 직접 개발하게 되었습니다.
-        </p>
-      </div>
+        <vue-component name="ProjectDetailSection" props='{"title":"개발 배경","icon":"🎯"}'>
+          <p>
+            회사에서 모달, 드롭다운, 툴팁, 아이콘 등 <code>position: absolute</code> 요소를 빈번히 사용하게 되었습니다. 
+            매번 개발자 도구에서 CSS 값을 수정하며 위치를 맞추는 과정을 하루에 수십 번 반복하는 것이 매우 비효율적이었습니다.
+          </p>
+          <p>
+            "드래그해서 실시간으로 좌표를 보면서 조정할 수 있으면 얼마나 좋을까?"라는 생각에서 시작하여 직접 개발하게 되었습니다.
+          </p>
+        </vue-component>
 
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">🚀</span>핵심 기능</h2>
-        <ul class="feature-list">
-          <li><strong>드래그 인터페이스:</strong> <code>Ctrl+드래그</code> (Mac: <code>Cmd+드래그</code>)로 웹 요소 이동</li>
-          <li><strong>실시간 좌표 표시:</strong> 드래그 중 실시간으로 CSS position 값 오버레이 표시</li>
-          <li><strong>요소 감지:</strong> <code>position: absolute</code> 또는 <code>position: fixed</code> 요소 자동 감지</li>
-          <li><strong>토글 기능:</strong> <code>Ctrl + Shift + Q</code>로 확장 기능 On/Off</li>
-          <li><strong>다국어 지원:</strong> 한국어, 영어, 일본어, 중국어(간체) 지원</li>
-        </ul>
-      </div>
+        <vue-component name="ProjectDetailSection" props='{"title":"핵심 기능","icon":"🚀"}'>
+          <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+            <li><strong>드래그 인터페이스:</strong> <code>Ctrl+드래그</code> (Mac: <code>Cmd+드래그</code>)로 웹 요소 이동</li>
+            <li><strong>실시간 좌표 표시:</strong> 드래그 중 실시간으로 CSS position 값 오버레이 표시</li>
+            <li><strong>요소 감지:</strong> <code>position: absolute</code> 또는 <code>position: fixed</code> 요소 자동 감지</li>
+            <li><strong>토글 기능:</strong> <code>Ctrl + Shift + Q</code>로 확장 기능 On/Off</li>
+            <li><strong>다국어 지원:</strong> 한국어, 영어, 일본어, 중국어(간체) 지원</li>
+          </vue-component>
+        </vue-component>
 
       <div class="project-detail-section">
         <h2><span class="emoji-icon">🛠</span>기술 스택 및 아키텍처</h2>
@@ -62,29 +59,26 @@ const project = [
         </p>
 
         <h4>각 영역의 역할</h4>
-        <div class="card-layout">
-          <div class="card">
-            <h4>📁 App 레이어</h4>
-            <ul class="tech-list">
+        <vue-component name="ProjectCardLayout">
+          <vue-component name="ProjectCard" props='{"title":"App 레이어","icon":"📁"}'>
+            <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
               <li><strong>content-main.ts:</strong> Content Script 메인 진입점</li>
               <li><strong>content.ts:</strong> 웹페이지 DOM 조작 로직</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>📁 Features 레이어</h4>
-            <ul class="tech-list">
+            </vue-component>
+          </vue-component>
+          <vue-component name="ProjectCard" props='{"title":"Features 레이어","icon":"📁"}'>
+            <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
               <li><strong>drag-manager:</strong> 드래그 상태 및 이벤트 관리</li>
               <li><strong>hover-manager:</strong> 호버 하이라이트 관리</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>📁 Shared 레이어</h4>
-            <ul class="tech-list">
+            </vue-component>
+          </vue-component>
+          <vue-component name="ProjectCard" props='{"title":"Shared 레이어","icon":"📁"}'>
+            <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
               <li><strong>position-utils:</strong> 위치 계산 유틸리티</li>
               <li><strong>extension-config:</strong> 확장 설정 관리</li>
-            </ul>
-          </div>
-        </div>
+            </vue-component>
+          </vue-component>
+        </vue-component>
 
         <h4>다중 진입점 아키텍처</h4>
         <p>Chrome Extension의 특성상 여러 컨텍스트에서 실행되는 구조를 체계적으로 관리하였습니다:</p>
@@ -96,8 +90,7 @@ const project = [
           <li><strong>Demo (demo/):</strong> 확장 설치 전 기능 체험을 위한 독립 웹페이지</li>
         </ul>
         
-        <div class="info-box">
-          <h4>프로젝트 구조</h4>
+        <vue-component name="ProjectInfoBox" props='{"title":"프로젝트 구조"}'>
           <pre><code>src/
 ├── 📁 app/                    # 애플리케이션 레이어
 │   ├── content-main.ts        # Content Script 메인 진입점
@@ -150,7 +143,7 @@ const project = [
 ├── index.js                   # 웹 데모 진입점
 ├── background.ts              # 백그라운드 스크립트
 └── app-icon.png               # 앱 아이콘</code></pre>
-        </div>
+        </vue-component>
 
         <h3>FSD 아키텍처의 장점</h3>
         <p>작은 프로젝트였지만 FSD를 적용함으로써 다음과 같은 장점을 얻을 수 있었습니다:</p>
@@ -389,37 +382,34 @@ const project = [
     url: null,
     image: require("@/assets/img/pdf_01.png"),
     contents: `
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">📋</span>프로젝트 개요</h2>
-        <p>
-          PDF 파일을 업로드하여 <strong>SVG 또는 Canvas 형태의 HTML로 변환</strong>하고, 원하는 페이지를 로컬에 저장할 수 있는 웹 애플리케이션입니다.
-          이 애플리케이션은 <strong>Vue3의 Composition API</strong>로 작성되었으며, 스타일링에는 <strong>SCSS</strong>를 사용했습니다. 
-          서버 측에서는 <strong>Node.js와 Express</strong>를 사용하여 구현되었습니다.
-        </p>
-        
-        <div class="highlight-box">
-          <h4>🏢 실무 배경 및 개발 동기</h4>
+        <vue-component name="ProjectDetailSection" props='{"title":"프로젝트 개요","icon":"📋"}'>
           <p>
-            <strong>회사 업무에서 e-book 콘텐츠 개발</strong> 과정에서 PDF 원본을 웹용 콘텐츠로 변환해야 하는 업무가 빈번했습니다. 
-            기존에는 전체 PDF를 변환하거나, 수동으로 페이지를 캡처하는 비효율적인 방식을 사용했는데, 
-            <strong>수백 페이지의 교육 콘텐츠 중 특정 페이지만 필요한 경우가 많아</strong> 효율적인 도구의 필요성을 느꼈습니다.
+            PDF 파일을 업로드하여 <strong>SVG 또는 Canvas 형태의 HTML로 변환</strong>하고, 원하는 페이지를 로컬에 저장할 수 있는 웹 애플리케이션입니다.
+            이 애플리케이션은 <strong>Vue3의 Composition API</strong>로 작성되었으며, 스타일링에는 <strong>SCSS</strong>를 사용했습니다. 
+            서버 측에서는 <strong>Node.js와 Express</strong>를 사용하여 구현되었습니다.
           </p>
-          <ul class="tech-list">
-            <li><strong>문제점:</strong> 전체 PDF 변환 시 불필요한 파일 생성 및 용량 증가</li>
-            <li><strong>기존 방식:</strong> 수동 캡처 → 이미지 편집 → HTML 변환 (시간 소요 과다)</li>
-            <li><strong>해결 목표:</strong> 원하는 페이지만 선택하여 바로 웹용 형태로 변환</li>
-          </ul>
-        </div>
+          
+          <vue-component name="ProjectHighlightBox" props='{"title":"🏢 실무 배경 및 개발 동기"}'>
+            <p>
+              <strong>회사 업무에서 e-book 콘텐츠 개발</strong> 과정에서 PDF 원본을 웹용 콘텐츠로 변환해야 하는 업무가 빈번했습니다. 
+              기존에는 전체 PDF를 변환하거나, 수동으로 페이지를 캡처하는 비효율적인 방식을 사용했는데, 
+              <strong>수백 페이지의 교육 콘텐츠 중 특정 페이지만 필요한 경우가 많아</strong> 효율적인 도구의 필요성을 느꼈습니다.
+            </p>
+            <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
+              <li><strong>문제점:</strong> 전체 PDF 변환 시 불필요한 파일 생성 및 용량 증가</li>
+              <li><strong>기존 방식:</strong> 수동 캡처 → 이미지 편집 → HTML 변환 (시간 소요 과다)</li>
+              <li><strong>해결 목표:</strong> 원하는 페이지만 선택하여 바로 웹용 형태로 변환</li>
+            </vue-component>
+          </vue-component>
 
-        <div class="info-box">
-          <h4>💡 개발 철학</h4>
-          <p>
-            <strong>"실무에서 겪은 불편함을 직접 해결하는 개발자"</strong><br/>
-            단순히 기술을 배우기 위한 토이 프로젝트가 아닌, <strong>실제 업무 효율성을 개선하기 위해 필요에 의해 개발</strong>한 실무형 도구입니다. 
-            현재도 팀 내에서 e-book 콘텐츠 제작 시 활용하고 있어 실용성이 검증된 프로젝트입니다.
-          </p>
-        </div>
-      </div>
+          <vue-component name="ProjectInfoBox" props='{"title":"💡 개발 철학"}'>
+            <p>
+              <strong>"실무에서 겪은 불편함을 직접 해결하는 개발자"</strong><br/>
+              단순히 기술을 배우기 위한 토이 프로젝트가 아닌, <strong>실제 업무 효율성을 개선하기 위해 필요에 의해 개발</strong>한 실무형 도구입니다. 
+              현재도 팀 내에서 e-book 콘텐츠 제작 시 활용하고 있어 실용성이 검증된 프로젝트입니다.
+            </p>
+          </vue-component>
+        </vue-component>
 
       <div class="project-detail-section">
         <h2><span class="emoji-icon">📚</span>스토리보드</h2>
@@ -730,115 +720,101 @@ const project = [
     url: "https://mevie.vercel.app/",
     image: require("@/assets/img/mevie_01.png"),
     contents: `
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">🎬</span>프로젝트 개요</h2>
-        <p>
-          TMDB API를 활용한 반응형 영화 검색 플랫폼으로, <strong>Vercel에 배포</strong>되어 실제 서비스 중입니다.
-          Vue 3의 최신 기능을 활용하여 영화 검색, 상세 정보 조회, 장르별 탐색 등 종합적인 영화 정보 서비스를 제공합니다.
-        </p>
-      </div>
+        <vue-component name="ProjectDetailSection" props='{"title":"프로젝트 개요","icon":"🎬"}'>
+          <p>
+            TMDB API를 활용한 반응형 영화 검색 플랫폼으로, <strong>Vercel에 배포</strong>되어 실제 서비스 중입니다.
+            Vue 3의 최신 기능을 활용하여 영화 검색, 상세 정보 조회, 장르별 탐색 등 종합적인 영화 정보 서비스를 제공합니다.
+          </p>
+        </vue-component>
 
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">⭐</span>핵심 기능</h2>
-        <div class="card-layout">
-          <div class="card">
-            <h4><span class="emoji-icon">🏠</span>메인 페이지</h4>
-            <ul class="feature-list">
-              <li>인기 영화 무한 슬라이더</li>
-              <li>장르별 영화 카테고리</li>
-              <li>반응형 디자인</li>
-              <li>다크/라이트 모드 토글</li>
-              <li>LocalStorage 기반 설정 저장</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4><span class="emoji-icon">🔍</span>검색 기능</h4>
-            <ul class="feature-list">
-              <li>실시간 검색 결과</li>
-              <li>무한 스크롤 페이지네이션</li>
-              <li>로딩 스피너 UX</li>
-              <li>검색어 자동 trim 처리</li>
-              <li>모바일 최적화</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4><span class="emoji-icon">📱</span>상세 페이지</h4>
-            <ul class="feature-list">
-              <li><strong>상세 정보:</strong> 줄거리, 개봉일, 평점, 런타임</li>
-              <li><strong>출연진/스태프:</strong> 감독, 주요 배우 정보</li>
-              <li><strong>추천 시스템:</strong> 비슷한 장르 영화 추천</li>
-              <li><strong>SEO 최적화:</strong> URL 기반 페이지 라우팅</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        <vue-component name="ProjectDetailSection" props='{"title":"핵심 기능","icon":"⭐"}'>
+          <vue-component name="ProjectCardLayout">
+            <vue-component name="ProjectCard" props='{"title":"메인 페이지","icon":"🏠"}'>
+              <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+                <li>인기 영화 무한 슬라이더</li>
+                <li>장르별 영화 카테고리</li>
+                <li>반응형 디자인</li>
+                <li>다크/라이트 모드 토글</li>
+                <li>LocalStorage 기반 설정 저장</li>
+              </vue-component>
+            </vue-component>
+            <vue-component name="ProjectCard" props='{"title":"검색 기능","icon":"🔍"}'>
+              <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+                <li>실시간 검색 결과</li>
+                <li>무한 스크롤 페이지네이션</li>
+                <li>로딩 스피너 UX</li>
+                <li>검색어 자동 trim 처리</li>
+                <li>모바일 최적화</li>
+              </vue-component>
+            </vue-component>
+            <vue-component name="ProjectCard" props='{"title":"상세 페이지","icon":"📱"}'>
+              <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+                <li><strong>상세 정보:</strong> 줄거리, 개봉일, 평점, 런타임</li>
+                <li><strong>출연진/스태프:</strong> 감독, 주요 배우 정보</li>
+                <li><strong>추천 시스템:</strong> 비슷한 장르 영화 추천</li>
+                <li><strong>SEO 최적화:</strong> URL 기반 페이지 라우팅</li>
+              </vue-component>
+            </vue-component>
+          </vue-component>
+        </vue-component>
 
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">🛠</span>기술적 구현</h2>
-        <div class="card-layout">
-          <div class="highlight-box">
-            <h4>상태 관리 & 라우팅</h4>
-            <ul class="tech-list">
-              <li><strong>Vuex</strong>로 글로벌 상태 관리 (다크모드, 사용자 설정)</li>
-              <li><strong>Vue Router</strong>로 SPA 라우팅 구현</li>
-              <li><strong>LocalStorage</strong>로 사용자 설정 영구 저장</li>
-            </ul>
-          </div>
-          <div class="info-box">
-            <h4>API & 성능 최적화</h4>
-            <ul class="tech-list">
-              <li><strong>TMDB API</strong> 연동으로 실시간 영화 데이터</li>
-              <li><strong>Lazy Loading</strong>으로 필요시에만 API 요청</li>
-              <li><strong>Debouncing</strong> 적용으로 검색 성능 최적화</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="highlight-box">
-          <h4>반응형 & UX</h4>
-          <ul class="tech-list">
-            <li><strong>Mobile Detect</strong>로 디바이스별 최적화</li>
-            <li><strong>SCSS</strong>로 컴포넌트 기반 스타일링</li>
-            <li><strong>CSS Grid/Flexbox</strong>로 유연한 레이아웃</li>
-            <li><strong>Infinite Scroll</strong>로 끊김없는 사용자 경험</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">📱</span>주요 화면</h2>
-        <div class="image-gallery">
-          <img src="${require("../img/mevie_03.png")}" alt="메인 페이지"/>
-          <p>메인 페이지 - 인기 영화 & 장르별 카테고리</p>
+        <vue-component name="ProjectDetailSection" props='{"title":"기술적 구현","icon":"🛠"}'>
+          <vue-component name="ProjectCardLayout">
+            <vue-component name="ProjectHighlightBox" props='{"title":"상태 관리 & 라우팅"}'>
+              <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
+                <li><strong>Vuex</strong>로 글로벌 상태 관리 (다크모드, 사용자 설정)</li>
+                <li><strong>Vue Router</strong>로 SPA 라우팅 구현</li>
+                <li><strong>LocalStorage</strong>로 사용자 설정 영구 저장</li>
+              </vue-component>
+            </vue-component>
+            <vue-component name="ProjectInfoBox" props='{"title":"API & 성능 최적화"}'>
+              <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
+                <li><strong>TMDB API</strong> 연동으로 실시간 영화 데이터</li>
+                <li><strong>Lazy Loading</strong>으로 필요시에만 API 요청</li>
+                <li><strong>Debouncing</strong> 적용으로 검색 성능 최적화</li>
+              </vue-component>
+            </vue-component>
+          </vue-component>
           
-          <img src="${require("../img/mevie_04.png")}" alt="상세 페이지"/>
-          <p>상세 페이지 - 영화 정보 & 추천 시스템</p>
-          
-          <img src="${require("../img/mevie_05.png")}" alt="검색 페이지"/>
-          <p>검색 페이지 - 실시간 검색 & 무한 스크롤</p>
-          
-          <img src="${require("../img/mevie_11.png")}" alt="모바일 버전"/>
-          <p>모바일 최적화 화면</p>
-        </div>
-      </div>
+          <vue-component name="ProjectHighlightBox" props='{"title":"반응형 & UX"}'>
+            <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
+              <li><strong>Mobile Detect</strong>로 디바이스별 최적화</li>
+              <li><strong>SCSS</strong>로 컴포넌트 기반 스타일링</li>
+              <li><strong>CSS Grid/Flexbox</strong>로 유연한 레이아웃</li>
+              <li><strong>Infinite Scroll</strong>로 끊김없는 사용자 경험</li>
+            </vue-component>
+          </vue-component>
+        </vue-component>
 
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">🚀</span>프로젝트 성과</h2>
-        <div class="card-layout">
-          <div class="card">
-            <h4>🌐 실제 배포</h4>
-            <p>Vercel을 통한 안정적인 서비스 운영</p>
-          </div>
-          <div class="card">
-            <h4>📱 반응형 지원</h4>
-            <p>모든 디바이스에서 최적화된 사용자 경험</p>
-          </div>
-          <div class="card">
-            <h4>⚡ 성능 최적화</h4>
-            <p>API 호출 최소화 및 로딩 성능 개선</p>
-          </div>
-        </div>
-      </div>
+        <vue-component name="ProjectDetailSection" props='{"title":"주요 화면","icon":"📱"}'>
+          <vue-component name="ProjectImageGallery">
+            <img src="${require("../img/mevie_03.png")}" alt="메인 페이지"/>
+            <p>메인 페이지 - 인기 영화 & 장르별 카테고리</p>
+            
+            <img src="${require("../img/mevie_04.png")}" alt="상세 페이지"/>
+            <p>상세 페이지 - 영화 정보 & 추천 시스템</p>
+            
+            <img src="${require("../img/mevie_05.png")}" alt="검색 페이지"/>
+            <p>검색 페이지 - 실시간 검색 & 무한 스크롤</p>
+            
+            <img src="${require("../img/mevie_11.png")}" alt="모바일 버전"/>
+            <p>모바일 최적화 화면</p>
+          </vue-component>
+        </vue-component>
+
+        <vue-component name="ProjectDetailSection" props='{"title":"프로젝트 성과","icon":"🚀"}'>
+          <vue-component name="ProjectCardLayout">
+            <vue-component name="ProjectCard" props='{"title":"실제 배포","icon":"🌐"}'>
+              <p>Vercel을 통한 안정적인 서비스 운영</p>
+            </vue-component>
+            <vue-component name="ProjectCard" props='{"title":"반응형 지원","icon":"📱"}'>
+              <p>모든 디바이스에서 최적화된 사용자 경험</p>
+            </vue-component>
+            <vue-component name="ProjectCard" props='{"title":"성능 최적화","icon":"⚡"}'>
+              <p>API 호출 최소화 및 로딩 성능 개선</p>
+            </vue-component>
+          </vue-component>
+        </vue-component>
     `,
   },
 
@@ -851,67 +827,123 @@ const project = [
     url: "https://mini-mate-s.vercel.app",
     image: require("@/assets/img/mini.png"),
     contents: `
-        이 애플리케이션은 사용자가 점심 뽑기, 사다리타기, 게임 등의 기능들을 사용할 수 있는 툴들을 모아둔 웹애플리케이션입니다.
-          <span style="font-size:24px">🎞 페이지를 만든 이유</span>
-          <span>점심이나, 커피를 뽑을 사람 등 일상 생활에서 필요로한 뽑기를 만들면서, 뽑기뿐만이 아닌 작업중에 필요한것이나, 킬링타임용 게임 등 제가 원하는 것들을 모두 만들어보고 싶어 제작하게 되었습니다.
-          </span>
-          <span style="font-size:24px">🖥 스토리보드 및 기능구현</span>
-          <div style="text-align:center">
-            <span style="font-size:20px">날씨</span>
-            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_01.png")}"/>
-          </div>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>OpenWeatherMap API를 사용하여 날씨 정보를 받아옵니다.</li>
-            <li>날씨(비, 눈 애니메이션), 시간에 따라 Background 색상이 변경 됩니다.</li>
-            <li>초기 화면에선 오늘 날씨와 날짜에 맞는 날씨, 추후 날짜의 날씨가 표시됩니다.</li>
-            <li>날짜를 클릭시엔 강수 확률, 강수량, 바람의 강도, 습도를 표시합니다.</li>
-          </ul>
-          <div style="text-align:center">
-            <span style="font-size:20px">점심 뽑기</span>
-            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_02.gif")}"/>
-          </div>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>오늘의 점심을 뽑습니다.</li>
-            <li>한식, 중식, 일식, 양식, 아시안 중 선택하여 음식을 고를 수 있습니다.</li>
-            <li>원하지 않는다면 다시 뽑을 수 있습니다.</li>
-          </ul>
-          <div style="text-align:center">
-            <span style="font-size:20px">커피 뽑기</span>
-            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_03.gif")}"/>
-          </div>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>커피를 살 인원을 뽑습니다.</li>
-            <li>인원을 추가하거나 제거 할 수 있습니다.(중복 ❌)</li>
-            <li>2명 이상이 될 경우 뽑기를 진행할 수 있습니다.</li>
-            <li>원하지 않는다면 다시 뽑을 수 있습니다.</li>
-          </ul>
-          <div style="text-align:center">
-            <span style="font-size:20px">사다리타기</span>
-            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_04.gif")}"/>
-          </div>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>사다리 타기를 진행합니다.</li>
-            <li>3 ~ 12명의 인원을 선택할 수 있습니다.</li>
-            <li>내기는 커스텀 할 수 있으며, 자동내기 클릭 시에 꽝 1명과 나머지는 당첨을 선택합니다.</li>
-            <li>시작하기 클릭 후 최상단의 아이템을 클릭시 그 아이템의 색상이 사다리를 탑니다.</li>
-          </ul>
-          <div style="text-align:center">
-            <span style="font-size:20px">오목(진행중)</span>
-            <img style="width : 100%; border-radius: 10px;"src="${require("../img/minimate_05.gif")}"/>
-          </div>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>오목을 진행합니다.</li>
-            <li>흑돌이 선을 잡고 플레이합니다.</li>
-            <li>먼저 오목을 만드는 인원이 승리합니다.</li>
-            <li>승리 후엔 돌을 둘 수 없으며, 다시하기를 클릭하여 게임을 다시 합니다.</li>
-          </ul>
-          <span style="font-size:20px">기능 추가 예정</span>
-          <ul style="position: relative; left: 15px; width: 100%; line-height: 2.1; text-align: left; list-style: disc;">
-            <li>렌주룰을 적용합니다.(흑돌은 33, 6목, 44가 불가능 합니다.)</li>
-            <li>UI 개선</li>
-            <li>무르기 기능 추가</li>
-            <li>가능하다면 socket.io를 통한 멀티 플레이 기능</li>
-          </ul>
+        <vue-component name="ProjectDetailSection" props='{"title":"프로젝트 개요","icon":"📋"}'>
+          <p>
+            사용자가 <strong>점심 뽑기, 사다리타기, 게임</strong> 등의 기능들을 사용할 수 있는 툴들을 모아둔 웹 애플리케이션입니다.<br/>
+            <strong>Nuxt3</strong>와 <strong>Pinia</strong>를 활용하여 모던한 상태 관리와 SSR을 구현했습니다.
+          </p>
+          
+          <vue-component name="ProjectHighlightBox" props='{"title":"🎞 페이지를 만든 이유"}'>
+            <p>
+              점심이나 커피를 뽑을 사람 등 <strong>일상 생활에서 필요한 뽑기</strong>를 만들면서, 뽑기뿐만이 아닌 
+              작업 중에 필요한 것이나 킬링타임용 게임 등 제가 원하는 것들을 모두 만들어보고 싶어 제작하게 되었습니다.
+            </p>
+          </vue-component>
+        </vue-component>
+
+        <vue-component name="ProjectDetailSection" props='{"title":"🖥 스토리보드 및 기능구현","icon":"🖥"}'>
+          
+          <h3><span class="emoji-icon">☀️</span>날씨</h3>
+          <vue-component name="ProjectImageGallery">
+            <img style="width: 100%; border-radius: 10px;" src="${require("../img/minimate_01.png")}" alt="날씨 화면"/>
+            <p>날씨 API를 활용한 실시간 날씨 정보</p>
+          </vue-component>
+          
+          <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+            <li><strong>OpenWeatherMap API</strong>를 사용하여 날씨 정보를 받아옵니다.</li>
+            <li><strong>날씨 애니메이션:</strong> 비, 눈 애니메이션과 시간에 따라 Background 색상이 변경됩니다.</li>
+            <li><strong>다양한 정보 표시:</strong> 오늘 날씨와 날짜에 맞는 날씨, 추후 날짜의 날씨가 표시됩니다.</li>
+            <li><strong>상세 정보:</strong> 날짜 클릭 시 강수 확률, 강수량, 바람의 강도, 습도를 표시합니다.</li>
+          </vue-component>
+
+          <h3><span class="emoji-icon">🍚</span>점심 뽑기</h3>
+          <vue-component name="ProjectImageGallery">
+            <img style="width: 100%; border-radius: 10px;" src="${require("../img/minimate_02.gif")}" alt="점심 뽑기 GIF"/>
+            <p>점심 뽑기 기능 시연</p>
+          </vue-component>
+          
+          <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+            <li><strong>랜덤 뽑기:</strong> 오늘의 점심을 뽑습니다.</li>
+            <li><strong>카테고리별 선택:</strong> 한식, 중식, 일식, 양식, 아시안 중 선택하여 음식을 고를 수 있습니다.</li>
+            <li><strong>재뽑기 기능:</strong> 원하지 않는다면 다시 뽑을 수 있습니다.</li>
+          </vue-component>
+
+          <h3><span class="emoji-icon">☕</span>커피 뽑기</h3>
+          <vue-component name="ProjectImageGallery">
+            <img style="width: 100%; border-radius: 10px;" src="${require("../img/minimate_03.gif")}" alt="커피 뽑기 GIF"/>
+            <p>커피 뽑기 기능 시연</p>
+          </vue-component>
+          
+          <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+            <li><strong>인원 관리:</strong> 커피를 살 인원을 뽑습니다.</li>
+            <li><strong>동적 인원 조정:</strong> 인원을 추가하거나 제거할 수 있습니다.(중복 ❌)</li>
+            <li><strong>최소 인원 체크:</strong> 2명 이상이 될 경우 뽑기를 진행할 수 있습니다.</li>
+            <li><strong>재뽑기:</strong> 원하지 않는다면 다시 뽑을 수 있습니다.</li>
+          </vue-component>
+
+          <h3><span class="emoji-icon">🪜</span>사다리타기</h3>
+          <vue-component name="ProjectImageGallery">
+            <img style="width: 100%; border-radius: 10px;" src="${require("../img/minimate_04.gif")}" alt="사다리타기 GIF"/>
+            <p>사다리타기 게임 시연</p>
+          </vue-component>
+          
+          <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+            <li><strong>인원 설정:</strong> 3 ~ 12명의 인원을 선택할 수 있습니다.</li>
+            <li><strong>커스텀 내기:</strong> 내기는 커스텀할 수 있으며, 자동내기 클릭 시 꽝 1명과 나머지는 당첨을 선택합니다.</li>
+            <li><strong>인터랙티브 게임:</strong> 시작하기 클릭 후 최상단의 아이템을 클릭시 그 아이템의 색상이 사다리를 탑니다.</li>
+          </vue-component>
+
+          <h3><span class="emoji-icon">⚫</span>오목 (진행중)</h3>
+          <vue-component name="ProjectImageGallery">
+            <img style="width: 100%; border-radius: 10px;" src="${require("../img/minimate_05.gif")}" alt="오목 게임 GIF"/>
+            <p>오목 게임 시연</p>
+          </vue-component>
+          
+          <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+            <li><strong>기본 룰:</strong> 흑돌이 선을 잡고 플레이합니다.</li>
+            <li><strong>승리 조건:</strong> 먼저 오목을 만드는 인원이 승리합니다.</li>
+            <li><strong>게임 종료:</strong> 승리 후엔 돌을 둘 수 없으며, 다시하기를 클릭하여 게임을 다시 합니다.</li>
+          </vue-component>
+
+          <vue-component name="ProjectWarningBox" props='{"title":"🔧 기능 추가 예정"}'>
+            <vue-component name="ProjectTechList" props='{"type":"feature-list"}'>
+              <li><strong>렌주룰 적용:</strong> 흑돌은 33, 6목, 44가 불가능합니다.</li>
+              <li><strong>UI 개선:</strong> 더 직관적인 인터페이스</li>
+              <li><strong>무르기 기능:</strong> 이전 수로 돌아가기</li>
+              <li><strong>멀티플레이:</strong> 가능하다면 socket.io를 통한 멀티 플레이 기능</li>
+            </vue-component>
+          </vue-component>
+        </vue-component>
+
+        <vue-component name="ProjectDetailSection" props='{"title":"🛠 기술 스택","icon":"🛠"}'>
+          <vue-component name="ProjectCardLayout">
+            <vue-component name="ProjectCard" props='{"title":"Frontend","icon":"💻"}'>
+              <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
+                <li><strong>Nuxt3</strong> - SSR 및 모던 Vue 프레임워크</li>
+                <li><strong>TypeScript</strong> - 타입 안전성 확보</li>
+                <li><strong>SCSS</strong> - 컴포넌트 기반 스타일링</li>
+              </vue-component>
+            </vue-component>
+
+            <vue-component name="ProjectCard" props='{"title":"State Management","icon":"🔧"}'></vue-component>
+              <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
+                <li><strong>Pinia</strong> - 모던 상태 관리 라이브러리</li>
+                <li><strong>Composition API</strong> - 반응형 상태 관리</li>
+              </vue-component>
+            </vue-component>
+          </vue-component>
+        </vue-component>
+
+        <vue-component name="ProjectDetailSection" props='{"title":"💡 개발하면서 배운 점","icon":"💡"}'>
+          <vue-component name="ProjectHighlightBox" props='{"title":"🎯 핵심 성과"}'></vue-component>
+            <vue-component name="ProjectTechList" props='{"type":"tech-list"}'>
+              <li><strong>Nuxt3 활용:</strong> SSR과 CSR의 장점을 모두 활용한 하이브리드 렌더링</li>
+              <li><strong>Pinia 상태 관리:</strong> Vuex보다 간결하고 TypeScript 친화적인 상태 관리</li>
+              <li><strong>사용자 중심 설계:</strong> 일상에서 실제로 사용할 수 있는 도구 개발</li>
+              <li><strong>게임 로직 구현:</strong> 오목, 사다리타기 등 복잡한 게임 알고리즘 구현 경험</li>
+            </vue-component>
+          </vue-component>
+        </vue-component>
         `,
   },
   {

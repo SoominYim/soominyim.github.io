@@ -82,14 +82,154 @@ const getInitialTOCState = () => {
 
 const isTOCOpen = ref(getInitialTOCState());
 
-// 마크다운을 HTML로 변환
+// 마크다운을 HTML로 변환하고 Vue 컴포넌트 파싱
 const contents = computed(() => {
   const project = props.projects[route.params.id];
   if (project && project.contents) {
-    return project.contents.split("\n").join("<br/>");
+    let content = project.contents.split("\n").join("<br/>");
+
+    // Vue 컴포넌트 마커를 실제 컴포넌트로 변환
+    content = parseVueComponents(content);
+
+    return content;
   }
   return "";
 });
+
+// Vue 컴포넌트 파싱 함수
+const parseVueComponents = (htmlString) => {
+  // <vue-component> 태그를 찾아서 실제 컴포넌트로 변환
+  return htmlString.replace(
+    /<vue-component\s+name="([^"]+)"(?:\s+props='([^']*)')?>(.*?)<\/vue-component>/gs,
+    (match, componentName, propsString, children) => {
+      // props 파싱
+      let props = {};
+      if (propsString) {
+        try {
+          props = JSON.parse(propsString);
+        } catch (e) {
+          console.warn('Props 파싱 오류:', propsString);
+        }
+      }
+
+      // 컴포넌트별 처리
+      switch (componentName) {
+        case 'ProjectDetailSection':
+          return createProjectDetailSection(props, children);
+        case 'ProjectHighlightBox':
+          return createProjectHighlightBox(props, children);
+        case 'ProjectWarningBox':
+          return createProjectWarningBox(props, children);
+        case 'ProjectInfoBox':
+          return createProjectInfoBox(props, children);
+        case 'ProjectCardLayout':
+          return createProjectCardLayout(props, children);
+        case 'ProjectCard':
+          return createProjectCard(props, children);
+        case 'ProjectImageGallery':
+          return createProjectImageGallery(props, children);
+        case 'ProjectTechList':
+          return createProjectTechList(props, children);
+        default:
+          return children; // 알 수 없는 컴포넌트는 내용만 반환
+      }
+    }
+  );
+};
+
+// 컴포넌트 생성 함수들
+const createProjectDetailSection = (props, children) => {
+  const title = props.title || '';
+  const icon = props.icon || '';
+  return `
+    <div class="project-detail-section">
+      <h2 class="section-title">
+        <span class="section-icon">${icon}</span>
+        ${title}
+      </h2>
+      <div class="section-content">
+        ${children}
+      </div>
+    </div>
+  `;
+};
+
+const createProjectHighlightBox = (props, children) => {
+  const title = props.title || '';
+  return `
+    <div class="highlight-box">
+      ${title ? `<h4 class="box-title">${title}</h4>` : ''}
+      <div class="box-content">
+        ${children}
+      </div>
+    </div>
+  `;
+};
+
+const createProjectWarningBox = (props, children) => {
+  const title = props.title || '';
+  return `
+    <div class="warning-box">
+      ${title ? `<h4 class="box-title">${title}</h4>` : ''}
+      <div class="box-content">
+        ${children}
+      </div>
+    </div>
+  `;
+};
+
+const createProjectInfoBox = (props, children) => {
+  const title = props.title || '';
+  return `
+    <div class="info-box">
+      ${title ? `<h4 class="box-title">${title}</h4>` : ''}
+      <div class="box-content">
+        ${children}
+      </div>
+    </div>
+  `;
+};
+
+const createProjectCardLayout = (props, children) => {
+  return `
+    <div class="card-layout">
+      ${children}
+    </div>
+  `;
+};
+
+const createProjectCard = (props, children) => {
+  const title = props.title || '';
+  const icon = props.icon || '';
+  return `
+    <div class="project-card">
+      <div class="card-header">
+        <span class="card-icon">${icon}</span>
+        <h4 class="card-title">${title}</h4>
+      </div>
+      <div class="card-content">
+        ${children}
+      </div>
+    </div>
+  `;
+};
+
+const createProjectImageGallery = (props, children) => {
+  return `
+    <div class="image-gallery">
+      ${children}
+    </div>
+  `;
+};
+
+const createProjectTechList = (props, children) => {
+  const type = props.type || 'feature-list';
+  return `
+    <ul class="${type}">
+      ${children}
+    </ul>
+  `;
+};
 
 // 목차 생성 함수
 const generateTableOfContents = () => {
@@ -501,13 +641,17 @@ h2 {
 
     p {
       margin: 0;
-      color: #ffe0e0;
+      color: #e0e0e0;
+    }
+
+    strong {
+      color: #ff6384;
     }
   }
 
   :deep(.info-box) {
-    background: rgba(102, 126, 234, 0.1);
-    border-left: 4px solid #667eea;
+    background: rgba(103, 195, 204, 0.1);
+    border-left: 4px solid #67c3cc;
     padding: 15px 20px;
     margin: 15px 0;
     border-radius: 8px;
@@ -519,46 +663,112 @@ h2 {
 
     p {
       margin: 0;
-      color: #e0e8ff;
+      color: #e0e0e0;
+    }
+
+    strong {
+      color: #67c3cc;
+    }
+  }
+
+  :deep(.box-title) {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+
+    @include mobile {
+      font-size: 15px;
+    }
+  }
+
+  :deep(.box-content) {
+    color: #e0e0e0;
+
+    p {
+      margin: 0;
     }
   }
 
   :deep(.card-layout) {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin: 20px -15px;
+    gap: 20px;
+    margin: 20px 0;
 
-    // 2개씩 배치 - gap에 의해 자동으로 정확한 크기로 조정
-    >* {
-      flex: 1 1 0;
-      min-width: 0;
-
-      @include mobile {
-        flex: 1 1 100%;
-      }
+    @include mobile {
+      flex-direction: column;
+      gap: 15px;
     }
   }
 
-  :deep(.card) {
+  :deep(.project-card) {
     background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(90, 192, 147, 0.3);
+    border-radius: 12px;
     padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(90, 192, 147, 0.2);
+    flex: 1 1 300px;
+    min-width: 280px;
 
-    h4 {
-      margin-top: 0;
-      color: #5ac093;
+    @include mobile {
+      flex: none;
+      min-width: auto;
+      padding: 15px;
     }
   }
 
-  :deep(.center-text) {
-    text-align: center;
+  :deep(.card-header) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  :deep(.card-icon) {
+    font-size: 24px;
+    margin-right: 10px;
+
+    @include mobile {
+      font-size: 20px;
+      margin-right: 8px;
+    }
+  }
+
+  :deep(.card-title) {
+    color: #5ac093;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  :deep(.card-content) {
+    color: #e0e0e0;
+  }
+
+  :deep(.section-icon) {
+    font-size: 28px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+
+    @include mobile {
+      font-size: 24px;
+      margin-right: 8px;
+    }
   }
 
   :deep(.emoji-icon) {
-    font-size: 1.2em;
-    margin-right: 5px;
+    font-size: 20px;
+    margin-right: 8px;
+    display: inline-block;
+
+    @include mobile {
+      font-size: 18px;
+      margin-right: 6px;
+    }
   }
 }
 
