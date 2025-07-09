@@ -379,129 +379,9 @@ const project = [
       </div>
     `,
   },
+
   {
     number: 1,
-    title: "Mevie",
-    content: `Vue.js 3.X를 사용하여 개발된 영화검색 웹 애플리케이션`,
-    project: `#Vue3, #Vuex, #VueRouter, #Javascript, #Scss, #Axios`,
-    gitUrl: "https://github.com/SoominYim/Mevie",
-    url: "https://mevie.vercel.app/",
-    image: require("@/assets/img/mevie_01.png"),
-    contents: `
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">🎬</span>프로젝트 개요</h2>
-        <p>
-          TMDB API를 활용한 반응형 영화 검색 플랫폼으로, <strong>Vercel에 배포</strong>되어 실제 서비스 중입니다.
-          Vue 3의 최신 기능을 활용하여 영화 검색, 상세 정보 조회, 장르별 탐색 등 종합적인 영화 정보 서비스를 제공합니다.
-        </p>
-      </div>
-
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">⭐</span>핵심 기능</h2>
-        <div class="card-layout">
-          <div class="card">
-            <h4><span class="emoji-icon">🏠</span>메인 페이지</h4>
-            <ul class="feature-list">
-              <li>인기 영화 무한 슬라이더</li>
-              <li>장르별 영화 카테고리</li>
-              <li>반응형 디자인</li>
-              <li>다크/라이트 모드 토글</li>
-              <li>LocalStorage 기반 설정 저장</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4><span class="emoji-icon">🔍</span>검색 기능</h4>
-            <ul class="feature-list">
-              <li>실시간 검색 결과</li>
-              <li>무한 스크롤 페이지네이션</li>
-              <li>로딩 스피너 UX</li>
-              <li>검색어 자동 trim 처리</li>
-              <li>모바일 최적화</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4><span class="emoji-icon">📱</span>상세 페이지</h4>
-            <ul class="feature-list">
-              <li><strong>상세 정보:</strong> 줄거리, 개봉일, 평점, 런타임</li>
-              <li><strong>출연진/스태프:</strong> 감독, 주요 배우 정보</li>
-              <li><strong>추천 시스템:</strong> 비슷한 장르 영화 추천</li>
-              <li><strong>SEO 최적화:</strong> URL 기반 페이지 라우팅</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">🛠</span>기술적 구현</h2>
-        <div class="card-layout">
-          <div class="highlight-box">
-            <h4>상태 관리 & 라우팅</h4>
-            <ul class="tech-list">
-              <li><strong>Vuex</strong>로 글로벌 상태 관리 (다크모드, 사용자 설정)</li>
-              <li><strong>Vue Router</strong>로 SPA 라우팅 구현</li>
-              <li><strong>LocalStorage</strong>로 사용자 설정 영구 저장</li>
-            </ul>
-          </div>
-          <div class="info-box">
-            <h4>API & 성능 최적화</h4>
-            <ul class="tech-list">
-              <li><strong>TMDB API</strong> 연동으로 실시간 영화 데이터</li>
-              <li><strong>Lazy Loading</strong>으로 필요시에만 API 요청</li>
-              <li><strong>Debouncing</strong> 적용으로 검색 성능 최적화</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="highlight-box">
-          <h4>반응형 & UX</h4>
-          <ul class="tech-list">
-            <li><strong>Mobile Detect</strong>로 디바이스별 최적화</li>
-            <li><strong>SCSS</strong>로 컴포넌트 기반 스타일링</li>
-            <li><strong>CSS Grid/Flexbox</strong>로 유연한 레이아웃</li>
-            <li><strong>Infinite Scroll</strong>로 끊김없는 사용자 경험</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">📱</span>주요 화면</h2>
-        <div class="image-gallery">
-          <img src="${require("../img/mevie_03.png")}" alt="메인 페이지"/>
-          <p>메인 페이지 - 인기 영화 & 장르별 카테고리</p>
-          
-          <img src="${require("../img/mevie_04.png")}" alt="상세 페이지"/>
-          <p>상세 페이지 - 영화 정보 & 추천 시스템</p>
-          
-          <img src="${require("../img/mevie_05.png")}" alt="검색 페이지"/>
-          <p>검색 페이지 - 실시간 검색 & 무한 스크롤</p>
-          
-          <img src="${require("../img/mevie_11.png")}" alt="모바일 버전"/>
-          <p>모바일 최적화 화면</p>
-        </div>
-      </div>
-
-      <div class="project-detail-section">
-        <h2><span class="emoji-icon">🚀</span>프로젝트 성과</h2>
-        <div class="card-layout">
-          <div class="card">
-            <h4>🌐 실제 배포</h4>
-            <p>Vercel을 통한 안정적인 서비스 운영</p>
-          </div>
-          <div class="card">
-            <h4>📱 반응형 지원</h4>
-            <p>모든 디바이스에서 최적화된 사용자 경험</p>
-          </div>
-          <div class="card">
-            <h4>⚡ 성능 최적화</h4>
-            <p>API 호출 최소화 및 로딩 성능 개선</p>
-          </div>
-        </div>
-      </div>
-    `,
-  },
-
-  {
-    number: 2,
     title: "PDF TO SVG HTML",
     content: "PDF Viewer 및 SVG or canvas & HTML Convert 웹 애플리케이션",
     project: `#Vue3, #Javascript, #Scss, #Node.js, #Express`,
@@ -841,6 +721,127 @@ const project = [
                 </div>
               `,
   },
+  {
+    number: 2,
+    title: "Mevie",
+    content: `Vue.js 3.X를 사용하여 개발된 영화검색 웹 애플리케이션`,
+    project: `#Vue3, #Vuex, #VueRouter, #Javascript, #Scss, #Axios`,
+    gitUrl: "https://github.com/SoominYim/Mevie",
+    url: "https://mevie.vercel.app/",
+    image: require("@/assets/img/mevie_01.png"),
+    contents: `
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🎬</span>프로젝트 개요</h2>
+        <p>
+          TMDB API를 활용한 반응형 영화 검색 플랫폼으로, <strong>Vercel에 배포</strong>되어 실제 서비스 중입니다.
+          Vue 3의 최신 기능을 활용하여 영화 검색, 상세 정보 조회, 장르별 탐색 등 종합적인 영화 정보 서비스를 제공합니다.
+        </p>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">⭐</span>핵심 기능</h2>
+        <div class="card-layout">
+          <div class="card">
+            <h4><span class="emoji-icon">🏠</span>메인 페이지</h4>
+            <ul class="feature-list">
+              <li>인기 영화 무한 슬라이더</li>
+              <li>장르별 영화 카테고리</li>
+              <li>반응형 디자인</li>
+              <li>다크/라이트 모드 토글</li>
+              <li>LocalStorage 기반 설정 저장</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4><span class="emoji-icon">🔍</span>검색 기능</h4>
+            <ul class="feature-list">
+              <li>실시간 검색 결과</li>
+              <li>무한 스크롤 페이지네이션</li>
+              <li>로딩 스피너 UX</li>
+              <li>검색어 자동 trim 처리</li>
+              <li>모바일 최적화</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4><span class="emoji-icon">📱</span>상세 페이지</h4>
+            <ul class="feature-list">
+              <li><strong>상세 정보:</strong> 줄거리, 개봉일, 평점, 런타임</li>
+              <li><strong>출연진/스태프:</strong> 감독, 주요 배우 정보</li>
+              <li><strong>추천 시스템:</strong> 비슷한 장르 영화 추천</li>
+              <li><strong>SEO 최적화:</strong> URL 기반 페이지 라우팅</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🛠</span>기술적 구현</h2>
+        <div class="card-layout">
+          <div class="highlight-box">
+            <h4>상태 관리 & 라우팅</h4>
+            <ul class="tech-list">
+              <li><strong>Vuex</strong>로 글로벌 상태 관리 (다크모드, 사용자 설정)</li>
+              <li><strong>Vue Router</strong>로 SPA 라우팅 구현</li>
+              <li><strong>LocalStorage</strong>로 사용자 설정 영구 저장</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h4>API & 성능 최적화</h4>
+            <ul class="tech-list">
+              <li><strong>TMDB API</strong> 연동으로 실시간 영화 데이터</li>
+              <li><strong>Lazy Loading</strong>으로 필요시에만 API 요청</li>
+              <li><strong>Debouncing</strong> 적용으로 검색 성능 최적화</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="highlight-box">
+          <h4>반응형 & UX</h4>
+          <ul class="tech-list">
+            <li><strong>Mobile Detect</strong>로 디바이스별 최적화</li>
+            <li><strong>SCSS</strong>로 컴포넌트 기반 스타일링</li>
+            <li><strong>CSS Grid/Flexbox</strong>로 유연한 레이아웃</li>
+            <li><strong>Infinite Scroll</strong>로 끊김없는 사용자 경험</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">📱</span>주요 화면</h2>
+        <div class="image-gallery">
+          <img src="${require("../img/mevie_03.png")}" alt="메인 페이지"/>
+          <p>메인 페이지 - 인기 영화 & 장르별 카테고리</p>
+          
+          <img src="${require("../img/mevie_04.png")}" alt="상세 페이지"/>
+          <p>상세 페이지 - 영화 정보 & 추천 시스템</p>
+          
+          <img src="${require("../img/mevie_05.png")}" alt="검색 페이지"/>
+          <p>검색 페이지 - 실시간 검색 & 무한 스크롤</p>
+          
+          <img src="${require("../img/mevie_11.png")}" alt="모바일 버전"/>
+          <p>모바일 최적화 화면</p>
+        </div>
+      </div>
+
+      <div class="project-detail-section">
+        <h2><span class="emoji-icon">🚀</span>프로젝트 성과</h2>
+        <div class="card-layout">
+          <div class="card">
+            <h4>🌐 실제 배포</h4>
+            <p>Vercel을 통한 안정적인 서비스 운영</p>
+          </div>
+          <div class="card">
+            <h4>📱 반응형 지원</h4>
+            <p>모든 디바이스에서 최적화된 사용자 경험</p>
+          </div>
+          <div class="card">
+            <h4>⚡ 성능 최적화</h4>
+            <p>API 호출 최소화 및 로딩 성능 개선</p>
+          </div>
+        </div>
+      </div>
+    `,
+  },
+
   {
     number: 3,
     title: "Mini_Mate",
